@@ -1,4 +1,4 @@
-const { Example } = require("../models");
+const { Example } = require('../models');
 
 const exampleData = [{}, {}];
 
