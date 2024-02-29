@@ -6,7 +6,6 @@ const Comment = require('./Comment');
 const TaskUser = require('./TaskUser')
 
 // ESTABLISH RELATIONSHIPS
-// THESE MIGHT NEED EDITING
 
 // Workspace
 // Has many Project
