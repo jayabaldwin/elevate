@@ -1,6 +1,6 @@
 const router = require('express').Router();
 const { Task } = require('../../models/Task');
-
+// end route is /api/tasks
 
 // Get all tasks
 router.get('/', async (req, res) => {
