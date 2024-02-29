@@ -78,4 +78,4 @@ Comment.belongsTo(User, {
     foreignKey: 'user_id'
 });
 
-module.exports = { Workspace, User, Project, Task, Comment };
+module.exports = { Workspace, User, Project, Task, Comment, TaskUser };
