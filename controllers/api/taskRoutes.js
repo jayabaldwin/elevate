@@ -63,7 +63,11 @@ router.delete('/:id', async (req, res) => {
             res.status(404).send('Task not found');
             return;
         }
-        await task.destroy();
+        await Task.destroy(
+            where: {
+                task_id: req.params.task_id,
+              },
+        );
         res.status(204).send();
     } catch (err) {
         console.error(err);
