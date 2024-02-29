@@ -26,11 +26,6 @@ Task.init(
       type: DataTypes.DATE,
       allowNull: false,
     },
-    // Not sure if necessary
-    updatedOn: {
-      type: DataTypes.DATE,
-      allowNull: false,
-    },
     user_id: {
       type: DataTypes.INTEGER,
       references: {

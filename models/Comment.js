@@ -17,7 +17,7 @@ Comment.init(
     },
     createdOn: {
       type: DataTypes.DATE,
-      allowNull: false,
+      allowNull: true,
     },
     task_id: {
       type: DataTypes.INTEGER,

@@ -1,0 +1,16 @@
+[{
+    "comment": "First comment",
+    "user_id": 1,
+    "task_id": 1
+  },
+{
+    "comment": "Second comment",
+    "user_id": 2,
+    "task_id": 1
+  },
+{
+    "comment": "Third comment",
+    "user_id": 3,
+    "task_id": 1
+  }
+]

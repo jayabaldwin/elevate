@@ -15,13 +15,6 @@ Project.init(
       type: DataTypes.STRING,
       allowNull: false,
     },
-    group_id: {
-      type: DataTypes.INTEGER,
-      references: {
-        model: 'group',
-        key: 'id',
-      },
-    },
   },
   {
     sequelize,
