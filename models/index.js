@@ -6,7 +6,6 @@ const Comment = require('./Comment');
 const TaskUser = require('./TaskUser')
 
 // ESTABLISH RELATIONSHIPS
-// THESE MIGHT NEED EDITING
 
 // Workspace
 // Has many Project
@@ -78,4 +77,4 @@ Comment.belongsTo(User, {
     foreignKey: 'user_id'
 });
 
-module.exports = { Workspace, User, Project, Task, Comment };
+module.exports = { Workspace, User, Project, Task, Comment, TaskUser };
