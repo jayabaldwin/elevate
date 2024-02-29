@@ -1,7 +1,7 @@
 const { Model, DataTypes } = require('sequelize');
 const sequelize = require('../config/connection');
 
-class Workspace extends Model {}
+class Workspace extends Model { }
 
 Workspace.init(
   {

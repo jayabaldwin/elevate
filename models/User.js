@@ -27,6 +27,7 @@ User.init(
     username: {
       type: DataTypes.STRING,
       allowNull: false,
+      unique: true,
     },
     email: {
       type: DataTypes.STRING,
@@ -41,6 +42,13 @@ User.init(
       allowNull: false,
       validate: {
         len: [8],
+      },
+    },
+    task_id: {
+      type: DataTypes.INTEGER,
+      references: {
+        model: 'task',
+        key: 'id',
       },
     },
     workspace_id: {
