@@ -5,20 +5,23 @@ const Project = require('./Project');
 const Task = require('./Task');
 const Comment = require('./Comment');
 
-// User.hasMany(BlogPost);
-// BlogPost.belongsTo(User, {
-//   onDelete: 'CASCADE',
-// });
+// ESTABLISH RELATIONSHIPS
+// THESE MIGHT NEED EDITING
 
-// User.hasMany(Comment);
-// Comment.belongsTo(User, {
-//   onDelete: 'CASCADE',
-// });
+// Workspace
+// Has many User & Group
 
-// BlogPost.hasMany(Comment);
-// Comment.belongsTo(BlogPost, {
-//   foreignKey: 'blogPost_id',
-//   onDelete: 'CASCADE',
-// });
+// Group
+// Has many User & Project
+
+// Project
+// Has many Task
+
+// Task
+// Has many User & Comment
+
+// Comment
+// Belongs to Task
+// onDelete: 'CASCADE'
 
 module.exports = { Workspace, Group, User, Project, Task, Comment };
