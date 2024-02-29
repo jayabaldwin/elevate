@@ -1,7 +1,7 @@
 const { Model, DataTypes } = require('sequelize');
 const sequelize = require('../config/connection');
 
-class Workspace extends Model {}
+class Workspace extends Model { }
 
 Workspace.init(
   {
@@ -14,22 +14,7 @@ Workspace.init(
     name: {
       type: DataTypes.STRING,
       allowNull: false,
-    },
-    // Don't think these should be in workspace as its the top parent table
-    owner: {
-      type: DataTypes.INTEGER,
-      references: {
-        model: 'user',
-        key: 'id',
-      },
-    },
-    team: {
-      type: DataTypes.INTEGER,
-      references: {
-        model: 'user',
-        key: 'id',
-      },
-    },
+    }
   },
   {
     sequelize,

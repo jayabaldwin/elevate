@@ -1,7 +1,7 @@
 const { Model, DataTypes } = require('sequelize');
 const sequelize = require('../config/connection');
 
-class Task extends Model {}
+class Task extends Model { }
 
 Task.init(
   {
@@ -26,15 +26,24 @@ Task.init(
       type: DataTypes.DATE,
       allowNull: false,
     },
-    // Not sure if necessary
-    updatedOn: {
-      type: DataTypes.DATE,
-      allowNull: false,
-    },
     user_id: {
       type: DataTypes.INTEGER,
       references: {
         model: 'user',
+        key: 'id',
+      },
+    },
+    project_id: {
+      type: DataTypes.INTEGER,
+      references: {
+        model: 'project',
+        key: 'id',
+      },
+    },
+    workspace_id: {
+      type: DataTypes.INTEGER,
+      references: {
+        model: 'workspace',
         key: 'id',
       },
     },

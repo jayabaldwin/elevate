@@ -27,6 +27,7 @@ User.init(
     username: {
       type: DataTypes.STRING,
       allowNull: false,
+      unique: true,
     },
     email: {
       type: DataTypes.STRING,
@@ -43,17 +44,17 @@ User.init(
         len: [8],
       },
     },
+    task_id: {
+      type: DataTypes.INTEGER,
+      references: {
+        model: 'task',
+        key: 'id',
+      },
+    },
     workspace_id: {
       type: DataTypes.INTEGER,
       references: {
         model: 'workspace',
-        key: 'id',
-      },
-    },
-    group_id: {
-      type: DataTypes.INTEGER,
-      references: {
-        model: 'group',
         key: 'id',
       },
     },
