@@ -1,17 +1,15 @@
 <br>
-  <h1 align="center"></h1>
-
-![Badge](https://img.shields.io/badge/License-MIT-yellow.svg) ![JavaScript](https://img.shields.io/badge/JavaScript-red) ![Node.js](https://img.shields.io/badge/Node.js-blue) ![Express.js@4.18.2](https://img.shields.io/badge/Express.js@4.18.2-lightgreen) ![Express Session@3.1.0](https://img.shields.io/badge/ExpressSession@3.1.0-pink) ![Express Handlebars@1.18.0](https://img.shields.io/badge/ExpressHandlebars@1.18.0-yellow) ![MySQL2@3.9.1](https://img.shields.io/badge/MySQL2@3.9.1-purple) ![Sequelize@6.37.1](https://img.shields.io/badge/Sequelize@6.37.1-lightblue) ![ConnectSessionSequelize@7.1.7](https://img.shields.io/badge/ConnectSessionSequelize@7.1.7-lavender) ![Bcrypt@5.1.1](https://img.shields.io/badge/Bcrypt@5.1.1-red) ![Dotenv@16.4.4](https://img.shields.io/badge/Dotenv@16.4.4-blue)
+  <h1 align="center">Elevate: Enhanced Task Management Software</h1>
 
 ## Description
 
-#### This application, upon setup and execution, facilitates the following functionalities:
+Elevate is a powerful and intuitive task management software designed to help individuals and teams organize, prioritize, and track their tasks efficiently.
 
-<br>
+### Application Features:
 
 ### Brief functionality walk through:
 
-![Mock-Up](./assets/mockup.gif)
+![Badge](https://img.shields.io/badge/License-MIT-yellow.svg) ![JavaScript](https://img.shields.io/badge/JavaScript-red) ![Node.js](https://img.shields.io/badge/Node.js-blue) ![Express.js@4.18.2](https://img.shields.io/badge/Express.js@4.18.2-lightgreen) ![Express Session@3.1.0](https://img.shields.io/badge/ExpressSession@3.1.0-pink) ![Express Handlebars@1.18.0](https://img.shields.io/badge/ExpressHandlebars@1.18.0-yellow) ![MySQL2@3.9.1](https://img.shields.io/badge/MySQL2@3.9.1-purple) ![Sequelize@6.37.1](https://img.shields.io/badge/Sequelize@6.37.1-lightblue) ![ConnectSessionSequelize@7.1.7](https://img.shields.io/badge/ConnectSessionSequelize@7.1.7-lavender) ![Bcrypt@5.1.1](https://img.shields.io/badge/Bcrypt@5.1.1-red) ![Dotenv@16.4.4](https://img.shields.io/badge/Dotenv@16.4.4-blue)
 
 ## Table of Contents
 
@@ -75,5 +73,12 @@ Run this application with the command:
 The application is covered under the following license: [MIT](https://opensource.org/licenses/MIT)
 
 ## Contributing
+
+## Authors
+
+- Jaya Baldwin: [GitHub](https://github.com/jayabaldwin)
+- Adam Isitmez: [GitHub](https://github.com/AdamIsitmez)
+- Amir Tara: [GitHub](https://github.com/Bjorn-Ironsidee)
+- Harry Potter: GitHub
 
 <!-- Add further readme items -->

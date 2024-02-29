@@ -1,12 +1,12 @@
 {
-  "name": "",
+  "name": "elevate",
   "version": "1.0.0",
   "description": "",
   "main": "server.js",
   "scripts": {
     "seeds": "node seeds/index.js"
   },
-  "author": "",
+  "author": "Adam Isitmez, Amir Tara, Harry Potter, Jaya Baldwin",
   "license": "ISC",
   "dependencies": {
     "bcrypt": "^5.1.1",
