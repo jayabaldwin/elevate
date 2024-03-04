@@ -15,7 +15,7 @@ Workspace.hasMany(Project, {
 });
 
 Workspace.hasMany(User, {
-    foreignKey: 'user_id'
+    foreignKey: 'workspace_id'
 });
 
 // Project

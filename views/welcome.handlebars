@@ -1,0 +1,32 @@
+{{! Welcome page }}
+<div class="container">
+  <div class="row">
+    <div class="col text-center">
+      <h1>WELCOME TO ELEVATE</h1>
+      <h2>Enhanced company management software.</h2>
+    </div>
+  </div>
+</div>
+<div class="container">
+  <div class="row">
+    <div class="col">
+      <a
+        href="/signup"
+        class="btn btn-primary btn-block"
+        id="signupHover"
+      >Creating a workspace?</a>
+    </div>
+    <div class="col">
+      <a href="/login" class="btn btn-primary btn-block" id="loginHover">Already
+        a member?</a>
+    </div>
+    <div class="col">
+      <a href="/join" class="btn btn-primary btn-block">Joining a team?</a>
+    </div>
+  </div>
+</div>
+
+<script src="/js/welcome.js"></script>
+
+{{! Each of the sections will be displayed with js depending on the button clicked }}
+{{! Scroll effect to the container with corresponding ID }}

@@ -1,10 +1,46 @@
-[{
-    "name": "Project 1"
+[
+  {
+    "name": "Project Delta",
+    "workspace_id": 1
   },
   {
-    "name": "Project 2"
-  }, 
+    "name": "Project Alpha",
+    "workspace_id": 3
+  },
   {
-    "name": "Project 3"
+    "name": "Project Zeta",
+    "workspace_id": 2
+  },
+  {
+    "name": "Project Gamma",
+    "workspace_id": 3
+  },
+  {
+    "name": "Project Omega",
+    "workspace_id": 1
+  },
+  {
+    "name": "Project Beta",
+    "workspace_id": 2
+  },
+  {
+    "name": "Project Sigma",
+    "workspace_id": 3
+  },
+  {
+    "name": "Project Epsilon",
+    "workspace_id": 1
+  },
+  {
+    "name": "Project Theta",
+    "workspace_id": 2
+  },
+  {
+    "name": "Project Kappa",
+    "workspace_id": 3
+  },
+  {
+    "name": "Project Lambda",
+    "workspace_id": 1
   }
 ]
