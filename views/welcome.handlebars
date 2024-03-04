@@ -24,10 +24,18 @@
 <div class='container'>
   <div class='row'>
     <div class='col'>
-      <button type='button' class='btn btn-primary btn-block' id='signupHover'>Creating a workspace?</button>
+      <button
+        type='button'
+        class='btn btn-primary btn-block'
+        id='signupHover'
+      >Creating a workspace?</button>
     </div>
     <div class='col'>
-      <button type='button' class='btn btn-primary btn-block' id='loginHover'>Already a member?</button>
+      <button
+        type='button'
+        class='btn btn-primary btn-block'
+        id='loginHover'
+      >Already a member?</button>
     </div>
     <div class='col'>
       <button type='button' class='btn btn-primary btn-block'>Joining a team?</button>
@@ -68,8 +76,6 @@
     </div>
   </div>
 </div>
-
-
 
 {{! Signing up for a workspace }}
 <div class='container' id='signup'>
@@ -158,39 +164,51 @@
   </div>
 </div>
 
-{{!-- Workspace name --}}
-        <div class="row justify-content-center" id="workplace-info">
-            <div class="col-md-6">
-                <h2 class="text-center">Welcome! What would you like to name your workspace?</h2>
-                    <form>
-                        <div class="form-row">
-                            <div class="form-group col-md-6">
-                                {{!-- <label for="workplaceName">Organisation name</label> --}}
-                                <input type="text" class="form-control" id="workplaceName" placeholder="Enter name">
-                            </div>
-                        <button type="submit" class="btn btn-primary">Join</button>
-                    </form>
-            </div>
+{{! Workspace name }}
+<div class='row justify-content-center' id='workplace-info'>
+  <div class='col-md-6'>
+    <h2 class='text-center'>Welcome! What would you like to name your workspace?</h2>
+    <form>
+      <div class='form-row'>
+        <div class='form-group col-md-6'>
+          {{! <label for="workplaceName">Organisation name</label> }}
+          <input
+            type='text'
+            class='form-control'
+            id='workplaceName'
+            placeholder='Enter name'
+          />
         </div>
+      </div>
+    </form>
+  </div>
+</div>
+<div class='row justify-content-center'>
+  <div class='col-md-6'>
+    <button type='submit' class='btn btn-primary'>Join</button>
+  </div>
+</div>
 
-
-        {{!-- Invite teammates --}}
-        {{!-- Multiple emails should be able to be added in a row before inviting and option to remove--}}
-        {{!-- Alternatively add after when youre in your workspace --}}
-         <div class="container">
-        <h2>Invite Users to Your Workspace</h2>
-        <form>
-            <div class="form-group">
-                <label for="email">Email Address</label>
-                <input type="email" class="form-control" id="email" placeholder="Enter email">
-            </div>
-            <button type="button" class="btn btn-primary" id="sendInviteBtn">Send Invite</button>
-            <button type="button" class="btn btn-primary" id="sendInviteBtn">Not now</button>
-
-        </form>
+{{! Invite teammates }}
+{{! Multiple emails should be able to be added in a row before inviting and option to remove}}
+{{! Alternatively add after when youre in your workspace }}
+<div class='container'>
+  <h2>Invite Users to Your Workspace</h2>
+  <form>
+    <div class='form-group'>
+      <label for='email'>Email Address</label>
+      <input
+        type='email'
+        class='form-control'
+        id='email'
+        placeholder='Enter email'
+      />
     </div>
+    <button type='button' class='btn btn-primary' id='sendInviteBtn'>Send Invite</button>
+    <button type='button' class='btn btn-primary' id='sendInviteBtn'>Not now</button>
 
-
+  </form>
+</div>
 
 {{! Joining existing workspace as employee }}
 <div class='container' id='join'>
@@ -278,3 +296,5 @@
     </div>
   </div>
 </div>
+
+<script src='../public/js/login.js'></script>
