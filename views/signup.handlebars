@@ -1,0 +1,138 @@
+{{! Signing up for a workspace }}
+<div class="container" id="signup">
+
+  {{! Workspace name }}
+  <div class="row justify-content-center" id="workplace-info">
+    <div class="col-md-6">
+      <h2 class="text-center">Welcome! What would you like to name your
+        workspace?</h2>
+      <form id="workspaceForm">
+        <div class="form-row">
+          <div class="form-group col-md-6">
+            <input
+              type="text"
+              class="form-control"
+              id="workspaceName"
+              placeholder="Enter name"
+            />
+          </div>
+        </div>
+        <div class="row justify-content-center">
+          <div class="col-md-6">
+            <button type="submit" class="btn btn-primary btn-block" id="wsNext">Next</button>
+          </div>
+      </form>
+    </div>
+  </div>
+  
+  </div>
+
+  {{! User details }}
+  <div class="row justify-content-center hide" id="user-info">
+    <div class="col-md-6">
+      <h2 class="text-center">Tell us about yourself</h2>
+      <form id="userDetails">
+        <div class="form-row">
+          <div class="form-group col-md-6">
+            <label for="firstName">First Name</label>
+            <input
+              type="text"
+              class="form-control"
+              id="firstName"
+              placeholder="First Name"
+            />
+          </div>
+          <div class="form-group col-md-6">
+            <label for="lastName">Last Name</label>
+            <input
+              type="text"
+              class="form-control"
+              id="lastName"
+              placeholder="Last Name"
+            />
+          </div>
+        </div>
+        {{! Set this to optional and have your initials rendered otherwise }}
+        {{! <div class='form-group'>
+          <label for='profilePicture'>Profile Picture</label>
+          <input type='file' class='form-control-file' id='profilePicture' />
+        </div> }}
+        <button type="submit" class="btn btn-primary" id="userNext">Next</button>
+      </form>
+    </div>
+  </div>
+
+  <div class="row justify-content-center hide" id="user-loginDetails">
+    <div class="col-md-6">
+      <div class="join-container">
+        <h2 class="text-center mb-4">Login Information</h2>
+        {{! Email, password and username }}
+        <form id="signup-form">
+          <div class="form-group">
+            <label for="email-signup">Email</label>
+            <input
+              type="email"
+              class="form-control"
+              id="email-signup"
+              placeholder="Enter email"
+            />
+          </div>
+          <div class="form-group">
+            <label for="username-signup">Username</label>
+            <input
+              type="username"
+              class="form-control"
+              id="username-signup"
+              placeholder="Enter username"
+            />
+          </div>
+          <div class="form-group">
+            <label for="password-signup">Password</label>
+            <input
+              type="password"
+              class="form-control"
+              id="password-signup"
+              placeholder="Must be at least 8 characters"
+            />
+          </div>
+          {{! JS for confirmation }}
+          <div class="form-group">
+            <label for="password-confirm">Confirm password</label>
+            <input
+              type="password"
+              class="form-control"
+              id="password-confirm"
+              placeholder="Re-enter Password"
+            />
+          </div>
+          <button type="submit" class="btn btn-primary btn-block">Next</button>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>
+
+<script src="/js/signup.js"></script>
+
+{{! Invite teammates }}
+{{! Multiple emails should be able to be added in a row before inviting and option to remove}}
+{{! Alternatively add after when youre in your workspace }}
+{{! <div class='container'>
+  <h2>Invite Users to Your Workspace</h2>
+  <form>
+    <div class='form-group'>
+      <label for='email'>Email Address</label>
+      <input
+        type='email'
+        class='form-control'
+        id='email'
+        placeholder='Enter email'
+      />
+    </div>
+    <button type='button' class='btn btn-primary' id='sendInviteBtn'>Send Invite</button>
+    <button type='button' class='btn btn-primary' id='sendInviteBtn'>Not now</button>
+
+  </form>
+</div>∏
+
+<script src='../public/js/invite.js'></script> }}
