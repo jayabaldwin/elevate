@@ -1,0 +1,89 @@
+{{! Joining existing workspace as employee }}
+<div class="container" id="join">
+  <div class="row justify-content-center" id="user-loginDetails">
+    <div class="col-md-6">
+      <div class="join-container">
+        <h2 class="text-center mb-4">Welcome to, {{{workspace.name}}}</h2>
+        {{! Email, password and username }}
+        <form>
+          <div class="form-group">
+            <label for="email-signup">Email</label>
+            <input
+              type="email"
+              class="form-control"
+              id="email-signup"
+              placeholder="Enter email"
+            />
+          </div>
+          <div class="form-group">
+            <label for="username-signup">Username</label>
+            <input
+              type="username"
+              class="form-control"
+              id="username-signup"
+              placeholder="Enter username"
+            />
+          </div>
+          <div class="form-group">
+            <label for="password-signup">Password</label>
+            <input
+              type="password"
+              class="form-control"
+              id="password-signup"
+              placeholder="Must be at least 8 characters"
+            />
+          </div>
+          {{! JS for confirmation }}
+          <div class="form-group">
+            <label for="password-confirm">Confirm password</label>
+            <input
+              type="password"
+              class="form-control"
+              id="password-confirm"
+              placeholder="Re-enter Password"
+            />
+          </div>
+          <button type="submit" class="btn btn-primary btn-block">Next</button>
+        </form>
+      </div>
+    </div>
+  </div>
+
+  {{! User details }}
+  <div class="row justify-content-center" id="user-info">
+    <div class="col-md-6">
+      <h2 class="text-center">Tell us about yourself</h2>
+      <form>
+        <div class="form-row">
+          <div class="form-group col-md-6">
+            <label for="firstName">First Name</label>
+            <input
+              type="text"
+              class="form-control"
+              id="firstName"
+              placeholder="First Name"
+            />
+          </div>
+          <div class="form-group col-md-6">
+            <label for="lastName">Last Name</label>
+            <input
+              type="text"
+              class="form-control"
+              id="lastName"
+              placeholder="Last Name"
+            />
+          </div>
+        </div>
+        {{! Set this to optional and have your initials rendered otherwise }}
+        <div class="form-group">
+          <label for="profilePicture">Profile Picture</label>
+          <input type="file" class="form-control-file" id="profilePicture" />
+        </div>
+        <button type="submit" class="btn btn-primary">Join</button>
+      </form>
+    </div>
+  </div>
+</div>
+
+<script src="/js/joinWorkspace.js"></script>
+<script src="/js/invite.js"></script>

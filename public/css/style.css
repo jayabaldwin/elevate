@@ -29,3 +29,7 @@
 #loginHover:hover::after {
     content: " Login";
 }
+
+.hide {
+    display: none;
+}

@@ -1,300 +1,32 @@
 {{! Welcome page }}
-
-<head>
-  <link
-    href='https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css'
-    rel='stylesheet'
-  />
-</head>
-
-<header><img
-    src='../public/images/Logo.png'
-    alt='Elevate logo'
-    class='navbar-logo'
-  /></header>
-
-<div class='container'>
-  <div class='row'>
-    <div class='col text-center'>
+<div class="container">
+  <div class="row">
+    <div class="col text-center">
       <h1>WELCOME TO ELEVATE</h1>
       <h2>Enhanced company management software.</h2>
     </div>
   </div>
 </div>
-<div class='container'>
-  <div class='row'>
-    <div class='col'>
-      <button
-        type='button'
-        class='btn btn-primary btn-block'
-        id='signupHover'
-      >Creating a workspace?</button>
+<div class="container">
+  <div class="row">
+    <div class="col">
+      <a
+        href="/signup"
+        class="btn btn-primary btn-block"
+        id="signupHover"
+      >Creating a workspace?</a>
     </div>
-    <div class='col'>
-      <button
-        type='button'
-        class='btn btn-primary btn-block'
-        id='loginHover'
-      >Already a member?</button>
+    <div class="col">
+      <a href="/login" class="btn btn-primary btn-block" id="loginHover">Already
+        a member?</a>
     </div>
-    <div class='col'>
-      <button type='button' class='btn btn-primary btn-block'>Joining a team?</button>
+    <div class="col">
+      <a href="/join" class="btn btn-primary btn-block">Joining a team?</a>
     </div>
   </div>
 </div>
 
-{{! Each of the following sections will be displayed with js depending on the button clicked }}
+<script src="/js/welcome.js"></script>
+
+{{! Each of the sections will be displayed with js depending on the button clicked }}
 {{! Scroll effect to the container with corresponding ID }}
-{{! Logging in }}
-<div class='container' id='login'>
-  <div class='row justify-content-center'>
-    <div class='col-md-6'>
-      <div class='login-container'>
-        <h2 class='text-center mb-4'>Login</h2>
-        <form>
-          <div class='form-group'>
-            <label for='email'>Username</label>
-            <input
-              type='email'
-              class='form-control'
-              id='username-login'
-              placeholder='Enter username'
-            />
-          </div>
-          <div class='form-group'>
-            <label for='password'>Password</label>
-            <input
-              type='password'
-              class='form-control'
-              id='password-login'
-              placeholder='Enter Password'
-            />
-          </div>
-          <button type='submit' class='btn btn-primary btn-block'>Login</button>
-        </form>
-      </div>
-    </div>
-  </div>
-</div>
-
-{{! Signing up for a workspace }}
-<div class='container' id='signup'>
-  <div class='row justify-content-center' id='user-loginDetails'>
-    <div class='col-md-6'>
-      <div class='join-container'>
-        <h2 class='text-center mb-4'>Create Workplace</h2>
-        {{! Email, password and username }}
-        <form>
-          <div class='form-group'>
-            <label for='email'>Email</label>
-            <input
-              type='email'
-              class='form-control'
-              id='email-signup'
-              placeholder='Enter email'
-            />
-          </div>
-          <div class='form-group'>
-            <label for='email'>Username</label>
-            <input
-              type='email'
-              class='form-control'
-              id='username-signup'
-              placeholder='Enter username'
-            />
-          </div>
-          <div class='form-group'>
-            <label for='password'>Password</label>
-            <input
-              type='password'
-              class='form-control'
-              id='password-signup'
-              placeholder='Must be at least 8 characters'
-            />
-          </div>
-          {{! JS for confirmation }}
-          <div class='form-group'>
-            <label for='password'>Confirm password</label>
-            <input
-              type='password'
-              class='form-control'
-              id='password-confirm'
-              placeholder='Re-enter Password'
-            />
-          </div>
-          <button type='submit' class='btn btn-primary btn-block'>Next</button>
-        </form>
-      </div>
-    </div>
-  </div>
-
-  {{! User details }}
-  <div class='row justify-content-center' id='user-info'>
-    <div class='col-md-6'>
-      <h2 class='text-center'>Tell us about yourself</h2>
-      <form>
-        <div class='form-row'>
-          <div class='form-group col-md-6'>
-            <label for='firstName'>First Name</label>
-            <input
-              type='text'
-              class='form-control'
-              id='firstName'
-              placeholder='First Name'
-            />
-          </div>
-          <div class='form-group col-md-6'>
-            <label for='lastName'>Last Name</label>
-            <input
-              type='text'
-              class='form-control'
-              id='lastName'
-              placeholder='Last Name'
-            />
-          </div>
-        </div>
-        {{! Set this to optional and have your initials rendered otherwise }}
-        <div class='form-group'>
-          <label for='profilePicture'>Profile Picture</label>
-          <input type='file' class='form-control-file' id='profilePicture' />
-        </div>
-        <button type='submit' class='btn btn-primary'>Join</button>
-      </form>
-    </div>
-  </div>
-</div>
-
-{{! Workspace name }}
-<div class='row justify-content-center' id='workplace-info'>
-  <div class='col-md-6'>
-    <h2 class='text-center'>Welcome! What would you like to name your workspace?</h2>
-    <form>
-      <div class='form-row'>
-        <div class='form-group col-md-6'>
-          {{! <label for="workplaceName">Organisation name</label> }}
-          <input
-            type='text'
-            class='form-control'
-            id='workplaceName'
-            placeholder='Enter name'
-          />
-        </div>
-      </div>
-    </form>
-  </div>
-</div>
-<div class='row justify-content-center'>
-  <div class='col-md-6'>
-    <button type='submit' class='btn btn-primary'>Join</button>
-  </div>
-</div>
-
-{{! Invite teammates }}
-{{! Multiple emails should be able to be added in a row before inviting and option to remove}}
-{{! Alternatively add after when youre in your workspace }}
-<div class='container'>
-  <h2>Invite Users to Your Workspace</h2>
-  <form>
-    <div class='form-group'>
-      <label for='email'>Email Address</label>
-      <input
-        type='email'
-        class='form-control'
-        id='email'
-        placeholder='Enter email'
-      />
-    </div>
-    <button type='button' class='btn btn-primary' id='sendInviteBtn'>Send Invite</button>
-    <button type='button' class='btn btn-primary' id='sendInviteBtn'>Not now</button>
-
-  </form>
-</div>
-
-{{! Joining existing workspace as employee }}
-<div class='container' id='join'>
-  <div class='row justify-content-center' id='user-loginDetails'>
-    <div class='col-md-6'>
-      <div class='join-container'>
-        <h2 class='text-center mb-4'>Welcome to, {{{workplace.name}}}</h2>
-        {{! Email, password and username }}
-        <form>
-          <div class='form-group'>
-            <label for='email'>Email</label>
-            <input
-              type='email'
-              class='form-control'
-              id='email-signup'
-              placeholder='Enter email'
-            />
-          </div>
-          <div class='form-group'>
-            <label for='email'>Username</label>
-            <input
-              type='email'
-              class='form-control'
-              id='username-signup'
-              placeholder='Enter username'
-            />
-          </div>
-          <div class='form-group'>
-            <label for='password'>Password</label>
-            <input
-              type='password'
-              class='form-control'
-              id='password-signup'
-              placeholder='Must be at least 8 characters'
-            />
-          </div>
-          {{! JS for confirmation }}
-          <div class='form-group'>
-            <label for='password'>Confirm password</label>
-            <input
-              type='password'
-              class='form-control'
-              id='password-confirm'
-              placeholder='Re-enter Password'
-            />
-          </div>
-          <button type='submit' class='btn btn-primary btn-block'>Next</button>
-        </form>
-      </div>
-    </div>
-  </div>
-
-  {{! User details }}
-  <div class='row justify-content-center' id='user-info'>
-    <div class='col-md-6'>
-      <h2 class='text-center'>Tell us about yourself</h2>
-      <form>
-        <div class='form-row'>
-          <div class='form-group col-md-6'>
-            <label for='firstName'>First Name</label>
-            <input
-              type='text'
-              class='form-control'
-              id='firstName'
-              placeholder='First Name'
-            />
-          </div>
-          <div class='form-group col-md-6'>
-            <label for='lastName'>Last Name</label>
-            <input
-              type='text'
-              class='form-control'
-              id='lastName'
-              placeholder='Last Name'
-            />
-          </div>
-        </div>
-        {{! Set this to optional and have your initials rendered otherwise }}
-        <div class='form-group'>
-          <label for='profilePicture'>Profile Picture</label>
-          <input type='file' class='form-control-file' id='profilePicture' />
-        </div>
-        <button type='submit' class='btn btn-primary'>Join</button>
-      </form>
-    </div>
-  </div>
-</div>
-
-<script src='../public/js/login.js'></script>

@@ -1,37 +1,22 @@
 const router = require('express').Router();
-const { User } = require('../models');
 
-// Homepage
-// router.get('/', async (req, res) => {
-//   try {
-//     const postData = await BlogPost.findAll({
-//       include: [
-//         {
-//           model: User,
-//           attributes: ['username'],
-//         },
-//       ],
-//     });
+// Initial homepage signup and login
+router.get('/', async (req, res) => {
+  res.render('welcome');
+});
 
-//     const postsData = postData.map((project) => project.get({ plain: true }));
-
-//     res.render('homepage', {
-//       postsData,
-//       logged_in: req.session.logged_in,
-//     });
-//   } catch (err) {
-//     res.status(500).json(err);
-//   }
-// });
-
-router.get('/login', (req, res) => {
-  if (req.session.logged_in) {
-    // Change endpoint
-    res.redirect('/dashboard');
-    return;
-  }
-
+router.get('/login', async (req, res) => {
   res.render('login');
 });
+
+router.get('/signup', async (req, res) => {
+  res.render('signup');
+});
+
+router.get('/join', async (req, res) => {
+  res.render('joinWorkspace');
+});
+
+// Workspace home /home
 
 module.exports = router;
