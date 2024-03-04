@@ -1,14 +1,26 @@
 const router = require('express').Router();
-const { Project, Workspace, User } = require('../../models');
+const { Project, Workspace, User, Task } = require('../../models');
 const withAuth = require('../../utils/auth');
 
 // Opening to see projects, will display all projects
 router.get('/', withAuth, async (req, res) => {
   try {
-    const projectData = await Project.findAll({
-      include: [{ model: Workspace }, { model: User, attributes: ['name'] }],
+
+    const workspaceData = await Workspace.findAll({
+      include: [{ model: Project, include: Task }]
+    })
+
+
+    const workspaces = [];
+
+    workspaceData.forEach(workspace => {
+      workspacePlain = workspace.get({ plain: true });
+      workspaces.push(workspacePlain);
     });
-    res.status(200).json(projectData);
+    res.json(workspaces);
+    // res.render('projects', {
+    //   workspaces
+    // });
   } catch (err) {
     res.status(500).json(err);
   }
