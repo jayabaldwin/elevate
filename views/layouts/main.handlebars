@@ -1,45 +1,23 @@
-{{! CHANGE THIS }}
-
 <html lang='en'>
 
   <head>
     <meta charset='UTF-8' />
     <meta name='viewport' content='width=device-width, initial-scale=1.0' />
-    <title>Tech Blog</title>
-    {{! <link rel="stylesheet" href="/css/jass.css"> }}
+    <title>Elevate: Enhanced Company Management Software</title>
     <link rel='stylesheet' href='/css/style.css' />
+    <script
+      src='https://cdn.jsdelivr.net/npm/handlebars/dist/handlebars.min.js'
+    ></script>
+    <script
+      src='https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js'
+      integrity='sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz'
+      crossorigin='anonymous'
+    ></script>
   </head>
 
   <body>
-    <div class='flex-column justify-space-around'>
-      <header class='display-flex justify-space-between align-center p-2'>
-        <h1>
-          <a href='/'>Tech Blog</a>
-        </h1>
-        <nav>
-          <!-- Conditionally render login or logout links -->
-          {{#if logged_in}}
-            <a href='/dashboard'>Dashboard</a>
-            |
-            <button class='no-button' id='logout'>logout</button>
-          {{else}}
-            <a href='/login'>login</a>
-          {{/if}}
-        </nav>
-      </header>
-      <main class='container container-fluid mt-5'>
-        <!-- Render the sub layout -->
-        {{{body}}}
-      </main>
-      <footer>
+    {{{body}}}
 
-      </footer>
-    </div>
-
-    <!-- Render script for logged in users only -->
-    {{#if logged_in}}
-      <script src='/js/logout.js'></script>
-    {{/if}}
   </body>
 
 </html>

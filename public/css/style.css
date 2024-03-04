@@ -1,0 +1,15 @@
+/* Welcome page */
+/* Navbar */
+.navbar-logo
+{
+float:left
+}
+
+/* Logins */
+#signupHover:hover::after {
+    content: "Sign up!";
+}
+
+#loginHover:hover::after {
+    content: "Login";
+}
