@@ -47,6 +47,11 @@ Task.init(
         key: 'id',
       },
     },
+    status: {
+      type: DataTypes.ENUM('to-do', 'in-progress', 'completed'),
+      allowNull: false,
+      defaultValue: 'to-do',
+    },
   },
   {
     sequelize,
