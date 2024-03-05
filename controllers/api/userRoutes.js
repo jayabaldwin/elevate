@@ -50,23 +50,6 @@ router.post("/login", async (req, res) => {
   }
 });
 
-// will add the logged in user to the workspace with the passed id
-router.put("/add-user/:id", async (req, res) => {
-  try {
-    await User.update(
-      { workspace_id: req.params.id },
-      {
-        where: {
-          id: req.session.user_id,
-        },
-      }
-    );
-    res.status(204).end();
-  } catch (err) {
-    res.status(500).json(err.message);
-  }
-});
-
 router.post("/logout", (req, res) => {
   if (req.session.logged_in) {
     req.session.destroy(() => {
