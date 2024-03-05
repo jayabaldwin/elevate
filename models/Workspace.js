@@ -1,7 +1,8 @@
-const { Model, DataTypes } = require('sequelize');
-const sequelize = require('../config/connection');
+const { Model, DataTypes } = require("sequelize");
+const sequelize = require("../config/connection");
+const uuid = require("../utils/utils.js");
 
-class Workspace extends Model { }
+class Workspace extends Model {}
 
 Workspace.init(
   {
@@ -15,13 +16,19 @@ Workspace.init(
       type: DataTypes.STRING,
       allowNull: false,
     },
+    join_code: {
+      type: DataTypes.STRING,
+      defaultValue: function () {
+        return uuid();
+      },
+    },
   },
   {
     sequelize,
     timestamps: false,
     freezeTableName: true,
     underscored: true,
-    modelName: 'workspace',
+    modelName: "workspace",
   }
 );
 

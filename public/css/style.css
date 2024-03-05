@@ -1,35 +1,68 @@
+/* Colour pallete */
+:root {
+    --white: #ffffff;
+ 
+}
+
+/* Global styles */
+* {   color: var(--white);
+    font-family: "Wix Madefor Display", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+}
+
 /* Background */
-/* body 
-{ 
-    background: linear-gradient(135deg, #6F4EFA, #8259EB, #E14C85,
-    #FF7A64); 
-    background-size: cover; 
-    background-repeat: no-repeat; 
+body 
+ { 
+    background-image: linear-gradient(to right, #f45474, #6a82fb);    
     height: 100vh; 
     margin: 0; 
-    display: flex; 
-    justify-content: center; 
-    align-items: center; 
-}; */
+};
 
 
-/* Welcome page */
-/* Navbar */
-.navbar-logo
-{
-    float:left
+/* Text */
+h1 {
+    font-size: 3.5rem;
+    margin-top: 12rem;
+    margin-bottom: 0rem;
+    font-family: "Wix Madefor Display", sans-serif;
+    font-weight: 400;
+    font-style: normal;
 }
+#welcome-sub {
+   font-size: 1.8rem;
+   margin-top: 0.2rem;
+   margin-bottom: 1rem;
+   font-family: "Wix Madefor Display", sans-serif;
+   font-weight: 400;
+   font-style: normal;   
+};
+
 
 /* Logins */
 /* Change to JS if we want it fully replaced instead of added to */
 #signupHover:hover::after {
-    content: " Sign up!";
+    content: " Sign Up";
 }
 
 #loginHover:hover::after {
     content: " Login";
 }
 
+
+/* Animation */
+.animate {
+    transition: transform 1s ease-in-out;
+}
+  
+.hidden {
+    transform: translateY(-100%);
+}
+
+.show {
+    transform: translateY(100%);
+}
+  
 .hide {
     display: none;
 }

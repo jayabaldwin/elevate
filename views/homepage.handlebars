@@ -1,11 +1,11 @@
-{{!-- Will need to add sortable.Js to main.handlebars --}}
+{{! Will need to add sortable.Js to main.handlebars }}
 {{! sidebar }}
 
 <aside id="sidebar" class="col-md-3">
   <div>
-    <img src="../assets/Logo.png">
+    <img src="../assets/Logo.png" />
   </div>
-  <nav class="nav flex-column"> 
+  <nav class="nav flex-column">
     <ul>
       <li><a class="nav-link" href="/dashboard"></a></li>
       <li><a class="nav-link" href="/projects"></a></li>
@@ -15,14 +15,14 @@
 
 {{! Main }}
 <main class="col-md-9">
-  <section id="task-board" class=""row>
+  <section id="task-board" class="" row>
     {{! To Do}}
     <div class="task-column col-md-4" id="to-do">
       <h2 class="h4 my-3">To Do</h2>
-        <div class="task-list list-group" id="to-do-task">
+      <div class="task-list list-group" id="to-do-task">
         {{! Will load in tasks here}}
-        </div>
-        <button class="create-task">CREATE NEW TASK</button>
+      </div>
+      <button class="create-task">CREATE NEW TASK</button>
     </div>
 
     {{! In Progress}}
@@ -41,6 +41,5 @@
     </div>
   </section>
 </main>
-{{!-- Will either NPM install sortable or have to use a library --}}
-<script src="../public/js/sortable.js"></script>
-
+{{! Will either NPM install sortable or have to use a library }}
+<script src="/js/sortable.js"></script>
