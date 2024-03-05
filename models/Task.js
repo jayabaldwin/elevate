@@ -33,13 +33,6 @@ Task.init(
         key: 'id',
       },
     },
-    workspace_id: {
-      type: DataTypes.INTEGER,
-      references: {
-        model: 'workspace',
-        key: 'id',
-      },
-    },
   },
   {
     sequelize,
