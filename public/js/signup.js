@@ -5,7 +5,6 @@ const signupFormHandler = async (event) => {
   const first = document.getElementById("firstName").value.trim();
   const last = document.getElementById("lastName").value.trim();
 
-  // Add password confirmation
   if (email && username && password && first && last) {
     const response = await fetch("/api/users", {
       method: "POST",
@@ -30,7 +29,7 @@ document
   .addEventListener("submit", function (event) {
     event.preventDefault();
 
-    document.getElementById("user-info").style.display = "none";
+    document.getElementById("userDetails").style.display = "none";
     const signUp = document.getElementById("user-loginDetails");
     signUp.classList.remove("hide");
   });
@@ -46,7 +45,7 @@ document
       var notification = document.getElementById("resultNotification");
       notification.classList.remove("hide");
 
-      // Set a timeout to hide the notification after 2 seconds
+      // Set a timeout to hide the notification after 1 seconds
       setTimeout(function () {
         notification.classList.add("hide");
       }, 1000);
@@ -55,7 +54,7 @@ document
         document.getElementById("user-loginDetails").style.display = "none";
         const newWorkspace = document.getElementById("newWorkspace");
         newWorkspace.classList.remove("hide");
-      }, 1000);
+      }, 2000);
     }, 1000);
   });
 
@@ -64,8 +63,6 @@ document
   .getElementById("createOpt")
   .addEventListener("click", function (event) {
     event.preventDefault();
-
-    console.log("Create button clicked");
 
     document.getElementById("newWorkspace").style.display = "none";
     const create = document.getElementById("workplace-create");
