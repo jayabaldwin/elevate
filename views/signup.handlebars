@@ -1,34 +1,6 @@
-{{! Signing up for a workspace }}
 <div class="container" id="signup">
-
-  {{! Workspace name }}
-  <div class="row justify-content-center" id="workplace-info">
-    <div class="col-md-6">
-      <h2 class="text-center">Welcome! What would you like to name your
-        workspace?</h2>
-      <form id="workspaceForm">
-        <div class="form-row">
-          <div class="form-group col-md-6">
-            <input
-              type="text"
-              class="form-control"
-              id="workspaceName"
-              placeholder="Enter name"
-            />
-          </div>
-        </div>
-        <div class="row justify-content-center">
-          <div class="col-md-6">
-            <button type="submit" class="btn btn-primary btn-block" id="wsNext">Next</button>
-          </div>
-      </form>
-    </div>
-  </div>
-  
-  </div>
-
-  {{! User details }}
-  <div class="row justify-content-center hide" id="user-info">
+  <!-- User details -->
+  <div class="row justify-content-center" id="user-info">
     <div class="col-md-6">
       <h2 class="text-center">Tell us about yourself</h2>
       <form id="userDetails">
@@ -52,21 +24,20 @@
             />
           </div>
         </div>
-        {{! Set this to optional and have your initials rendered otherwise }}
-        {{! <div class='form-group'>
-          <label for='profilePicture'>Profile Picture</label>
-          <input type='file' class='form-control-file' id='profilePicture' />
-        </div> }}
-        <button type="submit" class="btn btn-primary" id="userNext">Next</button>
+        <button
+          type="submit"
+          class="btn btn-primary btn-block"
+          id="userNext"
+        >Next</button>
       </form>
     </div>
   </div>
 
+  <!-- Email, password and username -->
   <div class="row justify-content-center hide" id="user-loginDetails">
     <div class="col-md-6">
       <div class="join-container">
         <h2 class="text-center mb-4">Login Information</h2>
-        {{! Email, password and username }}
         <form id="signup-form">
           <div class="form-group">
             <label for="email-signup">Email</label>
@@ -95,7 +66,6 @@
               placeholder="Must be at least 8 characters"
             />
           </div>
-          {{! JS for confirmation }}
           <div class="form-group">
             <label for="password-confirm">Confirm password</label>
             <input
@@ -110,29 +80,97 @@
       </div>
     </div>
   </div>
+
+  <!-- New workspace -->
+  <div class="row hide" id="newWorkspace">
+    <div class="col text-center">
+      <h2>What are we doing today?</h2>
+    </div>
+    <div class="row">
+      <div class="col">
+        <button
+          type="submit"
+          class="btn btn-primary btn-block"
+          id="createOpt"
+        >Create a Workspace</button>
+      </div>
+      <div class="col">
+        <button
+          type="submit"
+          class="btn btn-primary btn-block"
+          id="joinOpt"
+        >Join a Workspace</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Create a workspace -->
+  <div class="row justify-content-center hide" id="workplace-create">
+    <div class="col-md-6">
+      <h2 class="text-center">Welcome to Elevate!</h2>
+      <h3 class="text-center">What would you like to name your workspace?</h3>
+      <form id="workspaceForm">
+        <div class="form-row">
+          <div class="form-group col-md-6">
+            <input
+              type="text"
+              class="form-control"
+              id="workspaceName"
+              placeholder="Enter name"
+            />
+          </div>
+        </div>
+        <div class="row justify-content-center">
+          <div class="col-md-6">
+            <button
+              type="submit"
+              class="btn btn-primary btn-block"
+              id="generate-code"
+            >Generate Code</button>
+          </div>
+        </div>
+      </form>
+    </div>
+  </div>
+
+  <!-- Join a workspace -->
+  <div class="row justify-content-center hide" id="workplace-join">
+    <div class="col-md-6">
+      <h2 class="text-center">Welcome to Elevate!</h2>
+      <h3 class="text-center">Please enter the join code for your workspace
+        below</h3>
+      <form id="joinForm">
+        <div class="form-row">
+          <div class="form-group col-md-6">
+            <input
+              type="text"
+              class="form-control"
+              id="join-code"
+              placeholder="Enter your code"
+            />
+          </div>
+        </div>
+        <div class="row justify-content-center">
+          <div class="col-md-6">
+            <button
+              type="submit"
+              class="btn btn-primary btn-block"
+              id="join-btn"
+            >Join workspace!</button>
+          </div>
+        </div>
+      </form>
+    </div>
+  </div>
+
+  <!-- Result Notification -->
+  <div
+    id="resultNotification"
+    class="notification hide animate__animated animate__fadeIn"
+  >
+    <i class="fas fa-check" style="color: #ffffff;"></i>
+    Successfully signed up!
+  </div>
 </div>
 
 <script src="/js/signup.js"></script>
-
-{{! Invite teammates }}
-{{! Multiple emails should be able to be added in a row before inviting and option to remove}}
-{{! Alternatively add after when youre in your workspace }}
-{{! <div class='container'>
-  <h2>Invite Users to Your Workspace</h2>
-  <form>
-    <div class='form-group'>
-      <label for='email'>Email Address</label>
-      <input
-        type='email'
-        class='form-control'
-        id='email'
-        placeholder='Enter email'
-      />
-    </div>
-    <button type='button' class='btn btn-primary' id='sendInviteBtn'>Send Invite</button>
-    <button type='button' class='btn btn-primary' id='sendInviteBtn'>Not now</button>
-
-  </form>
-</div>∏
-
-<script src='../public/js/invite.js'></script> }}
