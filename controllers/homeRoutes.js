@@ -13,6 +13,8 @@ router.get("/signup", async (req, res) => {
   res.render("signup");
 });
 
-// Workspace home /home
+router.get("/home", async (req, res) => {
+  res.render("home");
+});
 
 module.exports = router;
