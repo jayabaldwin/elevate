@@ -2,8 +2,17 @@ const signupFormHandler = async (event) => {
   const email = document.querySelector("#email-signup").value.trim();
   const username = document.querySelector("#username-signup").value.trim();
   const password = document.querySelector("#password-signup").value.trim();
+  const passwordConfirm = document
+    .querySelector("#password-confirm")
+    .value.trim();
   const first = document.getElementById("firstName").value.trim();
   const last = document.getElementById("lastName").value.trim();
+
+  // Check password values are equal
+  if (password != passwordConfirm) {
+    alert("Passwords must match");
+    return;
+  }
 
   if (email && username && password && first && last) {
     const response = await fetch("/api/users", {
