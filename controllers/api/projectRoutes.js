@@ -1,5 +1,5 @@
 const router = require('express').Router();
-const { Project, Workspace, User } = require('../../models');
+const { Project, Workspace, User, Task } = require('../../models');
 const withAuth = require('../../utils/auth');
 
 // Opening to see projects, will display all projects

@@ -33,13 +33,6 @@ Task.init(
         key: 'id',
       },
     },
-    workspace_id: {
-      type: DataTypes.INTEGER,
-      references: {
-        model: 'workspace',
-        key: 'id',
-      },
-    },
     status: {
       type: DataTypes.ENUM('to-do', 'in-progress', 'completed'),
       allowNull: false,

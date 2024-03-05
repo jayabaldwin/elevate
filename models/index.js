@@ -27,7 +27,7 @@ Project.belongsTo(Workspace, {
 });
 
 Project.hasMany(Task, {
-    foreignKey: 'workspace_id'
+    foreignKey: 'project_id'
 });
 
 // Task
