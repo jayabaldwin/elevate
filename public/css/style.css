@@ -1,0 +1,35 @@
+/* Background */
+/* body 
+{ 
+    background: linear-gradient(135deg, #6F4EFA, #8259EB, #E14C85,
+    #FF7A64); 
+    background-size: cover; 
+    background-repeat: no-repeat; 
+    height: 100vh; 
+    margin: 0; 
+    display: flex; 
+    justify-content: center; 
+    align-items: center; 
+}; */
+
+
+/* Welcome page */
+/* Navbar */
+.navbar-logo
+{
+    float:left
+}
+
+/* Logins */
+/* Change to JS if we want it fully replaced instead of added to */
+#signupHover:hover::after {
+    content: " Sign up!";
+}
+
+#loginHover:hover::after {
+    content: " Login";
+}
+
+.hide {
+    display: none;
+}

@@ -1,5 +1,5 @@
 const router = require('express').Router();
-const { Task } = require('../../models/Task');
+const { Task } = require('../../models');
 // end route is /api/tasks
 
 // Get all tasks
@@ -40,6 +40,8 @@ router.post('/', async (req, res) => {
 });
 
 // Update a task by ID
+const taskStatus = ['to-do', 'in-progress', 'completed'];
+
 router.put('/:id', async (req, res) => {
   try {
     const task = await Task.findByPk(req.params.id);
@@ -47,6 +49,10 @@ router.put('/:id', async (req, res) => {
       res.status(404).send('Task not found');
       return;
     }
+    if (req.body.status && !taskStatus.includes(req.body.status)) {
+      return res.status(400).send('Invalid Status');
+    }
+    
     await task.update(req.body);
     res.json(task);
   } catch (err) {

@@ -10,7 +10,7 @@ const projectRoutes = require('./projectRoutes');
 router.use('/users', userRoutes);
 router.use('/workspace', workspaceRoutes);
 router.use('/comment', commentRoutes);
-router.use('/task', taskRoutes);
+router.use('/tasks', taskRoutes);
 router.use('/projects', projectRoutes);
 
 module.exports = router;
