@@ -5,11 +5,14 @@ const { Workspace, User } = require("../../models");
 router.post("/", async (req, res) => {
   try {
     const workspaceData = await Workspace.create(req.body);
-    res.status(201).end();
+    res.status(201).json(workspaceData);
   } catch (error) {
     res.status(500).json(error.message);
   }
 });
+
+// UPDATE QUERY
+// update user creating with the new workspace id
 
 // user will pass a join code and the workspace will be retreived
 router.get("/:code", async (req, res) => {

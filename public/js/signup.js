@@ -25,9 +25,26 @@ const signupFormHandler = async (event) => {
 
     if (ok) {
       response.json("Successfully logged in");
+      setTimeout(function () {
+        // Show the result notification
+        var notification = document.getElementById("resultNotification");
+        notification.classList.remove("hide");
+
+        // Set a timeout to hide the notification after 1 seconds
+        setTimeout(function () {
+          notification.classList.add("hide");
+        }, 1000);
+
+        setTimeout(function () {
+          document.getElementById("user-loginDetails").style.display = "none";
+          const newWorkspace = document.getElementById("newWorkspace");
+          newWorkspace.classList.remove("hide");
+        }, 2000);
+      }, 1000);
     } else {
-      // CHANGE ALERT
+      // Change this section
       alert(response.statusText);
+      alert("Invalid email or password");
     }
   }
 };
@@ -49,22 +66,6 @@ document
   .addEventListener("submit", function (event) {
     event.preventDefault();
     signupFormHandler();
-    setTimeout(function () {
-      // Show the result notification
-      var notification = document.getElementById("resultNotification");
-      notification.classList.remove("hide");
-
-      // Set a timeout to hide the notification after 1 seconds
-      setTimeout(function () {
-        notification.classList.add("hide");
-      }, 1000);
-
-      setTimeout(function () {
-        document.getElementById("user-loginDetails").style.display = "none";
-        const newWorkspace = document.getElementById("newWorkspace");
-        newWorkspace.classList.remove("hide");
-      }, 2000);
-    }, 1000);
   });
 
 // Redirect to create workspace
