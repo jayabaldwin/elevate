@@ -1,16 +1,7 @@
 {{! Will need to add sortable.Js to main.handlebars }}
+{{>navbar}}
 {{! sidebar }}
-<aside id="sidebar" class="col-md-3">
-  <div>
-    <img src="../assets/Logo.png" />
-  </div>
-  <nav class="nav flex-column">
-    <ul>
-      <li><a class="nav-link" href="/dashboard"></a></li>
-      <li><a class="nav-link" href="/projects"></a></li>
-    </ul>
-  </nav>
-</aside>
+{{>sidebar}}
 {{! Main }}
 <main class="col-md-9">
   <section id="task-board" class="row">
