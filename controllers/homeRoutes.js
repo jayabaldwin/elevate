@@ -1,6 +1,6 @@
 const router = require("express").Router();
-
-// Custom 404 page
+// Import the custom middleware
+const withAuth = require("../utils/auth");
 
 // Initial homepage signup and login
 router.get("/", async (req, res) => {
@@ -18,7 +18,7 @@ router.get("/signup", async (req, res) => {
   res.render("signup");
 });
 
-router.get("/home", async (req, res) => {
+router.get("/home", withAuth, async (req, res) => {
   res.render("home");
 });
 
