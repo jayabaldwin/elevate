@@ -5,11 +5,17 @@
 }
 
 /* Global styles */
-* {   color: var(--white);
+* {   color: #000000;
     font-family: "Wix Madefor Display", sans-serif;
     font-weight: 400;
     font-style: normal;
 }
+
+ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+  }
 
 /* Background */
 body 
@@ -37,7 +43,20 @@ h1 {
    font-weight: 400;
    font-style: normal;   
 };
+h5 {
+   font-family: "Montserrat", sans-serif;
+   font-optical-sizing: auto;
+   font-weight: 400;
+   font-style: normal;
+}
+p {
+   font-family: "Montserrat", sans-serif;
+   font-optical-sizing: auto;
+   font-weight: 300;
+   font-style: normal;
+}
 
+/* Buttons */
 
 /* Logins */
 /* Change to JS if we want it fully replaced instead of added to */
@@ -69,6 +88,36 @@ h1 {
 
 /* Sidebar link hover styling */
 aside .nav-pills .nav-link:hover {
-    background-color: purple; /* Change to desired hover background color */
-  }
-  
+    background-color: purple;
+}
+
+/* Custom styles for the sidebar */
+.sidebar {
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    width: 300px;
+    background-color: #343a40; 
+    padding-top: 20px; 
+    color: white
+}
+
+/* Style links inside the sidebar */
+.sidebar a {
+    padding: 10px;
+    text-decoration: none;
+    color: #fff;
+    display: block;
+}
+
+/* Change color on hover */
+.sidebar a:hover {
+    background-color: #495057;
+}
+
+/* Main content */
+.content {
+    margin-left: 300px;
+    padding: 20px;
+};
