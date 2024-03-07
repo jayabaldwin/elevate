@@ -87,9 +87,9 @@ p {
 }
 
 /* Sidebar link hover styling */
-/* aside .nav-pills .nav-link:hover {
+aside .nav-pills .nav-link:hover {
     background-color: purple;
-  } */
+}
 
 /* Custom styles for the sidebar */
 .sidebar {

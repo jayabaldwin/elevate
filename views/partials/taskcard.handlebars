@@ -1,23 +1,35 @@
-<div class="card">
-                  <div class="card-header">
-                    <h5 class="card-title"><i class="fa-regular fa-circle-down" style="color: #e45656;"></i> To Do</h5>
-                        <p class="card-subtitle">This item hasn't been started</p>
-                  </div>
-                  <div class="card-body">
-                      <!-- Nested Child Card -->
-                      <ul>
-                        <li>
-                          {{>task}}
-                        </li>
-                        <li>
-                          {{>task}}
-                        </li>
-                        <li>
-                          {{>task}}
-                        </li>
-                      </ul>
-                  </div>
-                  <div class="card-footer">
-                      <button type="button" class="btn btn-outline-dark btn-block"><i class="fa-regular fa-square-plus" style="color: #000000;"></i> Add Item</button>
-                  </div>
+{{!-- UNDER CONSTRUCTION --}}
+{{!-- Intending to insert into a modal --}}
+
+<div class="card text-center">
+  <div class="card-header">
+    <ul class="nav nav-tabs card-header-tabs">
+      <li class="nav-item">
+        <a class="nav-link active" href="#">Active</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="#">Link</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link disabled" href="#">Disabled</a>
+      </li>
+    </ul>
+  </div>
+  <div class="card-body">
+    <div class="row">
+    <div class="col-8">
+        <h5 class="card-title">Project Title</h5> 
+        <p class="card-text">Contents</p>
+    </div>
+    <div class="col-4 bg-dark">
+        <div class="card-subtitle">
+            <h6>ASSIGNEE</h6>
+        </div>
+
+       
+
+    </div>
+    </div>
+  </div>
+</div>
 <script src="/js/taskcard.js"> 
