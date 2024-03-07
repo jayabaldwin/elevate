@@ -150,8 +150,19 @@
           </div>
         </div>
       </form>
+        <div class="alert alert-dark hide text-center" id="code-success" role="alert">
+          {{!-- PROPERLY CONNECT TO ROUTE --}}
+          Code Successfully Generated: {{workspace.join_code}}
+        </div>
+          <button
+              type="submit"
+              class="btn btn-outline-light btn-block hide"
+              id="enter-workspace"
+            >Enter Workspace</button>
     </div>
   </div>
+
+  
 
   <!-- Join a workspace -->
   <div class="row justify-content-center hide" id="workplace-join">
@@ -197,15 +208,44 @@
   </div>
 </div>
 
-{{!-- Result notif: incorrect email or password - signup and login --}}
-{{!-- Result notif: passwords must match - signup --}}
-{{!-- Result notif: invalid workspace code - join workspace --}}
-{{!-- Result notif: fields cannot be left empty --}}
-{{!-- Result notif: username not available - signup --}}
-{{!-- Result notif: code generated... pull from db --}}
+  <!-- Result Notification for a duplicate username or email -->
+  <div class="container">
+  <div class="row justify-content-center">
+    <div
+      id="resultIncorrect"
+      class="notification hide animate__animated animate__fadeIn text-center"
+    >
+      <i class="fa-regular fa-circle-xmark" style="color: #c43434;"></i>
+      Invalid login credentials
+    </div>
+  </div>
+</div>
 
-{{!-- Continues on even if theirs a fault ie non-unique email, unmatched passwords etc --}}
-{{!-- workspace id of creator user is not saving to database --}}
+  <!-- Result Notification for an unmatched password -->
+  <div class="container">
+  <div class="row justify-content-center">
+    <div
+      id="passwordUnmatch"
+      class="notification hide animate__animated animate__fadeIn text-center"
+    >
+      <i class="fa-regular fa-circle-xmark" style="color: #c43434;"></i>
+      Passwords must match
+    </div>
+  </div>
+</div>
+
+  <!-- Result Notification for invalid workplace code -->
+  <div class="container">
+  <div class="row justify-content-center">
+    <div
+      id="noWorkspace"
+      class="notification hide animate__animated animate__fadeIn text-center"
+    >
+      <i class="fa-regular fa-circle-xmark" style="color: #c43434;"></i>
+      Your workspace code is invalid, make sure it is 4 characters
+    </div>
+  </div>
+</div>
 
 </div>
 

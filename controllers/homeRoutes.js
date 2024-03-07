@@ -22,6 +22,10 @@ router.get("/home", withAuth, async (req, res) => {
   res.render("home");
 });
 
+router.get("/invite", async (req, res) => {
+  res.render("home");
+});
+
 // router get /* generic 404 handling
 // res.render404
 

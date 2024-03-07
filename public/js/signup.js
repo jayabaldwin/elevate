@@ -10,7 +10,21 @@ const signupFormHandler = async (event) => {
 
   // Check password values are equal
   if (password != passwordConfirm) {
-    alert("Passwords must match");
+    setTimeout(function () {
+      // Show the result notification
+      var notification = document.getElementById("passwordUnmatch");
+      notification.classList.remove("hide");
+
+      // Set a timeout to hide the notification once submit button is clicked again
+      setTimeout(function () {
+        document
+          .getElementById("signup-form")
+          .addEventListener("submit", function (event) {
+            notification.classList.add("hide");
+          });
+      }, 1000);
+    }, 500);
+    // alert("Passwords must match");
     return;
   }
 
@@ -44,7 +58,20 @@ const signupFormHandler = async (event) => {
     } else {
       // Change this section
       alert(response.statusText);
-      alert("Invalid email or password");
+      setTimeout(function () {
+        // Show the result notification
+        var notification = document.getElementById("resultIncorrect");
+        notification.classList.remove("hide");
+
+        // Set a timeout to hide the notification once submit button is clicked again
+        setTimeout(function () {
+          document
+            .getElementById("signup-form")
+            .addEventListener("submit", function (event) {
+              notification.classList.add("hide");
+            });
+        }, 1000);
+      }, 1000);
     }
   }
 };
@@ -110,9 +137,24 @@ document
         });
 
         console.log("Added new workspace");
-        document.location.replace("/home");
+        document.getElementById("generate-code").style.display = "none";
+        const code = document.getElementById("code-success");
+        code.classList.remove("hide");
+        const joinSpace = document.getElementById("enter-workspace");
+        joinSpace.classList.remove("hide");
+
+        joinSpace.addEventListener("Click", async function (e) {
+          // REDIRECT TO HOME/WORKSPACE ID
+          document.location.replace("/home");
+        });
       } else {
         alert("Unable to add workspace");
+
+        setTimeout(function () {
+          // Show the result notification
+          var notification = document.getElementById("noWorkspace");
+          notification.classList.remove("hide");
+        }, 1000);
       }
     } else {
       alert(response.statusText);
@@ -141,13 +183,23 @@ document
       );
       if (addUserRes.ok) {
         console.log(addUserRes);
+        // REDIRECT TO WORKSPACE ID
         document.location.replace("/home");
         console.log("Added user to workspace ", workspace.id);
       } else {
-        alert("Unable to add you to workspace.");
-        document.location.replace("/");
+        // alert("Unable to add you to workspace.");
+        setTimeout(function () {
+          // Show the result notification
+          var notification = document.getElementById("noWorkspace");
+          notification.classList.remove("hide");
+
+          // Set a timeout to hide the notification after 2 seconds
+          setTimeout(function () {
+            notification.classList.add("hide");
+          }, 2000);
+        }, 1000);
       }
-    } else {
-      alert("Workspace not found! Try again.");
+      // } else {
+      //   alert("Workspace not found! Try again.");
     }
   });
