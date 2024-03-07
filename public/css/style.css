@@ -6,10 +6,16 @@
 
 /* Global styles */
 * {   color: #000000;
-    font-family: "Wix Madefor Display", sans-serif;
+    font-family: "Wix Madefor Text", sans-serif;
     font-weight: 400;
     font-style: normal;
 }
+
+ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+  }
 
 /* Background */
 body 
