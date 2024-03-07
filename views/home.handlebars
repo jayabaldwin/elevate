@@ -5,7 +5,6 @@
     <div class="sidebar">
         {{> sidebar}}
     </div>
-
     <!-- Page content -->
     <div class="content">
       {{> navbar }}
@@ -19,7 +18,7 @@
                     <h5 class="card-title"><i class="fa-regular fa-circle-down" style="color: #e45656;"></i> To Do</h5>
                         <p class="card-subtitle">This item hasn't been started</p>
                   </div>
-                  <div class="card-body">
+                  <div class="card-body" style="max-height: 600px; overflow-y: auto">
                       <!-- Nested Child Card -->
                       <ul>
                         <li>
@@ -48,9 +47,15 @@
                     <h5 class="card-title"><i class="fa-solid fa-circle-half-stroke" style="color: #e0cd61;"></i> In Progress</h5>
                         <p class="card-subtitle">This is actively being worked on</p>
                   </div>
-                  <div class="card-body">
+                  <div class="card-body" style="max-height: 600px; overflow-y: auto">
                       <!-- Nested Child Card -->
                       <ul>
+                        <li>
+                          {{>task}}
+                        </li>
+                        <li>
+                          {{>task}}
+                        </li>
                         <li>
                           {{>task}}
                         </li>
@@ -77,7 +82,7 @@
                     <h5 class="card-title"><i class="fa-regular fa-circle-check" style="color: #6fb854;"></i> Done</h5>
                         <p class="card-subtitle">This has been completed</p>
                   </div>
-                  <div class="card-body">
+                  <div class="card-body" style="max-height: 600px; overflow-y: auto">
                       <!-- Nested Child Card -->
                       <ul>
                         <li>
