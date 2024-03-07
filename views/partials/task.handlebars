@@ -1,0 +1,89 @@
+{{! <div class="card">
+  <div class="card-body">
+    <h5 class="card-title">Card title</h5>
+    <h6 class="card-subtitle mb-2 text-muted">Card subtitle</h6>
+    <p class="card-text">Some quick example text to build on the card title and
+      make up the bulk of the card's content.</p>
+    <a href="#" class="card-link">Card link</a>
+    <a href="#" class="card-link">Another link</a>
+    <div class="card-footer">
+      Card footer
+    </div>
+  </div>
+</div>
+<div class="card">
+  <div class="card-header">
+    Featured
+  </div>
+  <div class="card-body">
+    <h5 class="card-title">Special title treatment</h5>
+    <p class="card-text">With supporting text below as a natural lead-in to
+      additional content.</p>
+    <a href="#" class="btn btn-primary">Go somewhere</a>
+  </div>
+</div> }}
+
+<!-- Nested Child Card -->
+<div class="card mb-2">
+  <div class="card-body">
+    <h5 class="card-title"><a href="#" class="card-link">Child Card</a></h5>
+    <p class="card-text">This is the content of the child card.</p>
+  </div>
+  <div class="card-footer">
+    <p class="card-text"><i
+        class="fa-regular fa-clock"
+        style="color: #000000;"
+      ></i>
+      Mar 24</p>
+  </div>
+</div>
+
+{{!-- 
+
+<main class="col-md-9">
+  <section id="task-board" class="row">
+    {{! To Do}}
+    <div class="task-column col-md-4" id="to-do">
+      <h2 class="h4 my-3">To Do</h2>
+      <div class="task-list list-group" id="to-do-task">
+        {{! Will load in tasks here}}
+        {{#each tasks.toDo as |task|}}
+        <div class="task-card list-group-item" data-id="{{task.id}}">
+          <h3>{{task.title}}</h3>
+          <p>{{task.contents}}</p>
+          <p>{{task.deadline}}</p>
+        </div>
+        {{/each}}
+      </div>
+      <button class="create-task">CREATE NEW TASK</button>
+    </div>
+    {{! In Progress}}
+    <div class="task-column col-md-4" id="in-progress">
+      <h2 class="h4 my-3">In Progress</h2>
+      <div class="task-list list-group" id="in-progress-task">
+        {{! Load in - in progess tasks}}
+        {{#each tasks.inProgress as |task|}}
+        <div class="task-card list-group-item" data-id="{{task.id}}">
+          <h3>{{task.title}}</h3>
+          <p>{{task.contents}}</p>
+          <p>{{task.deadline}}</p>
+        </div>
+        {{/each}}
+      </div>
+    </div>
+    {{! Completed}}
+    <div class="task-column col-md-4" id="completed">
+      <h2 class="h4 my-3">Completed</h2>
+      <div class="task-list list-group" id="completed-task">
+        {{! Add in completed tasks here}}
+        {{#each tasks.completed as |task|}}
+        <div class="task-card list-group-item" data-id="{{task.id}}">
+          <h3>{{task.title}}</h3>
+          <p>{{task.contents}}</p>
+          <p>{{task.deadline}}</p>
+        </div>
+        {{/each}}
+      </div>
+    </div>
+  </section>
+</main> --}}

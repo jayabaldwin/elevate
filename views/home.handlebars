@@ -1,55 +1,85 @@
 {{! Will need to add sortable.Js to main.handlebars }}
-{{>navbar}}
-{{! sidebar }}
-{{>sidebar}}
-{{! Main }}
-<main class="col-md-9">
-  <section id="task-board" class="row">
-    {{! To Do}}
-    <div class="task-column col-md-4" id="to-do">
-      <h2 class="h4 my-3">To Do</h2>
-      <div class="task-list list-group" id="to-do-task">
-        {{! Will load in tasks here}}
-        {{#each tasks.toDo as |task|}}
-        <div class="task-card list-group-item" data-id="{{task.id}}">
-          <h3>{{task.title}}</h3>
-          <p>{{task.contents}}</p>
-          <p>{{task.deadline}}</p>
-        </div>
-        {{/each}}
-      </div>
-      <button class="create-task">CREATE NEW TASK</button>
+<body>
+  <div class="container-fluid">
+    <!-- Sidebar -->
+    <div class="sidebar">
+        {{> sidebar}}
     </div>
-    {{! In Progress}}
-    <div class="task-column col-md-4" id="in-progress">
-      <h2 class="h4 my-3">In Progress</h2>
-      <div class="task-list list-group" id="in-progress-task">
-        {{! Load in - in progess tasks}}
-        {{#each tasks.inProgress as |task|}}
-        <div class="task-card list-group-item" data-id="{{task.id}}">
-          <h3>{{task.title}}</h3>
-          <p>{{task.contents}}</p>
-          <p>{{task.deadline}}</p>
+
+    <!-- Page content -->
+    <div class="content">
+      {{> navbar }}
+        <div class="container">
+          <div class="row">
+            <div class="col" id="to-do">
+              {{!-- Parent Card --}}
+              <div class="container">
+                <div class="card">
+                  <div class="card-header">
+                    <h5 class="card-title"><i class="fa-regular fa-circle-down" style="color: #e45656;"></i> To Do</h5>
+                        <p class="card-subtitle text-center">This item hasn't been started</p>
+                  </div>
+                  <div class="card-body">
+                      <!-- Nested Child Card -->
+                      {{>task}}
+                      {{>task}}
+                      {{>task}}
+                  </div>
+                  <div class="card-footer">
+                      <button type="button" class="btn btn-outline-dark btn-block"><i class="fa-regular fa-square-plus" style="color: #000000;"></i> Add Item</button>
+                  </div>
+                </div>
+              </div>                
+            </div>
+
+            <div class="col" id="in-progress">
+              {{!-- Parent Card --}}
+              <div class="container">
+                <div class="card">
+                  <div class="card-header">
+                    <h5 class="card-title"><i class="fa-solid fa-circle-half-stroke" style="color: #e0cd61;"></i> In Progress</h5>
+                        <p class="card-subtitle text-center">This is actively being worked on</p>
+                  </div>
+                  <div class="card-body">
+                      <!-- Nested Child Card -->
+                      {{>task}}
+                      {{>task}}
+                      {{>task}}
+                  </div>
+                  <div class="card-footer">
+                      <button type="button" class="btn btn-outline-dark btn-block"><i class="fa-regular fa-square-plus" style="color: #000000;"></i> Add Item</button>
+                  </div>
+                </div>
+              </div>  
+            </div>
+
+            <div class="col" id="complete">
+              {{!-- Parent Card --}}
+              <div class="container">
+                <div class="card">
+                  <div class="card-header">
+                    <h5 class="card-title"><i class="fa-regular fa-circle-check" style="color: #6fb854;"></i> Done</h5>
+                        <p class="card-subtitle text-center">This has been completed</p>
+                  </div>
+                  <div class="card-body">
+                      <!-- Nested Child Card -->
+                      {{>task}}
+                      {{>task}}
+                      {{>task}}
+                  </div>
+                  <div class="card-footer">
+                      <button type="button" class="btn btn-outline-dark btn-block"><i class="fa-regular fa-square-plus" style="color: #000000;"></i> Add Item</button>
+                  </div>
+                </div>
+              </div>  
+            </div>
+          </div>
         </div>
-        {{/each}}
       </div>
-    </div>
-    {{! Completed}}
-    <div class="task-column col-md-4" id="completed">
-      <h2 class="h4 my-3">Completed</h2>
-      <div class="task-list list-group" id="completed-task">
-        {{! Add in completed tasks here}}
-        {{#each tasks.completed as |task|}}
-        <div class="task-card list-group-item" data-id="{{task.id}}">
-          <h3>{{task.title}}</h3>
-          <p>{{task.contents}}</p>
-          <p>{{task.deadline}}</p>
-        </div>
-        {{/each}}
-      </div>
-    </div>
-  </section>
-</main>
+  </div>
+</body>
+
+
 {{! Will either NPM install sortable or have to use a library }}
 <script src="https://cdn.jsdelivr.net/npm/sortablejs@1.14.0/Sortable.min.js"></script>
 <script src="/js/sortable.js"></script>
