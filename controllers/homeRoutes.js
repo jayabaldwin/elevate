@@ -18,9 +18,12 @@ router.get("/signup", async (req, res) => {
   res.render("signup");
 });
 
-router.get("/home", withAuth, async (req, res) => {
+router.get("/home", async (req, res) => {
   res.render("home");
 });
+// router.get("/home", withAuth, async (req, res) => {
+//   res.render("home");
+// });
 
 router.get("/invite", async (req, res) => {
   res.render("home");

@@ -39,6 +39,30 @@ router.get("/:code", async (req, res) => {
   }
 });
 
+// FIX THIS
+// get id code of workspace and connect to home
+// check if user should be able to see this with authorisation
+// if not show 404
+router.get("/:id", async (req, res) => {
+  try {
+    const workspace = await Workspace.findOne({
+      where: {
+        // user_id has linked workspace_id
+        workspace_id: req.params.code,
+      },
+    });
+    if (!workspace) {
+      return res
+        .status(404)
+        .json("Workspace not found")
+        .alert("You are not authorised to enter this workspace");
+    }
+    res.json(workspace);
+  } catch (err) {
+    res.status(500).json(err.message);
+  }
+});
+
 // will add the logged in user to the workspace with the passed id
 router.put("/add-user/:id", async (req, res) => {
   try {

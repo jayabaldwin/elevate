@@ -14,11 +14,35 @@ const loginFormHandler = async (event) => {
     });
 
     if (response.ok) {
+      setTimeout(function () {
+        // Show the result notification
+        var notification = document.getElementById("resultNotification");
+        notification.classList.remove("hide");
+
+        // Set a timeout to hide the notification after 1 seconds
+        setTimeout(function () {
+          notification.classList.add("hide");
+        }, 1000);
+      }, 1000);
       // If successful, redirect browser to homepage
       document.location.replace("/home");
     } else {
       // this does nothing
       alert(response.statusText);
+      setTimeout(function () {
+        // Show the result notification
+        var notification = document.getElementById("resultIncorrect");
+        notification.classList.remove("hide");
+
+        // Set a timeout to hide the notification once submit button is clicked again
+        setTimeout(function () {
+          document
+            .getElementById("login-form")
+            .addEventListener("submit", function (event) {
+              notification.classList.add("hide");
+            });
+        }, 1000);
+      }, 1000);
     }
   }
 };
