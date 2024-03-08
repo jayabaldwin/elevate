@@ -1,5 +1,4 @@
 {{! Will need to add sortable.Js to main.handlebars }}
-<body>
   <div class="container-fluid">
     <!-- Sidebar -->
     <div class="sidebar">
@@ -27,7 +26,7 @@
                       </ul>
                   </div>
                   <div class="card-footer">
-                      <button type="button" class="btn btn-outline-dark btn-block"><i class="fa-regular fa-square-plus" style="color: #000000;"></i> Add Item</button>
+                      <button class="btn btn-outline-dark btn-block" data-toggle="modal" data-target="#project-modal"><i class="fa-regular fa-square-plus" style="color: #000000;"></i> Add Item</button>
                   </div>
                 </div>
               </div>                
@@ -50,7 +49,7 @@
                       </ul>
                   </div>
                   <div class="card-footer">
-                      <button type="button" class="btn btn-outline-dark btn-block"><i class="fa-regular fa-square-plus" style="color: #000000;"></i> Add Item</button>
+                      <button type="button" class="btn btn-outline-dark btn-block" data-toggle="modal" data-target="#project-modal"><i class="fa-regular fa-square-plus" style="color: #000000;"></i> Add Item</button>
                   </div>
                 </div>
               </div>  
@@ -73,7 +72,7 @@
                       </ul>
                   </div>
                   <div class="card-footer">
-                      <button type="button" class="btn btn-outline-dark btn-block"><i class="fa-regular fa-square-plus" style="color: #000000;"></i> Add Item</button>
+                      <button type="button" class="btn btn-outline-dark btn-block" data-toggle="modal" data-target="#project-modal"><i class="fa-regular fa-square-plus" style="color: #000000;"></i> Add Item</button>
                   </div>
                 </div>
               </div>  
@@ -82,16 +81,37 @@
         </div>
       </div>
   </div> 
-      <div id="taskDetailModal" class="modal">
+      {{!-- <div id="taskDetailModal" class="modal">
         <div class="modal-content">
           {{! Fetched task details in here}}
         </div>
         <span class="close" onclick="closeModal()">&times;</span>
-      </div>
+      </div> --}}
+
+
+      {{!-- Add task --}}
+      <div class="modal" id="project-modal" tabindex="-1">
+          <div class="modal-dialog" >
+            <div class="modal-content">
+              <div class="modal-header">
+                <h5 class="modal-title">Modal title</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                  <span aria-hidden="true">&times;</span>
+                </button>
+              </div>
+              <div class="modal-body">
+                <p>Modal body text goes here.</p>
+              </div>
+              <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                <button type="button" class="btn btn-primary">Save changes</button>
+              </div>
+            </div>
+          </div>
+        </div>
 <script src="https://cdn.jsdelivr.net/npm/sortablejs@1.14.0/Sortable.min.js"></script>
 <script src="/js/sortable.js"></script>
 <script src="/js/taskCardModal.js"></script>
-</body>
 
 {{!-- Translate this into task.handlebars--}}
 {{!-- <main class="col-md-9">

@@ -70,7 +70,7 @@ p {
 
 
 /* Animation */
-.animate {
+/* .animate {
     transition: transform 1s ease-in-out;
 }
   
@@ -81,10 +81,10 @@ p {
 .show {
     transform: translateY(100%);
 }
-  
-.hide {
+   */
+/* .hide {
     display: none;
-}
+} */
 
 /* Sidebar link hover styling */
 aside .nav-pills .nav-link:hover {
@@ -166,4 +166,3 @@ aside .nav-pills .nav-link:hover {
 
   /* Change background color of logout button on hover */
   .logout-button:hover {background-color: #343a40;}
-
