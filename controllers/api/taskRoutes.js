@@ -1,5 +1,5 @@
 const router = require('express').Router();
-const { Task } = require('../../models');
+const { Task, User } = require('../../models');
 // end route is /api/tasks
 
 // Get all tasks
@@ -77,6 +77,30 @@ router.delete('/:id', async (req, res) => {
     res.status(204).send();
   } catch (err) {
     console.error(err);
+    res.status(500).send('Internal Server Error');
+  }
+});
+
+//Getting taskcard by id
+router.get('/:id/details', async (req, res) => {
+  try {
+    const task = await Task.findByPk(req.params.id, {
+      include: [{
+        model: User,
+        attributes: ['first', 'last']
+      }]
+    });
+
+    if (!task) {
+      return res.status(404).send('Task not found');
+    }
+
+    res.render('taskcard', {
+      layout: false,
+      task: task.get({ plain: true })
+    });
+  } catch (error) {
+    console.error('Error fetching task details:', error);
     res.status(500).send('Internal Server Error');
   }
 });

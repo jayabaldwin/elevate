@@ -1,15 +1,16 @@
 <!-- Nested Child Card -->
 <div class="card mb-2">
   <div class="card-body">
-    <h5 class="card-title"><a href="#" class="card-link">Child Card</a></h5>
-    <p class="card-text">This is the content of the child card.</p>
+    <h5 class="card-title">
+      <a href="#" onclick="openTaskCardModal({{id}})" class="card-link">{{title}}</a>
+    </h5>
+    <p class="card-text">{{contents}}</p>
   </div>
   <div class="card-footer">
-    <p class="card-text"><i
-        class="fa-regular fa-clock"
-        style="color: #000000;"
-      ></i>
-      Mar 24</p>
+    <p class="card-text">
+      <i class="fa-regular fa-clock" style="color: #000000;"></i>
+      {{deadline}}
+    </p>
   </div>
 </div>
 

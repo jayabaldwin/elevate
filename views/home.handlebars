@@ -21,15 +21,9 @@
                   <div class="card-body" style="max-height: 500px; overflow-y: auto">
                       <!-- Nested Child Card -->
                       <ul>
-                        <li>
-                          {{>task}}
-                        </li>
-                        <li>
-                          {{>task}}
-                        </li>
-                        <li>
-                          {{>task}}
-                        </li>
+                        {{#each tasks.toDo as |task|}}
+                        <li> {{> task task}} </li>
+                        {{/each}}
                       </ul>
                   </div>
                   <div class="card-footer">
@@ -50,21 +44,9 @@
                   <div class="card-body" style="max-height: 500px; overflow-y: auto">
                       <!-- Nested Child Card -->
                       <ul>
-                        <li>
-                          {{>task}}
-                        </li>
-                        <li>
-                          {{>task}}
-                        </li>
-                        <li>
-                          {{>task}}
-                        </li>
-                        <li>
-                          {{>task}}
-                        </li>
-                        <li>
-                          {{>task}}
-                        </li>
+                        {{#each tasks.inProgress as |task|}}
+                        <li> {{> task task}} </li>
+                        {{/each}}
                       </ul>
                   </div>
                   <div class="card-footer">
@@ -85,9 +67,9 @@
                   <div class="card-body" style="max-height: 500px; overflow-y: auto">
                       <!-- Nested Child Card -->
                       <ul>
-                        <li>
-                          {{>task}}
-                        </li>
+                        {{#each tasks.completed as |task|}}
+                        <li> {{> task task}} </li>
+                        {{/each}}
                       </ul>
                   </div>
                   <div class="card-footer">
@@ -100,6 +82,15 @@
         </div>
       </div>
   </div> 
+      <div id="taskDetailModal" class="modal">
+        <div class="modal-content">
+          {{! Fetched task details in here}}
+        </div>
+        <span class="close" onclick="closeModal()">&times;</span>
+      </div>
+<script src="https://cdn.jsdelivr.net/npm/sortablejs@1.14.0/Sortable.min.js"></script>
+<script src="/js/sortable.js"></script>
+<script src="/js/taskCardModal.js"></script>
 </body>
 
 {{!-- Translate this into task.handlebars--}}
@@ -153,5 +144,3 @@
 
 
 {{! Will either NPM install sortable or have to use a library }}
-<script src="https://cdn.jsdelivr.net/npm/sortablejs@1.14.0/Sortable.min.js"></script>
-<script src="/js/sortable.js"></script>
