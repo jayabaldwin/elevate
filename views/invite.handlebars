@@ -1,7 +1,8 @@
 <!-- Send Invites -->
-  <div class="row justify-content-center hide" id="workplace-create">
+{{!-- MAKE THIS LESS SUPER UGLY --}}
+  <div class="row justify-content-center" id="workplace-create">
     <div class="col-md-6 mt-5">
-      <h1 class="text-center mb-4">Welcome to {Workspace Name}!</h1>
+      <h1 class="text-center text-white mb-4">Welcome to, {{workspace.name}}!</h1>
       <h3 class="text-center mb-4">Would you like to send out invites?</h3>
       <h4 class="text-center">(Or you can save the code to be used later)</h4>
       <form id="workspaceForm">
@@ -9,7 +10,6 @@
           <div class="form-group col-md-6">
             
             <div class="alert alert-dark text-center" id="code-success" role="alert">
-              {{!-- PROPERLY CONNECT TO ROUTE --}}
               Code Successfully Generated: {{workspace.join_code}}
             </div>
             <div>
@@ -24,8 +24,8 @@
             </div>
           <button
               type="submit"
-              class="btn btn-outline-light btn-block hide"
-              id="enter-workspace"
+              class="btn btn-outline-light btn-block"
+              id="enter-workspace-invite"
             >Enter Workspace</button>
     </div>
   </div>

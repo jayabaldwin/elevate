@@ -56,8 +56,6 @@ const signupFormHandler = async (event) => {
         }, 2000);
       }, 1000);
     } else {
-      // Change this section
-      // alert(response.statusText);
       setTimeout(function () {
         // Show the result notification
         var notification = document.getElementById("resultIncorrect");
@@ -149,7 +147,6 @@ document
         });
       } else {
         // alert("Unable to add workspace");
-
         setTimeout(function () {
           // Show the result notification
           var notification = document.getElementById("noWorkspace");
@@ -183,23 +180,39 @@ document
       );
       if (addUserRes.ok) {
         console.log(addUserRes);
-        // REDIRECT TO WORKSPACE ID
-        document.location.replace("/home");
         console.log("Added user to workspace ", workspace.id);
+        setTimeout(function () {
+          // Show the result notification
+          var notification = document.getElementById("resultNotification");
+          notification.classList.remove("hide");
+
+          // Set a timeout to hide the notification after 1 seconds
+          setTimeout(function () {
+            notification.classList.add("hide");
+          }, 1000);
+
+          setTimeout(function () {
+            document.getElementById("user-loginDetails").style.display = "none";
+            const newWorkspace = document.getElementById("newWorkspace");
+            newWorkspace.classList.remove("hide");
+          }, 2000);
+        }, 1000);
       } else {
         // alert("Unable to add you to workspace.");
         setTimeout(function () {
           // Show the result notification
-          var notification = document.getElementById("noWorkspace");
+          var notification = document.getElementById("resultIncorrect");
           notification.classList.remove("hide");
 
-          // Set a timeout to hide the notification after 2 seconds
+          // Set a timeout to hide the notification once submit button is clicked again
           setTimeout(function () {
-            notification.classList.add("hide");
-          }, 2000);
+            document
+              .getElementById("signup-form")
+              .addEventListener("submit", function (event) {
+                notification.classList.add("hide");
+              });
+          }, 1000);
         }, 1000);
       }
-      // } else {
-      //   alert("Workspace not found! Try again.");
     }
   });
