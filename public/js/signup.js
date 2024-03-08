@@ -144,7 +144,7 @@ document
         joinSpace.classList.remove("hide");
 
         joinSpace.addEventListener("Click", async function (e) {
-          // REDIRECT TO HOME/WORKSPACE ID
+          // Redirects to workspace
           document.location.replace("/home");
         });
       } else {

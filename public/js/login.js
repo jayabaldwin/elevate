@@ -15,6 +15,7 @@ const loginFormHandler = async (event) => {
 
     if (response.ok) {
       response.json("Successfully logged in");
+
       setTimeout(function () {
         // Show the result notification
         var notification = document.getElementById("successfulLogin");
@@ -26,7 +27,7 @@ const loginFormHandler = async (event) => {
         }, 1000);
 
         setTimeout(function () {
-          // If successful, redirect browser to homepage
+          // If successful, redirect browser to homepage that corresponds to their workspace_id
           document.location.replace("/home");
         }, 500);
       }, 1000);

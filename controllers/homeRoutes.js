@@ -1,4 +1,5 @@
 const router = require("express").Router();
+const { User, Workspace } = require("../models");
 // Import the custom middleware
 const withAuth = require("../utils/auth");
 
@@ -18,18 +19,27 @@ router.get("/signup", async (req, res) => {
   res.render("signup");
 });
 
-router.get("/home", async (req, res) => {
-  res.render("home");
+router.get("/home", withAuth, async (req, res) => {
+  try {
+    const user = await User.findByPk(req.session.user_id);
+    if (!user) {
+      return res.status(404).json({ message: "User not found" });
+    }
+    const workspaceData = await Workspace.findOne({
+      where: { id: user.workspace_id },
+    });
+    if (!workspaceData) {
+      return res.status(404).json({ message: "Workspace not found" });
+    }
+    const workspace = workspaceData.get({ plain: true });
+    res.render("home", { workspace }); // Pass workspace as an object
+  } catch (err) {
+    res.status(500).json({ message: err.message });
+  }
 });
-// router.get("/home", withAuth, async (req, res) => {
-//   res.render("home");
-// });
 
 router.get("/invite", async (req, res) => {
   res.render("invite");
 });
-
-// router get /* generic 404 handling
-// res.render404
 
 module.exports = router;
