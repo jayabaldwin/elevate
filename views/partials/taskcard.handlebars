@@ -18,18 +18,24 @@
   <div class="card-body">
     <div class="row">
     <div class="col-8">
-        <h5 class="card-title">Project Title</h5> 
-        <p class="card-text">Contents</p>
+        <h5 class="card-title">{{title}}</h5> 
+        <p class="card-text">{{contents}}</p>
     </div>
     <div class="col-4 bg-dark">
         <div class="card-subtitle">
-            <h6>ASSIGNEE</h6>
+          <h6>ASSIGNEE:</h6>
+            {{#if this.users}}
+              <ul>
+                {{#each this.users as |user|}}
+                  <li>{{user.first}} {{user.last}}</li>
+                {{/each}}
+              </ul>
+           {{else}}
+            <p>No assignees</p>
+           {{/if}}
         </div>
-
-       
-
     </div>
     </div>
   </div>
 </div>
-<script src="/js/taskcard.js"> 
+{{!<script src="/js/taskcard.js">}}
