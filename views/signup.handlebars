@@ -11,11 +11,11 @@
   <!-- User details -->
   <div class="row justify-content-center" id="userDetails">
     <div class="col-md-6 mt-5">
-      <h2 class="text-center">Tell us about yourself</h2>
+      <h2 class="text-center text-white">Tell us about yourself</h2>
       <form id="user-info">
         <div class="form-row mt-5">
           <div class="form-group col-md-6">
-            <label for="firstName">First Name</label>
+            <label for="firstName" class="text-white">First Name</label>
             <input
               type="text"
               class="form-control"
@@ -25,7 +25,7 @@
             />
           </div>
           <div class="form-group col-md-6">
-            <label for="lastName">Last Name</label>
+            <label for="lastName" class="text-white">Last Name</label>
             <input
               type="text"
               class="form-control"
@@ -48,10 +48,10 @@
   <div class="row justify-content-center hide" id="user-loginDetails">
     <div class="col-md-6 mt-5">
       <div class="join-container">
-        <h2 class="text-center mb-4">Login Information</h2>
+        <h2 class="text-center text-white mb-4">Login Information</h2>
         <form id="signup-form">
           <div class="form-group">
-            <label for="email-signup">Email</label>
+            <label for="email-signup" class="text-white">Email</label>
             <input
               type="email"
               class="form-control"
@@ -61,7 +61,7 @@
             />
           </div>
           <div class="form-group">
-            <label for="username-signup">Username</label>
+            <label for="username-signup" class="text-white">Username</label>
             <input
               type="username"
               class="form-control"
@@ -71,7 +71,7 @@
             />
           </div>
           <div class="form-group">
-            <label for="password-signup">Password</label>
+            <label for="password-signup" class="text-white">Password</label>
             <input
               type="password"
               class="form-control"
@@ -81,7 +81,7 @@
             />
           </div>
           <div class="form-group">
-            <label for="password-confirm">Confirm password</label>
+            <label for="password-confirm" class="text-white">Confirm password</label>
             <input
               type="password"
               class="form-control"
@@ -101,7 +101,7 @@
     <div class="row justify-content-center">
       <div class="col-md-6">
         <div class="text-center mt-5 mb-4">
-          <h2>What are we doing today?</h2>
+          <h2 class="text-white">What are we doing today?</h2>
         </div>
         <div class="row mt-4">
           <div class="col">
@@ -126,8 +126,8 @@
   <!-- Create a workspace -->
   <div class="row justify-content-center hide" id="workplace-create">
     <div class="col-md-6 mt-5">
-      <h1 class="text-center mb-4">Welcome to Elevate!</h1>
-      <h3 class="text-center mb-4">What would you like to name your workspace?</h3>
+      <h1 class="text-center text-white mb-4">Welcome to Elevate!</h1>
+      <h3 class="text-center text-white mb-4">What would you like to name your workspace?</h3>
       <form id="workspaceForm">
         <div class="form-row justify-content-center">
           <div class="form-group col-md-6">
@@ -167,8 +167,8 @@
   <!-- Join a workspace -->
   <div class="row justify-content-center hide" id="workplace-join">
     <div class="col-md-6 mt-5">
-      <h2 class="text-center mb-4">Welcome to Elevate!</h2>
-      <h3 class="text-center mb-4">Please enter the join code for your workspace
+      <h2 class="text-center text-white mb-4">Welcome to Elevate!</h2>
+      <h3 class="text-center text-white mb-4">Please enter the join code for your workspace
         below</h3>
       <form id="joinForm">
         <div class="form-row justify-content-center">
@@ -200,7 +200,7 @@
   <div class="row justify-content-center">
     <div
       id="resultNotification"
-      class="notification hide animate__animated animate__fadeIn text-center"
+      class="notification hide animate__animated animate__fadeIn text-center text-white"
     >
       <i class="fas fa-check" style="color: #ffffff;"></i>
       Successfully signed up!
@@ -213,7 +213,7 @@
   <div class="row justify-content-center">
     <div
       id="resultIncorrect"
-      class="notification hide animate__animated animate__fadeIn text-center"
+      class="notification hide animate__animated animate__fadeIn text-center text-red"
     >
       <i class="fa-regular fa-circle-xmark" style="color: #c43434;"></i>
       Invalid login credentials
@@ -226,7 +226,7 @@
   <div class="row justify-content-center">
     <div
       id="passwordUnmatch"
-      class="notification hide animate__animated animate__fadeIn text-center"
+      class="notification hide animate__animated animate__fadeIn text-center text-red"
     >
       <i class="fa-regular fa-circle-xmark" style="color: #c43434;"></i>
       Passwords must match
@@ -239,7 +239,7 @@
   <div class="row justify-content-center">
     <div
       id="noWorkspace"
-      class="notification hide animate__animated animate__fadeIn text-center"
+      class="notification hide animate__animated animate__fadeIn text-center text-red"
     >
       <i class="fa-regular fa-circle-xmark" style="color: #c43434;"></i>
       Your workspace code is invalid
