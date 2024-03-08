@@ -4,7 +4,7 @@ document.addEventListener('DOMContentLoaded', function() {
             group: 'tasks',
             animation: 150,
             onEnd: function (event) {
-                var sortableTask = event.item;
+                var sortableTask = event.item;  // the task being moved
                 var setStatus = '';
 
                 switch (event.to.id) {
@@ -18,12 +18,17 @@ document.addEventListener('DOMContentLoaded', function() {
                         setStatus = 'completed';
                         break;
                 }
-                updateStatus(sortableTask.dataset.id, setStatus);
+
+                var taskId = sortableTask.getAttribute('data-id');  // Getting task id
+                if (taskId) {
+                    updateStatus(taskId, setStatus);
+                }
             }
         });
     });
+});
 
-  function updateStatus(taskId, setStatus) {
+function updateStatus(taskId, setStatus) {
     fetch('/api/tasks/' + taskId, {
         method: 'PUT',
         headers: {
@@ -41,7 +46,6 @@ document.addEventListener('DOMContentLoaded', function() {
         console.log('Task updated: ', data);
     })
     .catch((error) => {
-        console.log('Error updated status: ', error);
+        console.error('Error updated status: ', error);
     });
-  }
-});
+}
