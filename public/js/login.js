@@ -14,11 +14,38 @@ const loginFormHandler = async (event) => {
     });
 
     if (response.ok) {
-      // If successful, redirect browser to homepage
-      document.location.replace("/home");
+      response.json("Successfully logged in");
+
+      setTimeout(function () {
+        // Show the result notification
+        var notification = document.getElementById("successfulLogin");
+        notification.classList.remove("hide");
+
+        // Set a timeout to hide the notification after 1 seconds
+        setTimeout(function () {
+          notification.classList.add("hide");
+        }, 1000);
+
+        setTimeout(function () {
+          // If successful, redirect browser to homepage that corresponds to their workspace_id
+          document.location.replace("/home");
+        }, 500);
+      }, 1000);
     } else {
-      // this does nothing
-      alert(response.statusText);
+      setTimeout(function () {
+        // Show the result notification
+        var notification = document.getElementById("unsuccessfulLogin");
+        notification.classList.remove("hide");
+
+        // Set a timeout to hide the notification once submit button is clicked again
+        setTimeout(function () {
+          document
+            .getElementById("login-form")
+            .addEventListener("submit", function (event) {
+              notification.classList.add("hide");
+            });
+        }, 1000);
+      }, 500);
     }
   }
 };

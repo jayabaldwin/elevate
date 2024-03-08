@@ -5,7 +5,7 @@
   <div class="container mt-5" id="nav-welcome">
     <a href="#">
       <!-- Logo Image -->
-      <img src="/images/Logo.png" width="200" alt="" class="d-inline-block align-middle mr-2">
+      <img src="/images/Logo.png" width="250" alt="" class="d-inline-block align-middle mr-2">
     </a>
 </nav>
 
@@ -13,29 +13,57 @@
   <div class="row justify-content-center">
     <div class="col-md-6">
       <div class="login-container mt-5">
-        <h2 class="text-center mb-4">Login</h2>
+        <h2 class="text-center text-white mb-4">Login</h2>
         <form id="login-form" class="mt-5">
           <div class="form-group">
-            <label for="email-login">Email</label>
+            <label for="email-login" class="text-white">Email</label>
             <input
               type="email"
               class="form-control"
               id="email-login"
               placeholder="Enter email"
+              required
             />
           </div>
           <div class="form-group">
-            <label for="password-login">Password</label>
+            <label for="password-login" class="text-white">Password</label>
             <input
               type="password"
               class="form-control"
               id="password-login"
               placeholder="Enter Password"
+              required
             />
           </div>
           <button type="submit" class="btn btn-outline-light btn-block">Login</button>
         </form>
       </div>
+    </div>
+  </div>
+</div>
+
+<!-- Result Notification for successful sign up -->
+  <div class="container">
+  <div class="row justify-content-center">
+    <div
+      id="successfulLogin"
+      class="notification hide animate__animated animate__fadeIn text-center text-white"
+    >
+      <i class="fas fa-check" style="color: #ffffff;"></i>
+      Successfully logged in!
+    </div>
+  </div>
+</div>
+
+<!-- Result Notification for an unmatched password -->
+  <div class="container">
+  <div class="row justify-content-center">
+    <div
+      id="unsuccessfulLogin"
+      class="notification hide animate__animated animate__fadeIn text-center text-red"
+    >
+      <i class="fa-regular fa-circle-xmark" style="color: #c43434;"></i>
+       Incorrect email and/or password
     </div>
   </div>
 </div>

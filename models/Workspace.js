@@ -21,6 +21,9 @@ Workspace.init(
       defaultValue: function () {
         return uuid();
       },
+      validate: {
+        len: [4],
+      },
     },
   },
   {
