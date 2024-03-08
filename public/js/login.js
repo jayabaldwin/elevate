@@ -14,25 +14,26 @@ const loginFormHandler = async (event) => {
     });
 
     if (response.ok) {
+      response.json("Successfully logged in");
       setTimeout(function () {
         // Show the result notification
-        var notification = document.getElementById("resultNotification");
+        var notification = document.getElementById("successfulLogin");
         notification.classList.remove("hide");
-
-        // If successful, redirect browser to homepage
-        document.location.replace("/home");
 
         // Set a timeout to hide the notification after 1 seconds
         setTimeout(function () {
           notification.classList.add("hide");
         }, 1000);
+
+        setTimeout(function () {
+          // If successful, redirect browser to homepage
+          document.location.replace("/home");
+        }, 500);
       }, 1000);
     } else {
-      // this does nothing
-      alert(response.statusText);
       setTimeout(function () {
         // Show the result notification
-        var notification = document.getElementById("resultIncorrect");
+        var notification = document.getElementById("unsuccessfulLogin");
         notification.classList.remove("hide");
 
         // Set a timeout to hide the notification once submit button is clicked again
@@ -43,7 +44,7 @@ const loginFormHandler = async (event) => {
               notification.classList.add("hide");
             });
         }, 1000);
-      }, 1000);
+      }, 500);
     }
   }
 };
