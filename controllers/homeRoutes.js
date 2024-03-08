@@ -26,7 +26,7 @@ router.get("/home", async (req, res) => {
 // });
 
 router.get("/invite", async (req, res) => {
-  res.render("home");
+  res.render("invite");
 });
 
 // router get /* generic 404 handling

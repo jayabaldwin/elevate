@@ -57,7 +57,7 @@ const signupFormHandler = async (event) => {
       }, 1000);
     } else {
       // Change this section
-      alert(response.statusText);
+      // alert(response.statusText);
       setTimeout(function () {
         // Show the result notification
         var notification = document.getElementById("resultIncorrect");
@@ -148,7 +148,7 @@ document
           document.location.replace("/home");
         });
       } else {
-        alert("Unable to add workspace");
+        // alert("Unable to add workspace");
 
         setTimeout(function () {
           // Show the result notification
