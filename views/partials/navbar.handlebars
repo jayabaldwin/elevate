@@ -1,6 +1,8 @@
-<nav class="navbar bg-body-tertiary bg-transparent mb-3">
-  <div class="container-fluid">
-
+<nav class="navbar bg-body-tertiary bg-transparent mb-3 mt-3">
+  <div class="container-fluid flex-nowrap">
+    <div class="navbar-brand"><h1
+        class="text-white"
+      >{{workspace.name}}</h1></div>
     <div
       class="collapse navbar-collapse d-flex flex-row-reverse"
       id="navbarNavDropdown"
@@ -36,6 +38,41 @@
     </div>
   </div>
 </nav>
+{{!-- 
+<nav class="navbar bg-body-tertiary bg-transparent mb-3">
+  <div class="container-fluid d-flex justify-content-between">
+    <!-- Navbar brand/logo -->
+    <div class="navbar-brand text-white">
+      <h1 class="text-white">{{workspace.name}}</h1>
+    </div>
+
+    <!-- Nav items -->
+    <div class="navbar-nav">
+      <button
+        class="nav-link text-white btn btn-outline-light logout-button mx-4"
+        id="logout-button"
+        type="submit"
+      >Logout</button>
+      <div class="dropdown">
+        <button class="dropbtn text-white btn btn-outline-light px-2 py-2">
+          <i class="fa-regular fa-square-plus" style="color: #ffffff;"></i>
+          New
+          <i class="fa-solid fa-caret-down" style="color: #ffffff;"></i>
+        </button>
+        <div class="dropdown-content">
+          <a href="#">
+            <i class="fa-solid fa-list-check" style="color: #000000;"></i>
+            Project
+          </a>
+          <a href="#">
+            <i class="fa-regular fa-paper-plane" style="color: #000000;"></i>
+            Invite
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+</nav> --}}
 
 <script src="/js/logout.js"></script>
 <script src="/js/invite.js"></script>
