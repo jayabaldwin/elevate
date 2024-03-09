@@ -208,7 +208,7 @@ document
 
           setTimeout(function () {
             // If successful, redirect browser to homepage that corresponds to their workspace_id
-            document.location.replace("/home");
+            document.location.replace("/dashboard");
           }, 1000);
         }, 1000);
       }

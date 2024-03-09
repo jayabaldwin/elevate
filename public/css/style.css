@@ -211,6 +211,11 @@ aside .nav-pills .nav-link:hover {
     width: 100%;
 }
 
+#proj-description {
+    white-space: normal;
+    word-wrap: break-word;
+  }
+
 .hide {
     display: none;
 }

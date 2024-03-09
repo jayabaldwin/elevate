@@ -28,7 +28,7 @@ const loginFormHandler = async (event) => {
 
         setTimeout(function () {
           // If successful, redirect browser to homepage that corresponds to their workspace_id
-          document.location.replace("/home");
+          document.location.replace("/dashboard");
         }, 500);
       }, 1000);
     } else {

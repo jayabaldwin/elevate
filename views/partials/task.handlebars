@@ -1,8 +1,19 @@
+{{! TAKE OUT OF PARTIAL AND ADD INTO HOME JUST UNDER TO DO? WITH A FOR EACH? }}
+{{! ONLY NEED THE ONE AS THEYLL BE MOVED OVER TO OTHER COLUMNS WITH SORTABLE }}
+{{! ADD SORTABLE ANIMATIONS }}
+
 <!-- Nested Child Card -->
 <div class="card mb-2" data-id="{{id}}">
   <div class="card-body">
     <h5 class="card-title">
-      <a href="#" onclick="openTaskCardModal({{id}})" class="card-link">{{title}}</a>
+      <a
+        href="#"
+        onclick="openTaskCardModal({{id}})"
+        class="card-link"
+        {{! Check if this works... modal still to be fully built out... located base of home page }}
+        data-toggle="modal"
+        data-target="#task-view-modal"
+      >{{title}}</a>
     </h5>
     <p class="card-text">{{contents}}</p>
   </div>
