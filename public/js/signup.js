@@ -134,21 +134,37 @@ document
         });
 
         console.log("Added new workspace");
-        document.getElementById("generate-code").style.display = "none";
-        const code = document.getElementById("code-success");
-        code.classList.remove("hide");
-        const joinSpace = document.getElementById("enter-workspace");
-        joinSpace.classList.remove("hide");
+        setTimeout(function () {
+          // Show the result notification
+          var notification = document.getElementById("workspaceCreated");
+          notification.classList.remove("hide");
 
-        joinSpace.addEventListener("Click", async function (e) {
-          // Redirects to workspace
-          document.location.replace("/home");
-        });
+          // Set a timeout to hide the notification after 1 seconds
+          setTimeout(function () {
+            notification.classList.add("hide");
+          }, 1000);
+
+          setTimeout(function () {
+            // Redirect to invite page
+            document.location.replace("/invite");
+          }, 500);
+        }, 1000);
+
+        // document.getElementById("generate-code").style.display = "none";
+        // const code = document.getElementById("code-success");
+        // code.classList.remove("hide");
+        // const joinSpace = document.getElementById("enter-workspace");
+        // joinSpace.classList.remove("hide");
+
+        // joinSpace.addEventListener("Click", async function (e) {
+        //   // Redirects to workspace
+        //   document.location.replace("/invite");
+        // });
       } else {
         // alert("Unable to add workspace");
         setTimeout(function () {
           // Show the result notification
-          var notification = document.getElementById("noWorkspace");
+          var notification = document.getElementById("nocreate");
           notification.classList.remove("hide");
         }, 1000);
       }
@@ -211,5 +227,8 @@ document
             });
         }, 1000);
       }, 1000);
+    } else {
+      // If unidentified error direct to 404
+      document.location.replace("/404");
     }
   });

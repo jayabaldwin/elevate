@@ -146,23 +146,11 @@
               type="submit"
               class="btn btn-outline-light btn-block"
               id="generate-code"
-            >Generate Code</button>
+            >Create</button>
           </div>
         </div>
       </form>
-<div class="alert alert-dark hide text-center" id="code-success" role="alert">
-          {{!-- PROPERLY CONNECT TO ROUTE --}}
-          Code Successfully Generated: {{workspace.join_code}}
-        </div>
-          <button
-              type="submit"
-              class="btn btn-outline-light btn-block hide"
-              id="enter-workspace"
-            >Enter Workspace</button>
-    </div>
   </div>
-
-  
 
   <!-- Join a workspace -->
   <div class="row justify-content-center hide" id="workplace-join">
@@ -195,6 +183,8 @@
     </div>
   </div>
 
+
+  {{!-- NOTIFICATIONS --}}
   <!-- Result Notification for successful sign up -->
   <div class="container">
   <div class="row justify-content-center">
@@ -234,6 +224,19 @@
   </div>
 </div>
 
+  <!-- Result Notification for unable to create workspace -->
+  <div class="container">
+  <div class="row justify-content-center">
+    <div
+      id="nocreate"
+      class="notification hide animate__animated animate__fadeIn text-center text-red"
+    >
+      <i class="fa-regular fa-circle-xmark" style="color: #c43434;"></i>
+      Unable to add workspace
+    </div>
+  </div>
+</div>
+
   <!-- Result Notification for invalid workplace code -->
   <div class="container">
   <div class="row justify-content-center">
@@ -247,6 +250,18 @@
   </div>
 </div>
 
+  <!-- Result Notification for successfully generating workspace -->
+  <div class="container">
+  <div class="row justify-content-center">
+    <div
+      id="workspaceCreated"
+      class="notification hide animate__animated animate__fadeIn text-center text-white"
+    >
+      <i class="fas fa-check" style="color: #ffffff;"></i>
+      Workspace created!
+    </div>
+  </div>
+</div>
 
   <!-- Result Notification for successful joincode -->
   <div class="container">
