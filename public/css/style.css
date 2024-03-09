@@ -210,3 +210,7 @@ aside .nav-pills .nav-link:hover {
 .logout-button:hover {
     background-color: #343a40;
 }
+
+.dropdown-content {
+    width: 100%;
+}
