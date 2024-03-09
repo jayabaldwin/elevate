@@ -18,7 +18,7 @@ document.addEventListener('DOMContentLoaded', function() {
                         setStatus = 'completed';
                         break;
                 }
-
+                event.preventDefault();
                 var taskId = sortableTask.getAttribute('data-id');  // Getting task id
                 if (taskId) {
                     updateStatus(taskId, setStatus);
