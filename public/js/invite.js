@@ -30,11 +30,19 @@ async function submitInvitations(e) {
     },
   });
   if (response.ok) {
-    //navigate to home page with corresponding id... login page to sign up  }
+    document.location.replace("/home");
   }
 }
 
+// Submit invites
 document.getElementById("add-btn").addEventListener("click", generateHTML);
 document
   .getElementById("invite-form")
   .addEventListener("submit", submitInvitations);
+
+// Direct to home page
+document
+  .getElementById("enter-workspace-invite")
+  .addEventListener("click", function () {
+    document.location.replace("/home");
+  });
