@@ -96,10 +96,6 @@ p {
 }
    */
 
-.hide {
-    display: none;
-}
-
 /* Sidebar link hover styling */
 aside .nav-pills .nav-link:hover {
     background-color: purple;
@@ -213,4 +209,8 @@ aside .nav-pills .nav-link:hover {
 
 .dropdown-content {
     width: 100%;
+}
+
+.hide {
+    display: none;
 }
