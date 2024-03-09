@@ -1,0 +1,62 @@
+[
+    {
+        "message": "Good morning, team. Let's kickstart the day with a quick progress update.",
+        "createdOn": "2024-03-07T09:00:00",
+        "user_id": 3,
+        "project_id": "1"
+    },
+    {
+        "message": "Has everyone reviewed the latest draft of the project proposal?",
+        "createdOn": "2024-03-07T10:30:00",
+        "user_id": 4,
+        "project_id": "1"
+    },
+    {
+        "message": "I've scheduled a meeting for this afternoon to discuss the budget allocation. Please confirm your availability.",
+        "createdOn": "2024-03-07T11:45:00",
+        "user_id": 8,
+        "project_id": "1"
+    },
+    {
+        "message": "We need to finalize the timeline for the deliverables. Any suggestions?",
+        "createdOn": "2024-03-07T13:15:00",
+        "user_id": 9,
+        "project_id": "1"
+    },
+    {
+        "message": "Could someone provide an update on the market research findings?",
+        "createdOn": "2024-03-07T14:30:00",
+        "user_id": 12,
+        "project_id": "1"
+    },
+    {
+        "message": "I've identified a potential risk in our project plan. Let's discuss mitigation strategies.",
+        "createdOn": "2024-03-07T15:45:00",
+        "user_id": 14,
+        "project_id": "1"
+    },
+    {
+        "message": "Great work on the presentation slides! Let's aim for a final review by EOD.",
+        "createdOn": "2024-03-07T16:30:00",
+        "user_id": 19,
+        "project_id": "1"
+    },
+    {
+        "message": "Just a reminder to update the task board with your progress. Transparency is key!",
+        "createdOn": "2024-03-07T17:00:00",
+        "user_id": 3,
+        "project_id": "1"
+    },
+    {
+        "message": "I'll send out the meeting minutes shortly. Please review and provide feedback.",
+        "createdOn": "2024-03-07T17:30:00",
+        "user_id": 4,
+        "project_id": "1"
+    },
+    {
+        "message": "Let's aim to finalize the project roadmap by end of the week. We're making good progress, team!",
+        "createdOn": "2024-03-07T18:00:00",
+        "user_id": 8,
+        "project_id": "1"
+    }
+]
