@@ -158,5 +158,37 @@
     "email": "ThEvans@email.com",
     "password": "password456",
     "workspace_id": 3
+  },
+  {
+    "first": "Jaya",
+    "last": "Baldwin",
+    "username": "jayabaldwin",
+    "email": "jaya@gmail.com",
+    "password": "password",
+    "workspace_id": 4
+  },
+  {
+    "first": "Amir",
+    "last": "Tara",
+    "username": "amirtara",
+    "email": "amir@gmail.com",
+    "password": "password",
+    "workspace_id": 4
+  },
+  {
+    "first": "Adam",
+    "last": "Isitmez",
+    "username": "adamisitmez",
+    "email": "adam@gmail.com",
+    "password": "password",
+    "workspace_id": 4
+  },
+  {
+    "first": "Harry",
+    "last": "Potter",
+    "username": "harrypotter",
+    "email": "harry@gmail.com",
+    "password": "password",
+    "workspace_id": 4
   }
 ]

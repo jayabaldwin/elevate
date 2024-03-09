@@ -24,7 +24,6 @@ const signupFormHandler = async (event) => {
           });
       }, 1000);
     }, 500);
-    // alert("Passwords must match");
     return;
   }
 
@@ -53,7 +52,7 @@ const signupFormHandler = async (event) => {
           document.getElementById("user-loginDetails").style.display = "none";
           const newWorkspace = document.getElementById("newWorkspace");
           newWorkspace.classList.remove("hide");
-        }, 2000);
+        }, 1000);
       }, 1000);
     } else {
       setTimeout(function () {
@@ -135,21 +134,37 @@ document
         });
 
         console.log("Added new workspace");
-        document.getElementById("generate-code").style.display = "none";
-        const code = document.getElementById("code-success");
-        code.classList.remove("hide");
-        const joinSpace = document.getElementById("enter-workspace");
-        joinSpace.classList.remove("hide");
+        setTimeout(function () {
+          // Show the result notification
+          var notification = document.getElementById("workspaceCreated");
+          notification.classList.remove("hide");
 
-        joinSpace.addEventListener("Click", async function (e) {
-          // Redirects to workspace
-          document.location.replace("/home");
-        });
+          // Set a timeout to hide the notification after 1 seconds
+          setTimeout(function () {
+            notification.classList.add("hide");
+          }, 1000);
+
+          setTimeout(function () {
+            // Redirect to invite page
+            document.location.replace("/invite");
+          }, 500);
+        }, 1000);
+
+        // document.getElementById("generate-code").style.display = "none";
+        // const code = document.getElementById("code-success");
+        // code.classList.remove("hide");
+        // const joinSpace = document.getElementById("enter-workspace");
+        // joinSpace.classList.remove("hide");
+
+        // joinSpace.addEventListener("Click", async function (e) {
+        //   // Redirects to workspace
+        //   document.location.replace("/invite");
+        // });
       } else {
         // alert("Unable to add workspace");
         setTimeout(function () {
           // Show the result notification
-          var notification = document.getElementById("noWorkspace");
+          var notification = document.getElementById("nocreate");
           notification.classList.remove("hide");
         }, 1000);
       }
@@ -183,7 +198,7 @@ document
         console.log("Added user to workspace ", workspace.id);
         setTimeout(function () {
           // Show the result notification
-          var notification = document.getElementById("resultNotification");
+          var notification = document.getElementById("successfulJoin");
           notification.classList.remove("hide");
 
           // Set a timeout to hide the notification after 1 seconds
@@ -192,27 +207,28 @@ document
           }, 1000);
 
           setTimeout(function () {
-            document.getElementById("user-loginDetails").style.display = "none";
-            const newWorkspace = document.getElementById("newWorkspace");
-            newWorkspace.classList.remove("hide");
-          }, 2000);
-        }, 1000);
-      } else {
-        // alert("Unable to add you to workspace.");
-        setTimeout(function () {
-          // Show the result notification
-          var notification = document.getElementById("resultIncorrect");
-          notification.classList.remove("hide");
-
-          // Set a timeout to hide the notification once submit button is clicked again
-          setTimeout(function () {
-            document
-              .getElementById("signup-form")
-              .addEventListener("submit", function (event) {
-                notification.classList.add("hide");
-              });
+            // If successful, redirect browser to homepage that corresponds to their workspace_id
+            document.location.replace("/home");
           }, 1000);
         }, 1000);
       }
+    } else if (response.status === 404) {
+      setTimeout(function () {
+        // Show the result notification
+        var notification = document.getElementById("noWorkspace");
+        notification.classList.remove("hide");
+
+        // Set a timeout to hide the notification once submit button is clicked again
+        setTimeout(function () {
+          document
+            .getElementById("joinForm")
+            .addEventListener("submit", function (event) {
+              notification.classList.add("hide");
+            });
+        }, 1000);
+      }, 1000);
+    } else {
+      // If unidentified error direct to 404
+      document.location.replace("/404");
     }
   });
