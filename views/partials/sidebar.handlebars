@@ -7,9 +7,14 @@
       alt="Logo"
     /></a>
 
+{{!--SIDEBAR NEEDS COLLAPSIBLE MENUS --}}
+{{!-- POPULATE WITH USER AND PROJECT DATA --}}
+{{!-- PROJECT TO BE CLICKABLE AND DIRECT TO INDIVIDUAL PROJECT --}}
+{{!-- ADD CHAT TO SIDEBAR NAV THAT IS ALSO COLLAPSIBLE --}}
+
   <h4 class="text-center text-white">Welcome,</h3>
   {{! Add in once route has been added }}
-  <p class="text-center text-white">Add User First Last here</p>
+  <p class="text-center text-white">Generate logged in user first and last name</p>
 
   <ul class="nav nav-pills flex-column mb-auto">
     {{! <li class="nav-item">
@@ -49,6 +54,10 @@
             Project B</a>
         </div>
     </li>
+    {{!-- Add as part of collapsible and style --}}
+    <li>
+      {{> chat}}
+    </li>
   </ul>
 
   {{! <div class="container-fluid">
@@ -58,6 +67,6 @@
     </form>
   </div> }}
   
-  {{> chat}}
+  
 
 </aside>

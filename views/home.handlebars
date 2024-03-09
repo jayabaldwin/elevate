@@ -18,7 +18,7 @@
                   <h5 class="card-title"><i class="fa-regular fa-circle-down" style="color: #e45656;"></i> To Do</h5>
                   <p class="card-subtitle">This item hasn't been started</p>
                 </div>
-                <div class="card-body" style="max-height: 500px; overflow-y: auto">
+                <div class="card-body" style="max-height: 500px; min-height: 200px; overflow-y: auto">
                   <!-- Nested Child Card -->
                   <ul id="to-do-task">
                     {{#each tasks.toDo as |task|}}
@@ -27,7 +27,7 @@
                   </ul>
                 </div>
                 <div class="card-footer">
-                  <button type="button" class="btn btn-outline-dark btn-block" data-toggle="modal" data-target="#project-modal"><i class="fa-regular fa-square-plus"
+                  <button type="button" class="btn btn-outline-dark btn-block" data-toggle="modal" data-target="#task-create-modal"><i class="fa-regular fa-square-plus"
                       style="color: #000000;"></i> Add Item</button>
                 </div>
               </div>
@@ -43,7 +43,7 @@
                     Progress</h5>
                   <p class="card-subtitle">This is actively being worked on</p>
                 </div>
-                <div class="card-body" style="max-height: 500px; overflow-y: auto">
+                <div class="card-body" style="max-height: 500px; min-height: 200px; overflow-y: auto">
                   <!-- Nested Child Card -->
                   <ul id="in-progress-task">
                     {{#each tasks.inProgress as |task|}}
@@ -52,8 +52,6 @@
                   </ul>
                 </div>
                 <div class="card-footer">
-                  <button type="button" class="btn btn-outline-dark btn-block" data-toggle="modal" data-target="#project-modal"><i class="fa-regular fa-square-plus"
-                      style="color: #000000;"></i> Add Item</button>
                 </div>
               </div>
             </div>
@@ -67,7 +65,7 @@
                   <h5 class="card-title"><i class="fa-regular fa-circle-check" style="color: #6fb854;"></i> Done</h5>
                   <p class="card-subtitle">This has been completed</p>
                 </div>
-                <div class="card-body" style="max-height: 500px; overflow-y: auto">
+                <div class="card-body" style="max-height: 500px; min-height: 200px; overflow-y: auto">
                   <!-- Nested Child Card -->
                   <ul id="completed-task">
                     {{#each tasks.completed as |task|}}
@@ -76,8 +74,6 @@
                   </ul>
                 </div>
                 <div class="card-footer">
-                  <button type="button" class="btn btn-outline-dark btn-block" data-toggle="modal" data-target="#project-modal"><i class="fa-regular fa-square-plus"
-                      style="color: #000000;"></i> Add Item</button>
                 </div>
               </div>
             </div>
@@ -86,27 +82,112 @@
       </div>
   </div> 
 
-{{!-- 
-      {{!-- Add task, basic modal, will be added to, to incorporate all the fields --}}
-      <div class="modal" id="project-modal" tabindex="-1">
-          <div class="modal-dialog" >
-            <div class="modal-content">
-              <div class="modal-header">
-                <h5 class="modal-title">Modal title</h5>
-                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                  <span aria-hidden="true">&times;</span>
-                </button>
-              </div>
-              <div class="modal-body">
-                <p>Modal body text goes here.</p>
-              </div>
-              <div class="modal-footer">
-                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                <button type="button" class="btn btn-primary">Save changes</button>
-              </div>
-            </div>
-          </div>
-        </div> --}}
+{{!-- WILL ADD IN 2 TASK MODALS, ONE WITH INPUTS TO ADD, ONE WITH GENERATED DATA --}}
+{{!-- THEN LINK UP WITH HARRYS CODE --}}
+
+{{!-- Create new task Modal --}}
+{{!-- NEEDS ALL THE INPUT FIELDS ADDED FOR TASK CREATION --}}
+<div class="modal" id="task-create-modal" tabindex="-1">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title">Add New Task</h5>
+        <button
+          type="button"
+          class="close"
+          data-dismiss="modal"
+          aria-label="Close"
+        >
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <div class="form-group">
+          <label for="proj-title" class="text-left">Title:</label>
+          <input
+            type="text"
+            class="form-control"
+            id="proj-title"
+            aria-describedby="add-title"
+            placeholder="Project Title"
+          />
+          {{! <small id="add-title" class="form-text text-muted">Placeholder</small> }}
+        </div>
+        <div class="form-group">
+          <label for="proj-description" class="text-left">Description:</label>
+          <input
+            type="text"
+            class="form-control"
+            id="proj-description"
+            placeholder="Brief Description"
+          />
+        </div>
+      </div>
+      <div class="modal-footer">
+        <button
+          type="button"
+          class="btn btn-secondary"
+          data-dismiss="modal"
+        >Cancel</button>
+        <button type="button" class="btn btn-dark">Add</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+{{!-- View task Modal --}}
+{{!-- NEEDS ALL THE SECTIONS FOR A FULLY CREATED TASK AND ALL ITS DATA --}}
+{{!-- AND STYLING --}}
+<div class="modal" id="task-view-modal" tabindex="-1">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title">Add Project</h5>
+        <button
+          type="button"
+          class="close"
+          data-dismiss="modal"
+          aria-label="Close"
+        >
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <div class="form-group">
+          <label for="proj-title" class="text-left">Title:</label>
+          <input
+            type="text"
+            class="form-control"
+            id="proj-title"
+            aria-describedby="add-title"
+            placeholder="Project Title"
+          />
+          {{! <small id="add-title" class="form-text text-muted">Placeholder</small> }}
+        </div>
+        <div class="form-group">
+          <label for="proj-description" class="text-left">Description:</label>
+          <input
+            type="text"
+            class="form-control"
+            id="proj-description"
+            placeholder="Brief Description"
+          />
+        </div>
+      </div>
+      <div class="modal-footer">
+        <button
+          type="button"
+          class="btn btn-secondary"
+          data-dismiss="modal"
+        >Cancel</button>
+        <button type="button" class="btn btn-dark">Add</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+
 
         {{!-- <div id="taskDetailModal" class="modal">
         <div class="modal-content">
