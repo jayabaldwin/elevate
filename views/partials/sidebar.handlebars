@@ -1,36 +1,29 @@
-<aside
-  class="d-flex flex-column flex-shrink-0 p-3 text-white bg-dark"
-  style="width: 280px"
->
+<aside class="d-flex flex-column flex-shrink-0 p-3 text-white bg-dark" style="width: 280px">
 
-  <a class="navbar-brand" href="#Home"><img
-      src="/images/Logo.png"
-      width="200"
-      alt="Logo"
-    /></a>
+  <a class="navbar-brand" href="#Home"><img src="/images/Logo.png" width="200" alt="Logo" /></a>
 
   <ul class="nav nav-pills flex-column mb-auto">
     <li class="nav-item">
       <a href="#Home" class="nav-link text-white" aria-current="page">
-        <svg class="bi me-2" width="16" height="16"><use
-            xlink:href="#home"
-          ></use></svg>
+        <svg class="bi me-2" width="16" height="16">
+          <use xlink:href="#home"></use>
+        </svg>
         Home
       </a>
     </li>
     <li>
       <a href="#Groups" class="nav-link text-white">
-        <svg class="bi me-2" width="16" height="16"><use
-            xlink:href="#speedometer2"
-          ></use></svg>
+        <svg class="bi me-2" width="16" height="16">
+          <use xlink:href="#speedometer2"></use>
+        </svg>
         Groups
       </a>
     </li>
     <li>
       <a href="#Projects" class="nav-link text-white">
-        <svg class="bi me-2" width="16" height="16"><use
-            xlink:href="#table"
-          ></use></svg>
+        <svg class="bi me-2" width="16" height="16">
+          <use xlink:href="#table"></use>
+        </svg>
         Projects
       </a>
     </li>
@@ -38,16 +31,12 @@
 
   <div class="container-fluid">
     <form class="d-flex" role="search">
-      <input
-        class="form-control me-2"
-        type="search"
-        placeholder="Search"
-        aria-label="Search"
-      />
+      <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search" />
       <button class="btn btn-outline-success" type="submit">Search</button>
     </form>
   </div>
-
+  {{> chat}}
 </aside>
 
-{{! <script src="/js/sidebar.js"></script> }}
+{{!
+<script src="/js/sidebar.js"></script> }}

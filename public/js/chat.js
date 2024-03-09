@@ -15,18 +15,18 @@ socket.on('message', (message) => {
 });
 
 async function displayMessage(message) {
-    const currentUser = await getCurrentUser();
     const messageElement = document.createElement('div');
-    console.log(currentUser);
-    messageElement.textContent = `${currentUser.first}: ${message}`;
+    messageElement.textContent = message;
     chatWindow.appendChild(messageElement);
     chatWindow.scrollTop = chatWindow.scrollHeight;
 }
 
-document.getElementById('messageForm').addEventListener('submit', (event) => {
+document.getElementById('messageForm').addEventListener('submit', async (event) => {
     event.preventDefault();
+    const currentUser = await getCurrentUser();
     const messageInput = document.getElementById('messageInput');
-    const message = messageInput.value;
+    const message = `${currentUser.first}: ${messageInput.value}`;
+
     sendMessage(message);
     messageInput.value = '';
 });
