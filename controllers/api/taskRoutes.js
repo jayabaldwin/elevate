@@ -1,72 +1,72 @@
-const router = require('express').Router();
-const { Task, User } = require('../../models');
+const router = require("express").Router();
+const { Task, User } = require("../../models");
 // end route is /api/tasks
 
 // Get all tasks
-router.get('/', async (req, res) => {
+router.get("/", async (req, res) => {
   try {
     const taskData = await Task.findAll();
     res.json(taskData);
   } catch (err) {
     console.error(err);
-    res.status(500).send('Internal Server Error');
+    res.status(500).send("Internal Server Error");
   }
 });
 
 // Get a single task by ID
-router.get('/:id', async (req, res) => {
+router.get("/:id", async (req, res) => {
   try {
     const task = await Task.findByPk(req.params.id);
     if (!task) {
-      res.status(404).send('Task not found');
+      res.status(404).send("Task not found");
       return;
     }
     res.json(task);
   } catch (err) {
     console.error(err);
-    res.status(500).send('Internal Server Error');
+    res.status(500).send("Internal Server Error");
   }
 });
 
 // Create a new task
-router.post('/', async (req, res) => {
+router.post("/", async (req, res) => {
   try {
     const task = await Task.create(req.body);
     res.status(201).json(task);
   } catch (err) {
     console.error(err);
-    res.status(500).send('Internal Server Error');
+    res.status(500).send("Internal Server Error");
   }
 });
 
 // Update a task by ID
-const taskStatus = ['to-do', 'in-progress', 'completed'];
+const taskStatus = ["to-do", "in-progress", "completed"];
 
-router.put('/:id', async (req, res) => {
+router.put("/:id", async (req, res) => {
   try {
     const task = await Task.findByPk(req.params.id);
     if (!task) {
-      res.status(404).send('Task not found');
+      res.status(404).send("Task not found");
       return;
     }
     if (req.body.status && !taskStatus.includes(req.body.status)) {
-      return res.status(400).send('Invalid Status');
+      return res.status(400).send("Invalid Status");
     }
-    
+
     await task.update(req.body);
     res.json(task);
   } catch (err) {
     console.error(err);
-    res.status(500).send('Internal Server Error');
+    res.status(500).send("Internal Server Error");
   }
 });
 
 // Delete a task by ID
-router.delete('/:id', async (req, res) => {
+router.delete("/:id", async (req, res) => {
   try {
     const task = await Task.findByPk(req.params.id);
     if (!task) {
-      res.status(404).send('Task not found');
+      res.status(404).send("Task not found");
       return;
     }
     await Task.destroy({
@@ -77,31 +77,33 @@ router.delete('/:id', async (req, res) => {
     res.status(204).send();
   } catch (err) {
     console.error(err);
-    res.status(500).send('Internal Server Error');
+    res.status(500).send("Internal Server Error");
   }
 });
 
-//Getting taskcard by id
-router.get('/:id/details', async (req, res) => {
+// Getting taskcard by id
+router.get("/:id/details", async (req, res) => {
   try {
     const task = await Task.findByPk(req.params.id, {
-      include: [{
-        model: User,
-        attributes: ['first', 'last']
-      }]
+      include: [
+        {
+          model: User,
+          attributes: ["first", "last"],
+        },
+      ],
     });
 
     if (!task) {
-      return res.status(404).send('Task not found');
+      return res.status(404).send("Task not found");
     }
 
-    res.render('taskcard', {
+    res.render("taskcard", {
       layout: false,
-      task: task.get({ plain: true })
+      task: task.get({ plain: true }),
     });
   } catch (error) {
-    console.error('Error fetching task details:', error);
-    res.status(500).send('Internal Server Error');
+    console.error("Error fetching task details:", error);
+    res.status(500).send("Internal Server Error");
   }
 });
 

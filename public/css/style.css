@@ -83,7 +83,7 @@ p {
 
 
 /* Animation */
-.animate {
+/* .animate {
     transition: transform 1s ease-in-out;
 }
 
@@ -94,6 +94,7 @@ p {
 .show {
     transform: translateY(100%);
 }
+   */
 
 .hide {
     display: none;
@@ -191,6 +192,10 @@ aside .nav-pills .nav-link:hover {
     background-color: #ddd;
 }
 
+
+/* Change background color of logout button on hover */
+.logout-button:hover {background-color: #343a40;}
+
 /* Show the dropdown menu on hover */
 .dropdown:hover .dropdown-content {
     display: block;
@@ -204,4 +209,8 @@ aside .nav-pills .nav-link:hover {
 /* Change background color of logout button on hover */
 .logout-button:hover {
     background-color: #343a40;
+}
+
+.dropdown-content {
+    width: 100%;
 }

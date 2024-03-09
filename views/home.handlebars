@@ -1,6 +1,5 @@
 {{! Will need to add sortable.Js to main.handlebars }}
 
-<body>
   <div class="container-fluid">
     <!-- Sidebar -->
     <div class="sidebar">
@@ -28,7 +27,7 @@
                   </ul>
                 </div>
                 <div class="card-footer">
-                  <button type="button" class="btn btn-outline-dark btn-block"><i class="fa-regular fa-square-plus"
+                  <button type="button" class="btn btn-outline-dark btn-block" data-toggle="modal" data-target="#project-modal"><i class="fa-regular fa-square-plus"
                       style="color: #000000;"></i> Add Item</button>
                 </div>
               </div>
@@ -53,7 +52,7 @@
                   </ul>
                 </div>
                 <div class="card-footer">
-                  <button type="button" class="btn btn-outline-dark btn-block"><i class="fa-regular fa-square-plus"
+                  <button type="button" class="btn btn-outline-dark btn-block" data-toggle="modal" data-target="#project-modal"><i class="fa-regular fa-square-plus"
                       style="color: #000000;"></i> Add Item</button>
                 </div>
               </div>
@@ -77,7 +76,7 @@
                   </ul>
                 </div>
                 <div class="card-footer">
-                  <button type="button" class="btn btn-outline-dark btn-block"><i class="fa-regular fa-square-plus"
+                  <button type="button" class="btn btn-outline-dark btn-block" data-toggle="modal" data-target="#project-modal"><i class="fa-regular fa-square-plus"
                       style="color: #000000;"></i> Add Item</button>
                 </div>
               </div>
@@ -85,68 +84,36 @@
           </div>
         </div>
       </div>
-    </div>
-  </div>
-  </div>
-  <div id="taskDetailModal" class="modal">
-    <div class="modal-content">
-      {{! Fetched task details in here}}
-    </div>
-    <span class="close" onclick="closeModal()">&times;</span>
-  </div>
-  <script src="https://cdn.jsdelivr.net/npm/sortablejs@1.14.0/Sortable.min.js"></script>
-  <script src="/js/sortable.js"></script>
-  <script src="/js/taskCardModal.js"></script>
-</body>
-
-{{!-- Translate this into task.handlebars--}}
-{{!-- <main class="col-md-9">
-  <section id="task-board" class="row">
-    {{! To Do}}
-    <div class="task-column col-md-4" id="to-do">
-      <h2 class="h4 my-3">To Do</h2>
-      <div class="task-list list-group" id="to-do-task">
-        {{! Will load in tasks here}}
-        {{#each tasks.toDo as |task|}}
-        <div class="task-card list-group-item" data-id="{{task.id}}">
-          <h3>{{task.title}}</h3>
-          <p>{{task.contents}}</p>
-          <p>{{task.deadline}}</p>
+  </div> 
+  
+      {{!-- <div id="taskDetailModal" class="modal">
+        <div class="modal-content">
+          {{! Fetched task details in here}}
         </div>
-        {{/each}}
-      </div>
-      <button class="create-task">CREATE NEW TASK</button>
-    </div>
-    {{! In Progress}}
-    <div class="task-column col-md-4" id="in-progress">
-      <h2 class="h4 my-3">In Progress</h2>
-      <div class="task-list list-group" id="in-progress-task">
-        {{! Load in - in progess tasks}}
-        {{#each tasks.inProgress as |task|}}
-        <div class="task-card list-group-item" data-id="{{task.id}}">
-          <h3>{{task.title}}</h3>
-          <p>{{task.contents}}</p>
-          <p>{{task.deadline}}</p>
-        </div>
-        {{/each}}
-      </div>
-    </div>
-    {{! Completed}}
-    <div class="task-column col-md-4" id="completed">
-      <h2 class="h4 my-3">Completed</h2>
-      <div class="task-list list-group" id="completed-task">
-        {{! Add in completed tasks here}}
-        {{#each tasks.completed as |task|}}
-        <div class="task-card list-group-item" data-id="{{task.id}}">
-          <h3>{{task.title}}</h3>
-          <p>{{task.contents}}</p>
-          <p>{{task.deadline}}</p>
-        </div>
-        {{/each}}
-      </div>
-    </div>
-  </section>
-</main> --}}
+        <span class="close" onclick="closeModal()">&times;</span>
+      </div> --}}
 
 
-{{! Will either NPM install sortable or have to use a library }}
+      {{!-- Add task, basic modal, will be added to, to incorporate all the fields --}}
+      <div class="modal" id="project-modal" tabindex="-1">
+          <div class="modal-dialog" >
+            <div class="modal-content">
+              <div class="modal-header">
+                <h5 class="modal-title">Modal title</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                  <span aria-hidden="true">&times;</span>
+                </button>
+              </div>
+              <div class="modal-body">
+                <p>Modal body text goes here.</p>
+              </div>
+              <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                <button type="button" class="btn btn-primary">Save changes</button>
+              </div>
+            </div>
+          </div>
+        </div>
+<script src="https://cdn.jsdelivr.net/npm/sortablejs@1.14.0/Sortable.min.js"></script>
+<script src="/js/sortable.js"></script>
+<script src="/js/taskCardModal.js"></script>
