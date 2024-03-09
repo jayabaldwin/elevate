@@ -1,7 +1,7 @@
 const { Model, DataTypes } = require('sequelize');
 const sequelize = require('../config/connection');
 
-class TaskUser extends Model {}
+class TaskUser extends Model { }
 
 // Intermediary model for storing the associations between Task and User.
 TaskUser.init(
@@ -15,10 +15,18 @@ TaskUser.init(
     user_id: {
       type: DataTypes.STRING,
       allowNull: false,
+      references: {
+        model: 'user',
+        key: 'id',
+      },
     },
     task_id: {
       type: DataTypes.STRING,
       allowNull: false,
+      references: {
+        model: 'task',
+        key: 'id',
+      },
     },
   },
   {

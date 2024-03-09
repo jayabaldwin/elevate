@@ -60,4 +60,15 @@ router.post("/logout", (req, res) => {
   }
 });
 
+router.get("/current", async (req, res) => {
+  if (req.session.logged_in) {
+    const userData = await User.findOne({
+      where: { id: req.session.user_id },
+    });
+    res.status(200).json(userData);
+  } else {
+    res.status(404).end();
+  }
+});
+
 module.exports = router;
