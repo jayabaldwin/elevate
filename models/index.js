@@ -3,7 +3,11 @@ const User = require('./User');
 const Project = require('./Project');
 const Task = require('./Task');
 const Comment = require('./Comment');
-const TaskUser = require('./TaskUser')
+const TaskUser = require('./TaskUser');
+const ProjectUser = require('./ProjectUser');
+const ChatLine = require('./ChatLine');
+
+
 
 // ESTABLISH RELATIONSHIPS
 
@@ -29,6 +33,14 @@ Project.belongsTo(Workspace, {
 Project.hasMany(Task, {
     foreignKey: 'project_id'
 });
+
+Project.belongsToMany(User, {
+    through: ProjectUser, foreignKey: 'project_id'
+})
+
+Project.hasMany(ChatLine, {
+    foreignKey: 'user_id'
+})
 
 // Task
 // Belongs to one Project
@@ -64,6 +76,14 @@ User.hasMany(Comment, {
     foreignKey: 'user_id'
 });
 
+User.belongsToMany(Project, {
+    through: ProjectUser, foreignKey: 'user_id'
+})
+
+User.hasMany(ChatLine, {
+    foreignKey: 'user_id'
+})
+
 // Comment
 // Belongs to one Task
 // Belongs to one User
@@ -77,4 +97,17 @@ Comment.belongsTo(User, {
     foreignKey: 'user_id'
 });
 
-module.exports = { Workspace, User, Project, Task, Comment, TaskUser };
+// ChatLine
+// Belongs to one Project
+// Belongs to one User
+
+ChatLine.belongsTo(Project, {
+    foreignKey: 'project_id'
+})
+
+ChatLine.belongsTo(User, {
+    foreignKey: 'user_id'
+})
+
+
+module.exports = { Workspace, User, Project, Task, Comment, TaskUser, ProjectUser, ChatLine };
