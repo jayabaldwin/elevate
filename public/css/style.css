@@ -82,9 +82,9 @@ p {
     transform: translateY(100%);
 }
    */
-/* .hide {
+.hide {
     display: none;
-} */
+}
 
 /* Sidebar link hover styling */
 aside .nav-pills .nav-link:hover {
