@@ -1,7 +1,7 @@
-const { Model, DataTypes } = require('sequelize');
-const sequelize = require('../config/connection');
+const { Model, DataTypes } = require("sequelize");
+const sequelize = require("../config/connection");
 
-class Project extends Model { }
+class Project extends Model {}
 
 Project.init(
   {
@@ -15,11 +15,15 @@ Project.init(
       type: DataTypes.STRING,
       allowNull: false,
     },
+    description: {
+      type: DataTypes.STRING,
+      allowNull: false,
+    },
     workspace_id: {
       type: DataTypes.INTEGER,
       references: {
-        model: 'workspace',
-        key: 'id',
+        model: "workspace",
+        key: "id",
       },
     },
   },
@@ -28,7 +32,7 @@ Project.init(
     timestamps: false,
     freezeTableName: true,
     underscored: true,
-    modelName: 'project',
+    modelName: "project",
   }
 );
 
