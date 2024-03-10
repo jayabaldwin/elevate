@@ -87,7 +87,7 @@
 {{!-- CONNECT BOTH WITH taskcard.js --}}
 {{!-- Will need post request with event listener by id: task-add-btn to add to database --}}
 {{!-- Create task Modal --}}
-<div class="modal fade" id="task-create-modal" tabindex="-1">
+<div class="modal fade" id="task-create-modal" tabindex="-1" data-project-id="{{project.id}}">
   <div class="modal-dialog modal-dialog-centered">
     <div class="modal-content">
       <div class="modal-header">
@@ -124,15 +124,16 @@
             required
           />
         </div>
-        {{!-- <div class="form-group">
+        <div class="form-group">
           <label for="task-deadline" class="text-left">Deadline:</label>
           <input
-            type="text"
+            type="date"
             class="form-control"
             id="task-deadline"
             placeholder="Enter deadline"
+            required
           />
-        </div> --}}
+        </div>
       </div>
       <div class="modal-footer">
         <button
