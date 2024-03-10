@@ -8,19 +8,12 @@ const withAuth = require("../../utils/auth");
 // Connect post request to modal that is displayed in 2 locations (navbar and dashboard card)
 router.get("/", withAuth, async (req, res) => {
   try {
-    const workspaceData = await Workspace.findAll({
-      include: [{ model: Project, include: Task }],
-    });
+    const projectData = await Project.findAll();
 
-    const workspaces = [];
+    const projectDataPlain = projectData.map(project => project.get({ plain: true }));
 
-    workspaceData.forEach((workspace) => {
-      workspacePlain = workspace.get({ plain: true });
-      workspaces.push(workspacePlain);
-    });
-
-    res.render("dashboard", {
-      workspaces,
+    res.render('dashboard', {
+      projectDataPlain
     });
   } catch (err) {
     res.status(500).json(err);
@@ -28,11 +21,9 @@ router.get("/", withAuth, async (req, res) => {
 });
 
 // Selecting a project will display individual project by id
-router.get("/:id", withAuth, async (req, res) => {
+router.get('/:id', /* withAuth, */ async (req, res) => {
   try {
-    const projectData = await Project.findByPk(req.params.id, {
-      include: [{ model: Workspace }, { model: User, attributes: ["name"] }],
-    });
+    const projectData = await Project.findByPk(req.params.id);
 
     if (!projectData) {
       res
@@ -40,7 +31,13 @@ router.get("/:id", withAuth, async (req, res) => {
         .json({ message: "Error finding Project matching this id" });
       return;
     }
+    projectDataPlain = projectData.get({ plain: true })
+
     res.status(200).json(projectData);
+
+    // res.render('tasks', {
+    //   projectDataPlain
+    // });
   } catch (err) {
     res.status(500).json(err);
   }
@@ -51,12 +48,11 @@ router.post("/", withAuth, async (req, res) => {
   try {
     const newProject = await Project.create({
       ...req.body,
-      workspace_id: req.session.workspace_id,
-      user_id: req.session.user_id,
+      workspace_id: req.session.workspace_id
     });
     res.status(200).json(newProject);
   } catch (err) {
-    res.json(500).json(err);
+    res.status(500).json(err);
   }
 });
 

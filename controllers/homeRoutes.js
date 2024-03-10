@@ -1,5 +1,5 @@
 const router = require("express").Router();
-const { User, Workspace, Task } = require("../models");
+const { User, Workspace, Task, Project } = require("../models");
 // Import the custom middleware
 const withAuth = require("../utils/auth");
 
@@ -64,7 +64,7 @@ router.get("/home", withAuth, async (req, res) => {
     const toDoTasks = user.Tasks ? user.Tasks.filter(task => task.status === 'to-do') : [];
     const inProgressTasks = user.Tasks ? user.Tasks.filter(task => task.status === 'in-progress') : [];
     const completedTasks = user.Tasks ? user.Tasks.filter(task => task.status === 'completed') : [];
-    
+
     res.render("home", {
       user: user.get({ plain: true }),
       workspace: workspaceData.get({ plain: true }),
@@ -102,18 +102,22 @@ router.get("/invite", withAuth, async (req, res) => {
 // Projects also need to render here
 router.get("/dashboard", withAuth, async (req, res) => {
   try {
-    const user = await User.findByPk(req.session.user_id);
-    if (!user) {
-      return res.status(404).json({ message: "User not found" });
-    }
+
     const workspaceData = await Workspace.findOne({
-      where: { id: user.workspace_id },
+      where: { id: req.session.workspace_id },
     });
     if (!workspaceData) {
       return res.status(404).json({ message: "Workspace not found" });
     }
+
+    const projectData = await Project.findAll({
+      where: { workspace_id: req.session.workspace_id }
+    })
+
+    const projects = projectData.map(project => project.get({ plain: true }));
     const workspace = workspaceData.get({ plain: true });
-    res.render("dashboard", { workspace }); // Pass workspace as an object
+
+    res.render("dashboard", { workspace, projects }); // Pass workspace as an object
   } catch (err) {
     res.status(500).json({ message: err.message });
   }
