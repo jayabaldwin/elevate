@@ -5,8 +5,7 @@ document.addEventListener('DOMContentLoaded', function() {
             animation: 150,
             onEnd: function (event) {
                 var sortableTask = event.item;  // the task being moved
-                var setStatus = '';
-
+                let setStatus = '';
                 switch (event.to.id) {
                     case 'to-do-task':
                         setStatus = 'to-do';
@@ -18,8 +17,8 @@ document.addEventListener('DOMContentLoaded', function() {
                         setStatus = 'completed';
                         break;
                 }
-                event.preventDefault();
-                var taskId = sortableTask.getAttribute('data-id');  // Getting task id
+                
+                const taskId = sortableTask.getAttribute('data-id');  // Getting task id
                 if (taskId) {
                     updateStatus(taskId, setStatus);
                 }
@@ -29,23 +28,20 @@ document.addEventListener('DOMContentLoaded', function() {
 });
 
 function updateStatus(taskId, setStatus) {
-    fetch('/api/tasks/' + taskId, {
+    console.log('Updating status for task', taskId, 'to', setStatus);
+    fetch('api/tasks/' + taskId, {
         method: 'PUT',
         headers: {
             'Content-Type': 'application/json',
         },
         body: JSON.stringify({ status: setStatus })
     })
-    .then(response => {
-        if (!response.ok) {
-            throw new Error('Network response was not ok: ' + response.statusText);
-        }
-        return response.json();
-    })
-    .then(data => {
-        console.log('Task updated: ', data);
+    .then(response => response.json())
+    .then(data => { 
+        console.log('Task updated ', data);
     })
     .catch((error) => {
-        console.error('Error updated status: ', error);
+        console.error('Error updating status: ', error);
+        
     });
 }
