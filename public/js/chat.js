@@ -4,9 +4,11 @@ const chatWindow = document.getElementById('chatWindow');
 const projectId = 1;
 socket.emit('joinProjectRoom', projectId);
 
-function sendMessage(message) {
-    socket.emit('chatMessage', { projectId, message });
+async function sendMessage(message) {
+    const currentUser = await getCurrentUser();
     saveMessage(message, projectId);
+    message = `${currentUser.first}: ${message}`;
+    socket.emit('chatMessage', { projectId, message });
 }
 
 socket.on('message', (message) => {
@@ -15,10 +17,8 @@ socket.on('message', (message) => {
 });
 
 async function displayMessage(message) {
-    const currentUser = await getCurrentUser();
     const messageElement = document.createElement('div');
-    console.log(currentUser);
-    messageElement.textContent = `${currentUser.first}: ${message}`;
+    messageElement.textContent = message;
     chatWindow.appendChild(messageElement);
     chatWindow.scrollTop = chatWindow.scrollHeight;
 }
