@@ -6,7 +6,11 @@ document.addEventListener("DOMContentLoaded", async () => {
     projectList.innerHTML = ""; // Clear any existing content
     data.forEach(project => {
       const li = document.createElement("li");
-      li.textContent = `${project.name}`; // 
+      const link = document.createElement("a");
+      link.textContent = `${project.name}`;
+      link.href = `/projects/${project.id}`; // Assuming project id is unique and can be used as part of the project's URL
+      link.classList.add("text-dark"); // Add this line to add the text-dark class to the link
+      li.appendChild(link);
       projectList.appendChild(li);
     });
   } catch (error) {
