@@ -143,12 +143,65 @@ aside .nav-pills .nav-link:hover {
 }
 
 #chatWindow {
-    margin-top: 100px;
-    height: 120px;
+    height: 250px;
     overflow: scroll;
     overflow-x: hidden;
-    background-color: #f45474;
 }
+
+.chat-line {
+    margin: 5 0 5 0;
+    gap: 3px;
+}
+
+.user {
+    font-weight: bolder;
+    color: black;
+}
+
+.message {
+    color: black;
+}
+
+.chat-line {
+    padding: 5px;
+    border-radius: 5px;
+}
+
+.chat-line.even {
+    background-color: rgba(244, 84, 116, 0.5);
+}
+
+.chat-line.odd {
+    background-color: rgba(106, 130, 251, 0.5);
+}
+
+#messageForm {
+    margin: 0px;
+    display: flex;
+    flex-direction: column;
+    max-width: 100%;
+}
+
+#messageForm>button {
+    border-color: rgba(106, 130, 251, 0.5);
+    background-color: rgba(106, 130, 251, 0.5);
+    border-radius: 0 0 5px 5px;
+    font-weight: bolder;
+}
+
+#messageInput {
+    overflow: auto;
+    resize: none;
+    white-space: pre-wrap;
+    height: 50px;
+    border-radius: 5px 5px 0 0;
+}
+
+.card-body.chat {
+    padding: 10px;
+}
+
+
 
 /* Dropdown Button */
 /* .dropbtn {
@@ -190,7 +243,9 @@ aside .nav-pills .nav-link:hover {
 
 
 /* Change background color of logout button on hover */
-.logout-button:hover {background-color: #343a40;}
+.logout-button:hover {
+    background-color: #343a40;
+}
 
 /* Show the dropdown menu on hover */
 .dropdown:hover .dropdown-content {
@@ -214,7 +269,7 @@ aside .nav-pills .nav-link:hover {
 #proj-description {
     white-space: normal;
     word-wrap: break-word;
-  }
+}
 
 .hide {
     display: none;
