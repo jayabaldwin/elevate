@@ -70,11 +70,11 @@ router.get("/home", withAuth, async (req, res) => {
     });
 
     const allTasks = projectData.reduce((tasks, project) => {
-      if(Array.isArray(project.tasks)) {
-      tasks.push(...project.tasks);
+      if (Array.isArray(project.tasks)) {
+        tasks.push(...project.tasks);
       }
       return tasks;
-   }, []);
+    }, []);
     //filtering tasks by status
     const toDoTasks = allTasks.filter(task => task.status === 'to-do');
     const inProgressTasks = allTasks.filter(task => task.status === 'in-progress');
@@ -116,17 +116,23 @@ router.get("/invite", withAuth, async (req, res) => {
 
 // Projects also need to render here
 router.get("/dashboard", withAuth, async (req, res) => {
+
+  // const workspace_id = req.session.workspace_id;
   try {
+    const user = await User.findByPk(req.session.user_id);
+    if (!user) {
+      return res.status(404).json({ message: "User not found" });
+    }
 
     const workspaceData = await Workspace.findOne({
-      where: { id: req.session.workspace_id },
+      where: { id: user.workspace_id },
     });
     if (!workspaceData) {
       return res.status(404).json({ message: "Workspace not found" });
     }
 
     const projectData = await Project.findAll({
-      where: { workspace_id: req.session.workspace_id }
+      where: { workspace_id: user.workspace_id }
     })
 
     const projects = projectData.map(project => project.get({ plain: true }));
