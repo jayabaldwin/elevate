@@ -4,9 +4,11 @@ const chatWindow = document.getElementById('chatWindow');
 const projectId = 1;
 socket.emit('joinProjectRoom', projectId);
 
-function sendMessage(message) {
-    socket.emit('chatMessage', { projectId, message });
+async function sendMessage(message) {
+    const currentUser = await getCurrentUser();
     saveMessage(message, projectId);
+    message = `${currentUser.first}: ${message}`;
+    socket.emit('chatMessage', { projectId, message });
 }
 
 socket.on('message', (message) => {
@@ -21,12 +23,10 @@ async function displayMessage(message) {
     chatWindow.scrollTop = chatWindow.scrollHeight;
 }
 
-document.getElementById('messageForm').addEventListener('submit', async (event) => {
+document.getElementById('messageForm').addEventListener('submit', (event) => {
     event.preventDefault();
-    const currentUser = await getCurrentUser();
     const messageInput = document.getElementById('messageInput');
-    const message = `${currentUser.first}: ${messageInput.value}`;
-
+    const message = messageInput.value;
     sendMessage(message);
     messageInput.value = '';
 });

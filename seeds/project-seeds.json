@@ -1,46 +1,57 @@
 [
   {
     "name": "Project Delta",
-    "workspace_id": 1
+    "workspace_id": 1,
+    "description": "An innovative project aimed at enhancing productivity within the workspace."
   },
   {
     "name": "Project Alpha",
-    "workspace_id": 3
+    "workspace_id": 3,
+    "description": "A groundbreaking project focused on revolutionizing the workspace environment."
   },
   {
     "name": "Project Zeta",
-    "workspace_id": 2
+    "workspace_id": 2,
+    "description": "A cutting-edge project designed to streamline operations within the workspace."
   },
   {
     "name": "Project Gamma",
-    "workspace_id": 3
+    "workspace_id": 3,
+    "description": "An ambitious project dedicated to fostering collaboration and teamwork within the workspace."
   },
   {
     "name": "Project Omega",
-    "workspace_id": 1
+    "workspace_id": 1,
+    "description": "A comprehensive project aimed at optimizing resources and maximizing efficiency in the workspace."
   },
   {
     "name": "Project Beta",
-    "workspace_id": 2
+    "workspace_id": 2,
+    "description": "An innovative project focused on driving growth and innovation within the workspace."
   },
   {
     "name": "Project Sigma",
-    "workspace_id": 3
+    "workspace_id": 3,
+    "description": "A dynamic project dedicated to promoting creativity and innovation within the workspace."
   },
   {
     "name": "Project Epsilon",
-    "workspace_id": 1
+    "workspace_id": 1,
+    "description": "A transformative project aimed at driving positive change and progress within the workspace."
   },
   {
     "name": "Project Theta",
-    "workspace_id": 2
+    "workspace_id": 2,
+    "description": "A forward-thinking project focused on implementing new strategies and technologies within the workspace."
   },
   {
     "name": "Project Kappa",
-    "workspace_id": 3
+    "workspace_id": 3,
+    "description": "An impactful project dedicated to improving communication and collaboration within the workspace."
   },
   {
     "name": "Project Lambda",
-    "workspace_id": 1
+    "workspace_id": 1,
+    "description": "A strategic project aimed at achieving key objectives and goals within the workspace."
   }
 ]
