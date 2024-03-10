@@ -10,29 +10,27 @@
 </nav>
 
 <div class="row justify-content-center" id="workplace-create">
-  <div class="col-md-6 mt-5">
-    <h1 class="text-center text-white mb-4">Welcome to, {{workspace.name}}!</h1>
+  <div class="col-md-8 mt-5">
+    <h1 class="text-center text-white mb-4">Expand your {{workspace.name}} team!</h1>
     <h3 class="text-center mb-4">Would you like to send out invites?</h3>
     <h4 class="text-center">(Or you can save the code to be used later)</h4>
     <form id="workspaceForm">
       <div class="form-row justify-content-center">
-        <div class="form-group col-md-6">
+        <div class="form-group col-md-8">
 
-          <div class="alert alert-dark text-center" id="code-success" role="alert">
-            Code Successfully Generated: {{workspace.join_code}}
-          </div>
-          <div>
-            <button type="button" id="add-btn" class="btn">Add A User</button>
+          <button class="btn btn-outline-light btn-block user-select-all" id="code-success" role="alert" onclick="copyToClipboard()"><i class="fa-regular fa-clipboard" style="color: #ffffff;"></i>{{workspace.join_code}}
+          </button>
+          <div class="row">
             <form id="invite-form">
               <div id="email-container">
                 <input type="hidden" id="join_code" value="{{workspace.join_code}}" />
-                <input type="email" class="email" placeholder="Enter email" />
+                <input type="email" class="email d-inline" placeholder="Enter email" />
               </div>
-              <button type="submit" id="submit-btn">Submit All Invites</button>
+              <button type="button" id="add-btn" class="btn btn-outline-light">Add A User</button>
+              <button type="submit" class="btn btn-outline-light btn-block" id="submit-btn">Submit All Invites</button>
             </form>
           </div>
-          <button type="button" class="btn btn-outline-light btn-block" id="enter-workspace-invite">Enter
-            Workspace</button>
+          <button type="button" class="btn btn-outline-light btn-block" id="enter-workspace-invite">{{workspace.name}}</button>
         </div>
       </div>
 
