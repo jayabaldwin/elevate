@@ -1,37 +1,21 @@
 <nav class="navbar bg-body-tertiary bg-transparent mb-3 mt-3">
   <div class="container-fluid flex-nowrap">
-    <div class="navbar-brand"><h1
-        class="text-white"
-      >{{workspace.name}}</h1></div>
-    <div
-      class="collapse navbar-collapse d-flex flex-row-reverse"
-      id="navbarNavDropdown"
-    >
-      <button
-        class="nav-link text-white btn btn-outline-light logout-button mx-4"
-        id="logout-button"
-        type="submit"
-      >Logout</button>
+    <div class="navbar-brand">
+      <h1 class="text-white">{{workspace.name}}</h1>
+    </div>
+    <div class="collapse navbar-collapse d-flex flex-row-reverse" id="navbarNavDropdown">
+      <button class="nav-link text-white btn btn-outline-light logout-button mx-4" id="logout-button"
+        type="submit">Logout</button>
       <div class="dropdown">
-        <button class="dropbtn text-white btn btn-outline-light px-2 py-2"><i
-            class="fa-regular fa-square-plus"
-            style="color: #ffffff;"
-          ></i>
+        <button class="dropbtn text-white btn btn-outline-light px-2 py-2"><i class="fa-regular fa-square-plus"
+            style="color: #ffffff;"></i>
           New
-          <i
-            class="fa-solid fa-caret-down"
-            style="color: #ffffff;"
-          ></i></button>
+          <i class="fa-solid fa-caret-down" style="color: #ffffff;"></i></button>
         <div class="dropdown-content">
-          <a href="#" data-toggle="modal" data-target="#project-modal"><i
-              class="fa-solid fa-list-check"
-              style="color: #000000;"
-            ></i>
+          <a href="#" data-toggle="modal" data-target="#project-modal"><i class="fa-solid fa-list-check"
+              style="color: #000000;"></i>
             Project</a>
-          <a href="/invite"><i
-              class="fa-regular fa-paper-plane"
-              style="color: #000000;"
-            ></i>
+          <a href="/invite"><i class="fa-regular fa-paper-plane" style="color: #000000;"></i>
             Invite</a>
         </div>
       </div>
@@ -39,8 +23,8 @@
   </div>
 </nav>
 
-{{> projectModal}}
+{{!-- {{> projectModal}} --}}
 
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.min.js"></script>
 <script src="/js/logout.js"></script>
 <script src="/js/invite.js"></script>
-<script src="/js/project.js"></script>

@@ -1,35 +1,35 @@
 <div class="container-fluid">
     <!-- Sidebar -->
     <div class="sidebar">
-      {{> sidebar}}
+        {{> sidebar}}
     </div>
 
     <!-- Page content -->
     <div class="content">
-      {{> navbar }}
-      <div class="container">
-        <div class="row">
-            <div class="col">
-                {{!-- RENDER SORTABLE PROJECT TILES --}}
-                {{!-- Render --}}
-                {{#each projects}}
-                <div class="card text-white bg-dark mb-3" style="max-width: 18rem;">
-                    <div class="card-header">Open Project</div>
+        {{> navbar }}
+        <div class="container">
+            <div class="row">
+                <div class="col">
+                    {{!-- RENDER SORTABLE PROJECT TILES --}}
+                    {{!-- Render --}}
+                    {{#each projects}}
+                    <div class="card text-white bg-dark mb-3" style="max-width: 18rem;">
+                        <div class="card-header">Open Project</div>
                         <div class="card-body">
                             <h5 class="card-title">{{name}}</h5>
-                                <p class="card-text">{{description}}</p>   
-                        </div>
-                </div>
-                {{/each}}
-                <button class="btn btn-dark" data-toggle="modal" data-target="#project-modal">
-                    <div class="card text-white bg-dark mb-3" style="max-width: 18rem;">
-                            <div class="card-body">
-                                <h5 class="card-title">
-                                    <i class="fa-regular fa-square-plus"style="color: #ffffff;"
-                                    ></i> Add Project</h5>                    
-                            </div>                
+                            <p class="card-text">{{description}}</p>
                         </div>
                     </div>
+                    {{/each}}
+                    <button class="btn btn-dark" data-toggle="modal" data-target="#project-modal">
+                        <div class="card text-white bg-dark mb-3" style="max-width: 18rem;">
+                            <div class="card-body">
+                                <h5 class="card-title">
+                                    <i class="fa-regular fa-square-plus" style="color: #ffffff;"></i> Add Project
+                                </h5>
+                            </div>
+                        </div>
+                </div>
                 </button>
             </div>
         </div>
@@ -40,5 +40,4 @@
 
 <script src="https://cdn.jsdelivr.net/npm/sortablejs@1.14.0/Sortable.min.js"></script>
 <script src="/js/sortable.js"></script>
-
-
+<script src="/js/project.js"></script>

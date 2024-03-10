@@ -48,12 +48,11 @@ router.post("/", withAuth, async (req, res) => {
   try {
     const newProject = await Project.create({
       ...req.body,
-      workspace_id: req.session.workspace_id,
-      user_id: req.session.user_id,
+      workspace_id: req.session.workspace_id
     });
     res.status(200).json(newProject);
   } catch (err) {
-    res.json(500).json(err);
+    res.status(500).json(err);
   }
 });
 
