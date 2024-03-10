@@ -116,8 +116,6 @@ router.get("/invite", withAuth, async (req, res) => {
 
 // Projects also need to render here
 router.get("/dashboard", withAuth, async (req, res) => {
-
-  // const workspace_id = req.session.workspace_id;
   try {
     const user = await User.findByPk(req.session.user_id);
     if (!user) {
