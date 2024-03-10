@@ -3,7 +3,7 @@ document.addEventListener("DOMContentLoaded", async () => {
     const response = await fetch("/api/users/current");
     const currentUser = await response.json();
     const pTag = document.getElementById("currentUser");
-    pTag.textContent = `${currentUser.first} ${currentUser.last}`;
+    pTag.textContent = `${currentUser.first}`;
   } catch (error) {
     console.error(error);
   }
