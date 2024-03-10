@@ -1,6 +1,48 @@
 const router = require("express").Router();
 const { User } = require("../../models");
 
+router.get("/usersList", async (req, res) => {
+  const currentUser = await User.findByPk(req.session.user_id); // Assuming you have access to the current user
+if (!currentUser) {
+  return res.status(404).json({ message: "User not found" });
+}
+try {
+  const usersInSameWorkspace = await User.findAll({
+    where: {
+      workspace_id: currentUser.workspace_id
+    }
+  });
+  if (!usersInSameWorkspace) {
+    return res.status(404).json({ message: "No users found in the same workspace" });
+  }
+  // usersInSameWorkspace contains all users in the same workspace as the current user
+  res.json(usersInSameWorkspace);
+} catch (error) {
+  res.status(500).json({ message: "Internal server error" });
+}
+});
+
+// Opening to see users, will display all users
+router.get('/', async (req, res) => {
+  try {
+
+    const userData = await User.findAll()
+
+    const users = [];
+
+    userData.forEach(User => {
+      const userPlain = User.get({ plain: true });
+      users.push(userPlain);
+    });
+
+    res.render('users', {
+      users
+    });
+  } catch (err) {
+    res.status(500).json(err);
+  }
+});
+
 router.post("/", async (req, res) => {
   try {
     const userData = await User.create(req.body);
