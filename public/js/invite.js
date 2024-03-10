@@ -37,14 +37,14 @@ async function submitInvitations(e) {
 }
 
 // Submit invites
-document.getElementById("add-btn").addEventListener("click", generateHTML);
-document
-  .getElementById("invite-form")
-  .addEventListener("submit", submitInvitations);
+// document.getElementById("add-btn").addEventListener("click", generateHTML);
+// document
+//   .getElementById("invite-form")
+//   .addEventListener("submit", submitInvitations);
 
 // Direct to home page
 document
   .getElementById("enter-workspace-invite")
   .addEventListener("click", function () {
-    document.location.replace("/home");
+    document.location.replace("/dashboard");
   });
