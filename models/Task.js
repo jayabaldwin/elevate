@@ -1,7 +1,7 @@
-const { Model, DataTypes } = require('sequelize');
-const sequelize = require('../config/connection');
+const { Model, DataTypes } = require("sequelize");
+const sequelize = require("../config/connection");
 
-class Task extends Model { }
+class Task extends Model {}
 
 Task.init(
   {
@@ -22,21 +22,21 @@ Task.init(
     deadline: {
       type: DataTypes.DATE,
     },
-    createdOn: {
+    created_on: {
       type: DataTypes.DATE,
-      allowNull: false,
+      defaultValue: DataTypes.NOW,
     },
     project_id: {
       type: DataTypes.INTEGER,
       references: {
-        model: 'project',
-        key: 'id',
+        model: "project",
+        key: "id",
       },
     },
     status: {
-      type: DataTypes.ENUM('to-do', 'in-progress', 'completed'),
+      type: DataTypes.ENUM("to-do", "in-progress", "completed"),
       allowNull: false,
-      defaultValue: 'to-do',
+      defaultValue: "to-do",
     },
   },
   {
@@ -44,7 +44,7 @@ Task.init(
     timestamps: false,
     freezeTableName: true,
     underscored: true,
-    modelName: 'task',
+    modelName: "task",
   }
 );
 
