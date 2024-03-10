@@ -32,7 +32,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
 function updateStatus(taskId, setStatus) {
     console.log('Updating status for task', taskId, 'to', setStatus);
-    fetch('api/tasks/' + taskId, {
+    fetch('/api/tasks/' + taskId, {
         method: 'PUT',
         headers: {
             'Content-Type': 'application/json',

@@ -29,12 +29,21 @@ router.get("/:id", async (req, res) => {
 
 // Create a new task
 router.post("/", async (req, res) => {
+  const { title, contents, deadline, project_id, status } = req.body;
+
   try {
-    const task = await Task.create(req.body);
-    res.status(201).json(task);
+    const newTask = await Task.create({
+      title, 
+      contents,
+      deadline,
+      project_id,
+      status,
+    });
+
+    res.status(201).json(newTask);
   } catch (err) {
     console.error(err);
-    res.status(500).send("Internal Server Error");
+    res.status(500).json({ message: "Internal Server Error", error: err.message });
   }
 });
 
