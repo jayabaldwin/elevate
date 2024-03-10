@@ -1,4 +1,28 @@
 // Add data from task
+const task = async (e) => {
+  e.preventDefault();
+
+  const title = document.getElementById("task-title").value;
+  const contents = document.getElementById("task-description").value;
+  const modal = document.getElementById("task-create-modal").value;
+
+  const response = await fetch("/api/tasks", {
+    method: "POST",
+    body: JSON.stringify({ title, contents }),
+    headers: { "Content-Type": "application/json" },
+  });
+
+  console.log(response);
+
+  if (response.ok) {
+    response.json("Added task to database");
+    console.log("Added task to database");
+  } else {
+    throw new Error(`HTTP error! Status: ${response.status}`);
+  }
+};
+
+document.getElementById("task-add-btn").addEventListener("click", task);
 
 // View data from task
 
