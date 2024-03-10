@@ -60,10 +60,25 @@ router.get("/home", withAuth, async (req, res) => {
       return res.status(404).json({ message: "Workspace not found." });
     }
 
+    const projectData = await Project.findAll({
+      where: { workspace_id: user.workspace_id },
+      include: [
+        {
+          model: Task,
+        },
+      ],
+    });
+
+    const allTasks = projectData.reduce((tasks, project) => {
+      if(Array.isArray(project.tasks)) {
+      tasks.push(...project.tasks);
+      }
+      return tasks;
+   }, []);
     //filtering tasks by status
-    const toDoTasks = user.Tasks ? user.Tasks.filter(task => task.status === 'to-do') : [];
-    const inProgressTasks = user.Tasks ? user.Tasks.filter(task => task.status === 'in-progress') : [];
-    const completedTasks = user.Tasks ? user.Tasks.filter(task => task.status === 'completed') : [];
+    const toDoTasks = allTasks.filter(task => task.status === 'to-do');
+    const inProgressTasks = allTasks.filter(task => task.status === 'in-progress');
+    const completedTasks = allTasks.filter(task => task.status === 'completed');
 
     res.render("home", {
       user: user.get({ plain: true }),

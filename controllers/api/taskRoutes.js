@@ -38,22 +38,28 @@ router.post("/", async (req, res) => {
   }
 });
 
-// Update a task by ID
+// Update a tasks status by ID
 const taskStatus = ["to-do", "in-progress", "completed"];
 
 router.put("/:id", async (req, res) => {
+
+  console.log('Task ID:', req.params.id);
+  console.log('Request body:', req.body);
   try {
     const task = await Task.findByPk(req.params.id);
     if (!task) {
       res.status(404).send("Task not found");
-      return;
     }
+    // Validating the incoming status update
     if (req.body.status && !taskStatus.includes(req.body.status)) {
       return res.status(400).send("Invalid Status");
     }
+    // UPdate the task
 
-    await task.update(req.body);
-    res.json(task);
+    const updateTask = await task.update({
+      status: req.body.status 
+  });
+    return res.json(updateTask);
   } catch (err) {
     console.error(err);
     res.status(500).send("Internal Server Error");
