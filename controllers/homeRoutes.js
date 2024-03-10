@@ -142,4 +142,50 @@ router.get("/dashboard", withAuth, async (req, res) => {
   }
 });
 
+router.get("/projects/:id", withAuth, async (req, res) => {
+  try {
+    const user = await User.findByPk(req.session.user_id, {
+      include: [
+        {
+          model: Task,
+        },
+      ],
+    });
+
+    if (!user) {
+      return res.status(404).json({ message: "User not found." });
+    }
+
+    const workspaceData = await Workspace.findByPk(user.workspace_id);
+    if (!workspaceData) {
+      return res.status(404).json({ message: "Workspace not found." });
+    }
+
+    const projectData = await Project.findByPk(req.params.id, {
+      include: [{ model: Task }],
+    });
+
+    if (!projectData) {
+      res.status(404).json({ message: "Error finding Project matching this id" });
+      return;
+    }
+    const projectDataPlain = projectData.get({ plain: true });
+
+    res.render("home", {
+      user: user.get({ plain: true }),
+      workspace: workspaceData.get({ plain: true }),
+      project: projectDataPlain,
+      tasks: {
+        toDo: projectDataPlain.tasks.filter(task => task.status === 'to-do'),
+        inProgress: projectDataPlain.tasks.filter(task => task.status === 'in-progress'),
+        completed: projectDataPlain.tasks.filter(task => task.status === 'completed'),
+      }
+    });
+
+  } catch (err) {
+    console.error("Error in route:", err);
+    res.status(500).json({ message: "Internal Server Error", error: err.message });
+  }
+});
+
 module.exports = router;
