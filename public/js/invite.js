@@ -1,10 +1,17 @@
+const addBtn = document
+  .getElementById("add-btn")
+  .addEventListener("click", generateHTML);
+
+const emailInputEl = document.querySelector('input[type="email"]');
+emailListEl = document.getElementById("email-list");
+
 function generateHTML() {
   let newEmailEl = document.createElement("li");
-  newEmailEl.classList.add('email');
+  newEmailEl.classList.add("email");
 
   const newEmail = emailInputEl.value;
   newEmailEl.textContent = newEmail;
-
+  emailListEl.classList.add("list-group-flush");
   emailListEl.appendChild(newEmailEl);
   emailInputEl.value = "";
 }
@@ -20,21 +27,31 @@ async function submitInvitations(e) {
         .filter((input) => input)
     )
   );
-
   const join_code = document.querySelector("#join_code").value;
-
   console.log(values, join_code);
-
   await fetch("/api/workspace/invites", {
     method: "POST",
-
     body: JSON.stringify({ values, join_code }),
     headers: {
       "Content-Type": "application/json",
     },
   });
 
-  document.location.replace("/dashboard");
+  setTimeout(function () {
+    // Show the result notification
+    var notification = document.getElementById("invite-submit");
+    notification.classList.remove("hide");
+
+    // Set a timeout to hide the notification after 1 seconds
+    setTimeout(function () {
+      notification.classList.add("hide");
+    }, 1500);
+
+    setTimeout(function () {
+      // If successful, redirect browser to homepage that corresponds to their workspace_id
+      document.location.replace("/dashboard");
+    }, 1000);
+  }, 100);
 }
 
 // Copy code to clipboard
@@ -43,15 +60,14 @@ const copyToClipboard = async () => {
     const element = document.querySelector(".user-select-all");
     await navigator.clipboard.writeText(element.textContent);
     console.log("Text copied to clipboard!");
-    // Optional: Display a success message to the user
+    alert("Successfully copied to clipboard");
   } catch (error) {
     console.error("Failed to copy to clipboard:", error);
-    // Optional: Display an error message to the user
+    alert("Failed to copy to clipboard");
   }
 };
 
 // Submit invites
-
 document.addEventListener("DOMContentLoaded", () => {
   document
     .querySelector("#invite-form")

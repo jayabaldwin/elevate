@@ -6,39 +6,45 @@
       <!-- Logo Image -->
       <img src="/images/Logo.png" width="250" alt="" class="d-inline-block align-middle mr-2">
     </a>
-</nav>
+</nav><div class="container mt-5 mb-5">
+  {{!-- <h1 class="text-center text-white mb-5">Expand your {{workspace.name}} team!</h1> --}}
 
-<div class="row justify-content-center" id="workplace-create">
-  <div class="col-md-8 mt-5">
-    <h1 class="text-center text-white mb-4">Expand your {{workspace.name}} team!</h1>
-    <h3 class="text-center mb-4">Would you like to send out invites?</h3>
-    <h4 class="text-center">(Or you can save the code to be used later)</h4>
-
-
-      <div class="form-row justify-content-center">
-        <div class="form-group col-md-8">
-
-          <button class="btn btn-outline-light btn-block user-select-all" id="code-success" role="alert"
-            onclick="copyToClipboard()"><i class="fa-regular fa-clipboard"
-              style="color: #ffffff;"></i>{{workspace.join_code}}
-          </button>
-          <div class="row">
-            <form id="invite-form">
-              <div id="email-container">
-                <input type="hidden" id="join_code" value="{{workspace.join_code}}" />
-                <input type="email" class="email d-inline" placeholder="Enter email" />
-              </div>
-              <button type="button" id="add-btn" class="btn btn-outline-light">Add A User</button>
-              <button type="submit" class="btn btn-outline-light btn-block" id="submit-btn">Submit All Invites</button>
-            </form>
-
-
-          </div>
-          <button type="button" class="btn btn-outline-light btn-block"
-            id="enter-workspace-invite">{{workspace.name}}</button>
+  <!-- First column -->
+  <div class="row mt-5">
+    <div class="col-md-5">
+      <h3 class="text-center text-white mt-5">Send out invites?</h3> 
+      <form id="invite-form">
+        <div class="form-group">
+          <input type="hidden" id="join_code" value="{{workspace.join_code}}" />
+          <input type="email" class="form-control" placeholder="Enter email" />
         </div>
-        <ul id="email-list">
-        </ul>
-      </div>
+        <ul id="email-list" class="list-group-flush"></ul> <!-- List populated here -->
+        <button type="button" id="add-btn" class="btn btn-outline-light btn-block mt-3">Add A User</button>
+        <button type="submit" class="btn btn-info btn-block" id="submit-btn">Submit All Invites</button>
+      </form>
+      <!-- Result Notification for successful sign up -->
+        <div class="row justify-content-center">
+        <div
+        id="invite-submit"
+        class="notification hide animate__animated animate__fadeIn text-center text-white"
+        >
+        <i class="fas fa-check" style="color: #ffffff;"></i>
+        Invited submitted!
+    </div>
+  </div>
+</div>
 
-      <script src="/js/invite.js"></script>
+    <!-- Second column -->
+    <div class="col-md-5 offset-md-2">
+      <h3 class="text-center text-white mt-5">Or save code for later?</h3>
+      <p class="text-center text-white">(Click to copy to clipboard)</p>
+      <button class="btn btn-outline-light btn-block user-select-all" id="code-success" role="alert" onclick="copyToClipboard()">{{workspace.join_code}}
+      </button>
+      <button class="btn btn-info btn-block" id="enter-workspace-invite">Enter Workspace
+      </button>
+    </div>
+  </div>
+</div>
+
+
+<script src="/js/invite.js"></script>

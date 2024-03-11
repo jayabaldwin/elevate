@@ -12,7 +12,7 @@ const transporter = nodemailer.createTransport({
   },
 });
 
-// send the workplace into the database with the 'creating a workspace? button'
+// send the workspace into the database with the 'creating a workspace? button'
 router.post("/", async (req, res) => {
   try {
     const workspaceData = await Workspace.create(req.body);
