@@ -1,10 +1,17 @@
 // JAYA TO FIX
+document.getElementById("add-btn").addEventListener("click", generateHTML);
+const emailInputEl = document.querySelector('input[type="email"]');
+const emailListEl = document.getElementById('email-list');
 
 function generateHTML() {
-  let newInput = document.createElement("input");
-  newInput.placeholder = "Enter email";
-  newInput.classList.add("email");
-  document.getElementById("email-container").append(newInput);
+  let newEmailEl = document.createElement("li");
+  newEmailEl.classList.add('email');
+
+  const newEmail = emailInputEl.value;
+  newEmailEl.textContent = newEmail;
+
+  emailListEl.appendChild(newEmailEl);
+  emailInputEl.value = "";
 }
 
 async function submitInvitations(e) {
@@ -14,7 +21,7 @@ async function submitInvitations(e) {
   const values = Array.from(
     new Set(
       Array.from(document.querySelectorAll(".email"))
-        .map((input) => input.value.trim())
+        .map((input) => input.textContent.trim())
         .filter((input) => input)
     )
   );
@@ -49,7 +56,6 @@ const copyToClipboard = async () => {
 };
 
 // Submit invites
-document.getElementById("add-btn").addEventListener("click", generateHTML);
 
 document.addEventListener("DOMContentLoaded", () => {
   document

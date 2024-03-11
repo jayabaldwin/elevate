@@ -18,20 +18,25 @@
       <div class="form-row justify-content-center">
         <div class="form-group col-md-8">
 
-          <button class="btn btn-outline-light btn-block user-select-all" id="code-success" role="alert" onclick="copyToClipboard()"><i class="fa-regular fa-clipboard" style="color: #ffffff;"></i>{{workspace.join_code}}
+          <button class="btn btn-outline-light btn-block user-select-all" id="code-success" role="alert"
+            onclick="copyToClipboard()"><i class="fa-regular fa-clipboard"
+              style="color: #ffffff;"></i>{{workspace.join_code}}
           </button>
           <div class="row">
             <form id="invite-form">
               <div id="email-container">
                 <input type="hidden" id="join_code" value="{{workspace.join_code}}" />
-                <input type="email" class="email d-inline" placeholder="Enter email"/>
+                <input type="email" class="email d-inline" placeholder="Enter email" />
               </div>
               <button type="button" id="add-btn" class="btn btn-outline-light">Add A User</button>
               <button type="submit" class="btn btn-outline-light btn-block" id="submit-btn">Submit All Invites</button>
             </form>
           </div>
-          <button type="button" class="btn btn-outline-light btn-block" id="enter-workspace-invite">{{workspace.name}}</button>
+          <button type="button" class="btn btn-outline-light btn-block"
+            id="enter-workspace-invite">{{workspace.name}}</button>
         </div>
+        <ul id="email-list">
+        </ul>
       </div>
 
       <script src="/js/invite.js"></script>
