@@ -8,7 +8,7 @@
     <!-- Page content -->
     <div class="content">
       {{> navbar }}
-      <div class="container">
+      <div class="container-fluid">
         <div class="row">
           <div class="col ml-3">
             <h3 class="text-white">{{project.name}}</h3>
@@ -19,10 +19,9 @@
           <div class="col" id="to-do">
             {{!-- Parent Card --}}
             <div class="container">
-              <div class="card">
-                <div class="card-header">
-                  <h5 class="card-title"><i class="fa-regular fa-circle-down" style="color: #e45656;"></i> To Do</h5>
-                  {{!-- <p class="card-subtitle">This item hasn't been started</p> --}}
+              <div class="card bg-transparent border-light shadow-lg">
+                <div class="card-header border-light">
+                  <h5 class="card-title text-white mt-0 mb-0"><i class="fa-regular fa-circle-down" style="color: rgb(240, 48, 48);"></i> To Do</h5>
                 </div>
                 <div class="card-body" style="max-height: 500px; min-height: 200px; overflow-y: auto">
                   <!-- Nested Child Card -->
@@ -32,9 +31,9 @@
                     {{/each}}
                   </ul>
                 </div>
-                <div class="card-footer">
-                  <button type="button" class="btn btn-outline-dark btn-block" data-toggle="modal" data-target="#task-create-modal"><i class="fa-regular fa-square-plus"
-                      style="color: #000000;"></i> Add Item</button>
+                <div class="card-footer border-light d-flex justify-content-end">
+                  <button type="button" class="btn btn-outline-secondary text-white" data-toggle="modal" data-target="#task-create-modal"><i class="fa-regular fa-square-plus"
+                      style="color: white;"></i> Add Item</button>
                 </div>
               </div>
             </div>
@@ -43,11 +42,10 @@
           <div class="col" id="in-progress">
             {{!-- Parent Card --}}
             <div class="container">
-              <div class="card">
-                <div class="card-header">
-                  <h5 class="card-title"><i class="fa-solid fa-circle-half-stroke" style="color: #f2dc61;"></i> In
+              <div class="card bg-transparent border-light shadow-lg">
+                <div class="card-header border-light">
+                  <h5 class="card-title text-white mt-0 mb-0"><i class="fa-solid fa-circle-half-stroke" style="color: #e5ec68;"></i> In
                     Progress</h5>
-                  {{!-- <p class="card-subtitle">This is actively being worked on</p> --}}
                 </div>
                 <div class="card-body" style="max-height: 500px; min-height: 200px; overflow-y: auto">
                   <!-- Nested Child Card -->
@@ -57,8 +55,6 @@
                     {{/each}}
                   </ul>
                 </div>
-                <div class="card-footer">
-                </div>
               </div>
             </div>
           </div>
@@ -66,10 +62,9 @@
           <div class="col" id="completed">
             {{!-- Parent Card --}}
             <div class="container">
-              <div class="card">
-                <div class="card-header">
-                  <h5 class="card-title"><i class="fa-regular fa-circle-check" style="color: #6fb854;"></i> Done</h5>
-                  {{!-- <p class="card-subtitle">This has been completed</p> --}}
+              <div class="card bg-transparent border-light shadow-lg">
+                <div class="card-header border-light">
+                  <h5 class="card-title text-white mt-0 mb-0"><i class="fa-regular fa-circle-check" style="color: #7ed95d;"></i> Done</h5>
                 </div>
                 <div class="card-body" style="max-height: 500px; min-height: 200px; overflow-y: auto">
                   <!-- Nested Child Card -->
@@ -78,8 +73,6 @@
                     <li> {{> task task}} </li>
                     {{/each}}
                   </ul>
-                </div>
-                <div class="card-footer">
                 </div>
               </div>
             </div>

@@ -20,7 +20,7 @@ Task.init(
       allowNull: false,
     },
     deadline: {
-      type: DataTypes.DATE,
+      type: DataTypes.DATEONLY,
     },
     created_on: {
       type: DataTypes.DATE,

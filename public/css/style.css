@@ -245,11 +245,6 @@ aside .nav-pills .nav-link:hover {
     background-color: #343a40;
 }
 
-/* Change background color of logout button on hover */
-.logout-button:hover {
-    background-color: #343a40;
-}
-
 #proj-description {
     white-space: normal;
     word-wrap: break-word;
