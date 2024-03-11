@@ -1,74 +1,23 @@
-{{! TAKE OUT OF PARTIAL AND ADD INTO HOME JUST UNDER TO DO? WITH A FOR EACH? }}
-{{! ONLY NEED THE ONE AS THEYLL BE MOVED OVER TO OTHER COLUMNS WITH SORTABLE }}
-{{! ADD SORTABLE ANIMATIONS }}
-
 <!-- Nested Child Card -->
 <div class="card mb-2" data-id="{{id}}">
-  <div class="card-body">
+  <div class="card-body bg-transparent shadow rounded">
     <h5 class="card-title">
       <a
         href="#"
         onclick="openTaskCardModal({{id}})"
         class="card-link"
+        style="text-decoration: none; color: #cb7889"
         {{! Check if this works... modal still to be fully built out... located base of home page }}
         data-toggle="modal"
         data-target="#task-view-modal"
       >{{title}}</a>
     </h5>
-    <p class="card-text">{{contents}}</p>
+    <p class="card-text text-black">{{contents}}</p>
   </div>
-  <div class="card-footer">
-    <p class="card-text">
-      <i class="fa-regular fa-clock" style="color: #000000;"></i>
+  <div class="card-footer bg-white">
+    <p class="card-text text-black">
+      <i class="fa-regular fa-clock" style="color: black;"></i>
       {{deadline}}
     </p>
   </div>
 </div>
-
-{{!-- <main class="col-md-9">
-  <section id="task-board" class="row">
-    {{! To Do}}
-    <div class="task-column col-md-4" id="to-do">
-      <h2 class="h4 my-3">To Do</h2>
-      <div class="task-list list-group" id="to-do-task">
-        {{! Will load in tasks here}}
-        {{#each tasks.toDo as |task|}}
-        <div class="task-card list-group-item" data-id="{{task.id}}">
-          <h3>{{task.title}}</h3>
-          <p>{{task.contents}}</p>
-          <p>{{task.deadline}}</p>
-        </div>
-        {{/each}}
-      </div>
-      <button class="create-task">CREATE NEW TASK</button>
-    </div>
-    {{! In Progress}}
-    <div class="task-column col-md-4" id="in-progress">
-      <h2 class="h4 my-3">In Progress</h2>
-      <div class="task-list list-group" id="in-progress-task">
-        {{! Load in - in progess tasks}}
-        {{#each tasks.inProgress as |task|}}
-        <div class="task-card list-group-item" data-id="{{task.id}}">
-          <h3>{{task.title}}</h3>
-          <p>{{task.contents}}</p>
-          <p>{{task.deadline}}</p>
-        </div>
-        {{/each}}
-      </div>
-    </div>
-    {{! Completed}}
-    <div class="task-column col-md-4" id="completed">
-      <h2 class="h4 my-3">Completed</h2>
-      <div class="task-list list-group" id="completed-task">
-        {{! Add in completed tasks here}}
-        {{#each tasks.completed as |task|}}
-        <div class="task-card list-group-item" data-id="{{task.id}}">
-          <h3>{{task.title}}</h3>
-          <p>{{task.contents}}</p>
-          <p>{{task.deadline}}</p>
-        </div>
-        {{/each}}
-      </div>
-    </div>
-  </section>
-</main> --}}
