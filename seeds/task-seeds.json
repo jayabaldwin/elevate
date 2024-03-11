@@ -1,82 +1,122 @@
 [
   {
-    "title": "Complete report",
-    "contents": "Finish writing the quarterly sales report and send it to the management team.",
+    "title": "Database Design",
+    "contents": "Design the database schema for the CRM system, including tables for customers, contacts, leads, and interactions.",
     "deadline": "2024-03-10",
     "createdOn": "2024-02-29T08:00:00Z",
     "project_id": 1,
     "workspace_id": 4
   },
   {
-    "title": "Prepare presentation",
-    "contents": "Create slides for the upcoming project presentation scheduled for next week.",
-    "deadline": "2024-03-11",
-    "createdOn": "2024-03-01T09:00:00Z",
+  "title": "User Interface Design",
+  "contents": "Design the user interface for the CRM system, focusing on usability and user experience.",
+  "deadline": "2024-03-15",
+  "createdOn": "2024-02-29T08:00:00Z",
+  "project_id": 1,
+  "workspace_id": 4
+  },
+  {
+    "title": "Implement Contact Management Feature",
+    "contents": "Implement the feature to manage contacts, including adding, editing, and deleting contacts.",
+    "deadline": "2024-03-20",
+    "createdOn": "2024-02-29T08:00:00Z",
+    "project_id": 1,
+    "workspace_id": 4
+  },
+  {
+    "title": "Performance Optimization",
+    "contents": "Optimize the performance of the e-commerce platform, focusing on page load times and server response times.",
+    "deadline": "2024-03-10",
+    "createdOn": "2024-02-29T08:00:00Z",
     "project_id": 2,
     "workspace_id": 4
   },
   {
-    "title": "Code refactor",
-    "contents": "Review the existing codebase and refactor sections to improve maintainability.",
-    "deadline": "2024-03-12",
-    "createdOn": "2024-03-02T10:00:00Z",
+    "title": "Implement Product Recommendations",
+    "contents": "Implement a feature to provide personalized product recommendations based on user behavior and purchase history.",
+    "deadline": "2024-03-15",
+    "createdOn": "2024-02-29T08:00:00Z",
+    "project_id": 2,
+    "workspace_id": 4
+  },
+  {
+    "title": "Enhance Security Measures",
+    "contents": "Enhance the security measures of the e-commerce platform, including implementing HTTPS and preventing SQL injection attacks.",
+    "deadline": "2024-03-20",
+    "createdOn": "2024-02-29T08:00:00Z",
+    "project_id": 2,
+    "workspace_id": 4
+  },
+  {
+    "title": "UI/UX Design",
+    "contents": "Design the user interface and user experience for the mobile app, focusing on simplicity and ease of use.",
+    "deadline": "2024-03-10",
+    "createdOn": "2024-02-29T08:00:00Z",
     "project_id": 3,
     "workspace_id": 4
   },
   {
-    "title": "Bug fixing",
-    "contents": "Identify and fix critical bugs reported by users in the latest software release.",
-    "deadline": "2024-03-13",
-    "createdOn": "2024-03-03T11:00:00Z",
+    "title": "Implement Authentication System",
+    "contents": "Implement a secure authentication system for the mobile app, including login and registration functionalities.",
+    "deadline": "2024-03-15",
+    "createdOn": "2024-02-29T08:00:00Z",
+    "project_id": 3,
+    "workspace_id": 4
+  },
+  {
+    "title": "Integrate Push Notifications",
+    "contents": "Integrate push notifications to keep users informed about updates and promotions.",
+    "deadline": "2024-03-20",
+    "createdOn": "2024-02-29T08:00:00Z",
+    "project_id": 3,
+    "workspace_id": 4
+  },
+  {
+    "title": "Data Collection",
+    "contents": "Set up data collection mechanisms to gather relevant data for the analytics dashboard.",
+    "deadline": "2024-03-10",
+    "createdOn": "2024-02-29T08:00:00Z",
     "project_id": 4,
     "workspace_id": 4
   },
   {
-    "title": "Design new feature",
-    "contents": "Brainstorm ideas and create wireframes for the new feature requested by stakeholders.",
-    "deadline": "2024-03-14",
-    "createdOn": "2024-03-04T12:00:00Z",
+    "title": "Dashboard Design",
+    "contents": "Design the visual layout of the data analytics dashboard, focusing on presenting information in a clear and concise manner.",
+    "deadline": "2024-03-15",
+    "createdOn": "2024-02-29T08:00:00Z",
+    "project_id": 4,
+    "workspace_id": 4
+  },
+  {
+    "title": "Implement Data Visualization",
+    "contents": "Implement data visualization techniques to represent data in graphs, charts, and tables.",
+    "deadline": "2024-03-20",
+    "createdOn": "2024-02-29T08:00:00Z",
+    "project_id": 4,
+    "workspace_id": 4
+  },
+  {
+    "title": "Assess Current Infrastructure",
+    "contents": "Assess the current on-premises infrastructure to identify resources and dependencies that need to be migrated to the cloud.",
+    "deadline": "2024-03-10",
+    "createdOn": "2024-02-29T08:00:00Z",
     "project_id": 5,
     "workspace_id": 4
   },
   {
-    "title": "Write documentation",
-    "contents": "Document the API endpoints and usage instructions for the developers' reference.",
+    "title": "Develop Migration Plan",
+    "contents": "Develop a detailed plan for migrating resources to the cloud, including timelines, resources, and potential risks.",
     "deadline": "2024-03-15",
-    "createdOn": "2024-03-05T13:00:00Z",
-    "project_id": 6,
+    "createdOn": "2024-02-29T08:00:00Z",
+    "project_id": 5,
     "workspace_id": 4
   },
   {
-    "title": "Test application",
-    "contents": "Perform thorough testing of the application to ensure its functionality and reliability.",
-    "deadline": "2024-03-16",
-    "createdOn": "2024-03-06T14:00:00Z",
-    "project_id": 7,
-    "workspace_id": 4
-  },
-  {
-    "title": "Optimize performance",
-    "contents": "Identify performance bottlenecks and optimize the application for better speed and efficiency.",
-    "deadline": "2024-03-17",
-    "createdOn": "2024-03-07T15:00:00Z",
-    "project_id": 8,
-    "workspace_id": 4
-  },
-  {
-    "title": "Enhance user experience",
-    "contents": "Gather user feedback and implement improvements to enhance the overall user experience.",
-    "deadline": "2024-03-18",
-    "createdOn": "2024-03-08T16:00:00Z",
-    "project_id": 9,
-    "workspace_id": 4
-  },
-  {
-    "title": "Deploy updates",
-    "contents": "Prepare and deploy the latest updates to the production server during the maintenance window.",
-    "deadline": "2024-03-19",
-    "createdOn": "2024-03-09T17:00:00Z",
-    "project_id": 10,
+    "title": "Execute Migration",
+    "contents": "Execute the migration plan, ensuring minimal downtime and data loss during the migration process.",
+    "deadline": "2024-03-20",
+    "createdOn": "2024-02-29T08:00:00Z",
+    "project_id": 5,
     "workspace_id": 4
   }
 ]
