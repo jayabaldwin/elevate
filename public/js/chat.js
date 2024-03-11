@@ -1,4 +1,7 @@
 const socket = io();
+const chatMenuItem = document.getElementById('collapseThree')
+const chatCard = chatMenuItem.querySelector('.card-body')
+const chatEl = chatCard.querySelector('.chat')
 const chatWindow = document.getElementById('chatWindow');
 const currentProjectId = chatWindow.getAttribute('data-project-id');
 
@@ -8,9 +11,9 @@ let messageCounter = 0;
 
 const projectId = currentProjectId;
 
-console.log(projectId);
 if (!projectId) {
-    chatWindow.textContent = "no project selected";
+    chatEl.classList.add('hide')
+    chatCard.textContent = "Please select a project to view the chat.";
 }
 else {
     populateChat();
