@@ -12,11 +12,15 @@ const transporter = nodemailer.createTransport({
   },
 });
 
-// send the workplace into the database with the 'creating a workspace? button'
+// send the workspace into the database with the 'creating a workspace? button'
 router.post("/", async (req, res) => {
   try {
     const workspaceData = await Workspace.create(req.body);
-    res.status(201).json(workspaceData);
+    console.log("workspace id", workspaceData.id);
+    req.session.save(() => {
+      req.session.workspace_id = workspaceData.id;
+      res.status(201).json(workspaceData);
+    });
   } catch (error) {
     res.status(500).json(error.message);
   }
