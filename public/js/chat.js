@@ -1,26 +1,60 @@
 const socket = io();
+const chatMenuItem = document.getElementById('collapseThree')
+const chatCard = chatMenuItem.querySelector('.card-body')
+const chatEl = chatCard.querySelector('.chat')
 const chatWindow = document.getElementById('chatWindow');
+const currentProjectId = chatWindow.getAttribute('data-project-id');
 
-const projectId = 1;
-socket.emit('joinProjectRoom', projectId);
+chatWindow.scrollTop = chatWindow.scrollHeight;
+
+let messageCounter = 0;
+
+const projectId = currentProjectId;
+
+if (!projectId) {
+    chatEl.classList.add('hide')
+    chatCard.textContent = "Please select a project to view the chat.";
+}
+else {
+    populateChat();
+
+    socket.emit('joinProjectRoom', projectId);
+    socket.on('message', async (message) => {
+        const currentUser = await getCurrentUser();
+        console.log('Received message:', message);
+        displayMessage(message, currentUser.first);
+    });
+}
+
 
 async function sendMessage(message) {
-    const currentUser = await getCurrentUser();
     saveMessage(message, projectId);
-    message = `${currentUser.first}: ${message}`;
     socket.emit('chatMessage', { projectId, message });
 }
 
-socket.on('message', (message) => {
-    console.log('Received message:', message);
-    displayMessage(message);
-});
-
-async function displayMessage(message) {
+async function displayMessage(message, user) {
+    const chatLineElement = document.createElement('div')
     const messageElement = document.createElement('div');
+    const userElement = document.createElement('span')
+    chatLineElement.classList.add('chat-line');
+    messageElement.classList.add('message');
+    userElement.classList.add('user');
+
+    if (messageCounter % 2 === 0) {
+        chatLineElement.classList.add('even');
+    } else {
+        chatLineElement.classList.add('odd');
+    }
+
     messageElement.textContent = message;
-    chatWindow.appendChild(messageElement);
+    userElement.textContent = user + ":";
+
+    chatLineElement.appendChild(userElement);
+    chatLineElement.appendChild(messageElement);
+
+    chatWindow.appendChild(chatLineElement);
     chatWindow.scrollTop = chatWindow.scrollHeight;
+    messageCounter++;
 }
 
 document.getElementById('messageForm').addEventListener('submit', (event) => {
@@ -93,13 +127,27 @@ async function saveMessage(message, project_id) {
 async function populateChat() {
     const messageData = await getMessages();
     messageData.forEach(element => {
-        chatLine = `${element.user.first}: ${element.message}`;
+        const chatLineElement = document.createElement('div')
         const messageElement = document.createElement('div');
-        messageElement.textContent = chatLine;
-        chatWindow.appendChild(messageElement);
-        chatWindow.scrollTop = chatWindow.scrollHeight;
+        const userElement = document.createElement('span')
+        chatLineElement.classList.add('chat-line');
+        messageElement.classList.add('message');
+        userElement.classList.add('user');
+
+        if (messageCounter % 2 === 0) {
+            chatLineElement.classList.add('even');
+        } else {
+            chatLineElement.classList.add('odd');
+        }
+
+        messageElement.textContent = element.message;
+        userElement.textContent = element.user.first + ":";
+
+        chatLineElement.appendChild(userElement);
+        chatLineElement.appendChild(messageElement);
+
+        chatWindow.appendChild(chatLineElement);
+        messageCounter++;
     });
-
+    chatWindow.scrollTop = chatWindow.scrollHeight;
 }
-
-populateChat();

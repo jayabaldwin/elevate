@@ -1,3 +1,4 @@
+<aside class="d-flex flex-column flex-shrink-0 p-3 text-white bg-dark" style="width: 280px">
 
 <aside
   class="d-flex flex-column flex-shrink-0 text-white bg-dark"
@@ -69,21 +70,22 @@
   </div>
 
 {{!-- Chat window --}}
-<div class="card bg-dark">
-    <div class="card-header bg-dark" id="headingThree">
-      <h2 class="mb-0">
-        <button class="btn btn-secondary bg-transparent btn-block text-left collapsed text-decoration-none" type="button" data-toggle="collapse" data-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
-          <i class="fas fa-comments" style="color: white;"></i> Chat
-        </button>
-      </h2>
-    </div>
-    <div id="collapseThree" class="collapse" aria-labelledby="headingThree" data-parent="#accordionExample">
-      <div class="card-body">
-        Some placeholder content for the third accordion panel. This panel is hidden by default.
+    <div class="card">
+      <div class="card-header" id="headingThree">
+        <h2 class="mb-0">
+          <button class="btn btn-link btn-block text-left collapsed text-decoration-none" type="button"
+            data-toggle="collapse" data-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+            <i class="fas fa-comments" style="color: black;"></i> Chat
+          </button>
+        </h2>
+      </div>
+      <div id="collapseThree" class="collapse show" aria-labelledby="headingThree" data-parent="#accordionExample">
+        <div class="card-body">
+          {{> chat}}
+        </div>
       </div>
     </div>
-  </div>
-</div>
+    </div>
 </aside>
 
 <script src="/js/usersList.js"></script>
