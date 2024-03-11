@@ -59,9 +59,9 @@ io.on("connection", (socket) => {
     console.log(`User left project room ${projectId}`);
   });
 
-  socket.on('chatMessage', ({ projectId, message }) => {
+  socket.on('chatMessage', ({ projectId, message, user_id }) => {
     // Emit the message to all users in the project room
-    io.to(projectId).emit('message', message);
+    io.to(projectId).emit('message', message, user_id);
   });
 });
 
