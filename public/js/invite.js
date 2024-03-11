@@ -1,8 +1,3 @@
-// JAYA TO FIX
-document.getElementById("add-btn").addEventListener("click", generateHTML);
-const emailInputEl = document.querySelector('input[type="email"]');
-const emailListEl = document.getElementById('email-list');
-
 function generateHTML() {
   let newEmailEl = document.createElement("li");
   newEmailEl.classList.add('email');

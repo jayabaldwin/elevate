@@ -1,52 +1,75 @@
 <aside class="d-flex flex-column flex-shrink-0 p-3 text-white bg-dark" style="width: 280px">
 
-  <a class="navbar-brand ml-3 mb-2" href="#Home"><img src="/images/Logo.png" width="200" alt="Logo" /></a>
+<aside
+  class="d-flex flex-column flex-shrink-0 text-white bg-dark"
+  style="width: 300px"
+>
 
-  {{!--SIDEBAR NEEDS COLLAPSIBLE MENUS --}}
-  {{!-- POPULATE WITH USER AND PROJECT DATA --}}
-  {{!-- PROJECT TO BE CLICKABLE AND DIRECT TO INDIVIDUAL PROJECT --}}
-  {{!-- ADD CHAT TO SIDEBAR NAV THAT IS ALSO COLLAPSIBLE --}}
+  <a class="navbar-brand ml-5 mb-2" href="#Home"><img
+      src="/images/Logo.png"
+      width="200"
+      alt="Logo"
+    /></a>
+
+{{!-- PROJECT TO BE CLICKABLE AND DIRECT TO INDIVIDUAL PROJECT --}}
+{{!-- ADD CHAT TO SIDEBAR NAV THAT IS ALSO COLLAPSIBLE --}}
 
   <h4 class="text-center text-white">Welcome,</h3>
-    {{! Add in once route has been added }}
-    <p class="text-center text-white" id="currentUser"></p>
 
-    <div class="accordion" id="accordionExample">
-      <div class="card">
-        <div class="card-header" id="headingOne">
-          <h2 class="mb-0">
-            <button class="btn btn-link btn-block text-left text-decoration-none" type="button" data-toggle="collapse"
-              data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
-              <i class="fa fa-user" aria-hidden="true"></i> Users
-            </button>
-          </h2>
-        </div>
+  <p class="text-center text-white" id="currentUser"></p>
+  
 
-        <div id="collapseOne" class="collapse" aria-labelledby="headingOne" data-parent="#accordionExample">
-          <ul id="userList">
-            <li class="card-body">
-            </li>
-          </ul>
-        </div>
+
+<div class="accordion" id="accordionExample">
+
+  {{!-- Dashboard --}}
+  <div class="card bg-dark">
+      <div class="card-header bg-dark" id="headingZero">
+        <h2 class="mb-0">
+          <a href="/dashboard" class="btn btn-secondary btn-bg-* btn-block text-left text-decoration-none collapsed" type="button">
+            <i class="fa-solid fa-house-user" style="color: white;"></i> Dashboard
+          </a>
+        </h2>
       </div>
-      <div class="card">
-        <div class="card-header" id="headingTwo">
-          <h2 class="mb-0">
-            <button class="btn btn-link btn-block text-left text-decoration-none collapsed" type="button"
-              data-toggle="collapse" data-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
-              <i class="fas fa-project-diagram" style="color: black;"></i> Projects
-            </button>
-          </h2>
-        </div>
-        <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionExample">
-          <ul id="projectList">
-            <li class="card-body">
-              Some placeholder content for the second accordion panel. This panel is hidden by default.
-            </li>
-          </ul>
-        </div>
-      </div>
+
+  {{!-- Project --}}
+  <div class="card bg-dark">
+    <div class="card-header bg-dark" id="headingTwo">
+      <h2 class="mb-0">
+        <button class="btn btn-secondary bg-transparent btn-block text-left text-decoration-none collapsed" type="button" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+          <i class="fas fa-project-diagram" style="color: white;"></i> Projects
+        </button>
+      </h2>
     </div>
+
+    <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionExample">
+      <ul id="projectList">
+      <li class="card-body mb-3">
+        Some placeholder content for the second accordion panel. This panel is hidden by default.
+      </li>
+      </ul>
+    </div>
+  </div>
+</div>
+
+  {{!-- User --}}
+  <div class="card bg-dark">
+    <div class="card-header bg-dark" id="headingOne">
+      <h2 class="mb-0">
+        <button class="btn btn-secondary bg-transparent btn-block text-left text-decoration-none" type="button" data-toggle="collapse" data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+          <i class="fa fa-user" style="color: white" aria-hidden="true"></i> Users
+        </button>
+      </h2>
+    </div>
+    <div id="collapseOne" class="collapse" aria-labelledby="headingOne" data-parent="#accordionExample">
+    <ul id="userList" class="list-group-flush">
+      <li class="card-body">
+      </li>
+    </ul>
+    </div>
+  </div>
+
+{{!-- Chat window --}}
     <div class="card">
       <div class="card-header" id="headingThree">
         <h2 class="mb-0">
