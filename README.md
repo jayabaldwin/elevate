@@ -22,7 +22,7 @@ Elevate is a powerful and intuitive task management software designed to help in
 
 ### Brief functionality walk through:
 
-![Badge](https://img.shields.io/badge/License-MIT-yellow.svg) ![JavaScript](https://img.shields.io/badge/JavaScript-red) ![Node.js](https://img.shields.io/badge/Node.js-blue) ![Express.js@4.18.2](https://img.shields.io/badge/Express.js@4.18.2-lightgreen) ![Express Session@3.1.0](https://img.shields.io/badge/ExpressSession@3.1.0-pink) ![Express Handlebars@1.18.0](https://img.shields.io/badge/ExpressHandlebars@1.18.0-yellow) ![MySQL2@3.9.1](https://img.shields.io/badge/MySQL2@3.9.1-purple) ![Sequelize@6.37.1](https://img.shields.io/badge/Sequelize@6.37.1-lightblue) ![ConnectSessionSequelize@7.1.7](https://img.shields.io/badge/ConnectSessionSequelize@7.1.7-lavender) ![Bcrypt@5.1.1](https://img.shields.io/badge/Bcrypt@5.1.1-red) ![Dotenv@16.4.4](https://img.shields.io/badge/Dotenv@16.4.4-blue)
+![Badge](https://img.shields.io/badge/License-MIT-yellow.svg) ![JavaScript](https://img.shields.io/badge/JavaScript-red) ![Node.js](https://img.shields.io/badge/Node.js-blue) ![Express.js@4.17.1](https://img.shields.io/badge/Express.js@4.17.1-lightgreen) ![Express Session@1.18.0](https://img.shields.io/badge/ExpressSession@1.18.0-pink) ![Express Handlebars@3.1.0](https://img.shields.io/badge/ExpressHandlebars@3.1.0-yellow) ![MySQL2@2.1.0](https://img.shields.io/badge/MySQL2@2.1.0-purple) ![Sequelize@6.37.1](https://img.shields.io/badge/Sequelize@6.37.1-lightblue) ![ConnectSessionSequelize@7.1.7](https://img.shields.io/badge/ConnectSessionSequelize@7.1.7-lavender) ![Bcrypt@5.1.1](https://img.shields.io/badge/Bcrypt@5.1.1-red) ![Dotenv@8.2.0](https://img.shields.io/badge/Dotenv@8.2.0-blue) ![Socket.io@4.7.4](https://img.shields.io/badge/Socket.io@4.7.4-lightgreen) ![SortablesJS@1.15.2](https://img.shields.io/badge/SortablesJS@1.15.2-pink) ![Nodemailer@6.9.11](https://img.shields.io/badge/Nodemailer@6.9.11-lightblue) ![ESLint@8.57.0](https://img.shields.io/badge/ESLint@8.57.0-lavender)
 
 ## Table of Contents
 
@@ -50,7 +50,7 @@ Elevate is a powerful and intuitive task management software designed to help in
 - Connect Session Sequelize (7.1.7)
 - Bcrypt (5.1.1)
 - Dotenv (8.2.0)
-- Socket.IO (4.7.4)
+- Socket.io (4.7.4)
 - SortableJS (1.15.2)
 - Nodemailer (6.9.11)
 - ESLint (8.57.0)
@@ -89,9 +89,9 @@ Elevate is a powerful and intuitive task management software designed to help in
 <br>
 
 ## User Story
-AS a PERSON who works collaboratively with others
-I WANT a management website
-SO THAT I can create workspaces, invite others to join workspaces, create projects, view projects, create tasks and organise tasks
+- AS a PERSON who works collaboratively with others
+- I WANT a management website
+- SO THAT I can create workspaces, invite others to join workspaces, create projects, view projects, create tasks and organise tasks
 
 ## Acceptance Criteria
 
@@ -182,6 +182,6 @@ The application is covered under the following license: [MIT](https://opensource
 
 ## Deployed Application
 
-[Elevate]()
+[Elevate](https://elevate-task-manager-4dc7b75f392c.herokuapp.com/)
 
 <!-- Add further readme items -->
