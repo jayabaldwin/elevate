@@ -14,7 +14,7 @@
     <h1 class="text-center text-white mb-4">Expand your {{workspace.name}} team!</h1>
     <h3 class="text-center mb-4">Would you like to send out invites?</h3>
     <h4 class="text-center">(Or you can save the code to be used later)</h4>
-    <form id="workspaceForm">
+    {{!-- <form id="workspaceForm"> --}}
       <div class="form-row justify-content-center">
         <div class="form-group col-md-8">
 
@@ -24,7 +24,7 @@
             <form id="invite-form">
               <div id="email-container">
                 <input type="hidden" id="join_code" value="{{workspace.join_code}}" />
-                <input type="email" class="email d-inline" placeholder="Enter email" />
+                <input type="email" class="email d-inline" placeholder="Enter email"/>
               </div>
               <button type="button" id="add-btn" class="btn btn-outline-light">Add A User</button>
               <button type="submit" class="btn btn-outline-light btn-block" id="submit-btn">Submit All Invites</button>

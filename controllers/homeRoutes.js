@@ -3,12 +3,8 @@ const { User, Workspace, Task, Project } = require("../models");
 // Import the custom middleware
 const withAuth = require("../utils/auth");
 
-// Initial homepage signup and login
 router.get("/", async (req, res) => {
   res.render("welcome");
-  // if condition
-  // check if input condition/request condition is valid
-  // based on request params/conditio/path
 });
 
 router.get("/login", async (req, res) => {
@@ -76,20 +72,23 @@ router.get("/home", withAuth, async (req, res) => {
       return tasks;
     }, []);
     //filtering tasks by status
-    const toDoTasks = allTasks.filter(task => task.status === 'to-do');
-    const inProgressTasks = allTasks.filter(task => task.status === 'in-progress');
-    const completedTasks = allTasks.filter(task => task.status === 'completed');
+    const toDoTasks = allTasks.filter((task) => task.status === "to-do");
+    const inProgressTasks = allTasks.filter(
+      (task) => task.status === "in-progress"
+    );
+    const completedTasks = allTasks.filter(
+      (task) => task.status === "completed"
+    );
 
     res.render("home", {
       user: user.get({ plain: true }),
       workspace: workspaceData.get({ plain: true }),
       tasks: {
-        toDo: toDoTasks.map(task => task.get({ plain: true })),
-        inProgress: inProgressTasks.map(task => task.get({ plain: true })),
-        completed: completedTasks.map(task => task.get({ plain: true })),
-      }
+        toDo: toDoTasks.map((task) => task.get({ plain: true })),
+        inProgress: inProgressTasks.map((task) => task.get({ plain: true })),
+        completed: completedTasks.map((task) => task.get({ plain: true })),
+      },
     });
-
   } catch (err) {
     res.status(500).json({ message: err.message });
   }
@@ -130,10 +129,10 @@ router.get("/dashboard", withAuth, async (req, res) => {
     }
 
     const projectData = await Project.findAll({
-      where: { workspace_id: user.workspace_id }
-    })
+      where: { workspace_id: user.workspace_id },
+    });
 
-    const projects = projectData.map(project => project.get({ plain: true }));
+    const projects = projectData.map((project) => project.get({ plain: true }));
     const workspace = workspaceData.get({ plain: true });
 
     res.render("dashboard", { workspace, projects }); // Pass workspace as an object
@@ -166,7 +165,9 @@ router.get("/projects/:id", withAuth, async (req, res) => {
     });
 
     if (!projectData) {
-      res.status(404).json({ message: "Error finding Project matching this id" });
+      res
+        .status(404)
+        .json({ message: "Error finding Project matching this id" });
       return;
     }
     const projectDataPlain = projectData.get({ plain: true });
@@ -176,15 +177,20 @@ router.get("/projects/:id", withAuth, async (req, res) => {
       workspace: workspaceData.get({ plain: true }),
       project: projectDataPlain,
       tasks: {
-        toDo: projectDataPlain.tasks.filter(task => task.status === 'to-do'),
-        inProgress: projectDataPlain.tasks.filter(task => task.status === 'in-progress'),
-        completed: projectDataPlain.tasks.filter(task => task.status === 'completed'),
-      }
+        toDo: projectDataPlain.tasks.filter((task) => task.status === "to-do"),
+        inProgress: projectDataPlain.tasks.filter(
+          (task) => task.status === "in-progress"
+        ),
+        completed: projectDataPlain.tasks.filter(
+          (task) => task.status === "completed"
+        ),
+      },
     });
-
   } catch (err) {
     console.error("Error in route:", err);
-    res.status(500).json({ message: "Internal Server Error", error: err.message });
+    res
+      .status(500)
+      .json({ message: "Internal Server Error", error: err.message });
   }
 });
 
