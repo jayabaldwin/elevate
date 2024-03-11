@@ -1,13 +1,11 @@
-const Workspace = require('./Workspace');
-const User = require('./User');
-const Project = require('./Project');
-const Task = require('./Task');
-const Comment = require('./Comment');
-const TaskUser = require('./TaskUser');
-const ProjectUser = require('./ProjectUser');
-const ChatLine = require('./ChatLine');
-
-
+const Workspace = require("./Workspace");
+const User = require("./User");
+const Project = require("./Project");
+const Task = require("./Task");
+const Comment = require("./Comment");
+const TaskUser = require("./TaskUser");
+const ProjectUser = require("./ProjectUser");
+const ChatLine = require("./ChatLine");
 
 // ESTABLISH RELATIONSHIPS
 
@@ -15,11 +13,11 @@ const ChatLine = require('./ChatLine');
 // Has many Project
 // Has many Users
 Workspace.hasMany(Project, {
-    foreignKey: 'workspace_id'
+  foreignKey: "workspace_id",
 });
 
 Workspace.hasMany(User, {
-    foreignKey: 'workspace_id'
+  foreignKey: "workspace_id",
 });
 
 // Project
@@ -27,20 +25,21 @@ Workspace.hasMany(User, {
 // has many Tasks
 
 Project.belongsTo(Workspace, {
-    foreignKey: 'workspace_id'
+  foreignKey: "workspace_id",
 });
 
 Project.hasMany(Task, {
-    foreignKey: 'project_id'
+  foreignKey: "project_id",
 });
 
 Project.belongsToMany(User, {
-    through: ProjectUser, foreignKey: 'project_id'
-})
+  through: ProjectUser,
+  foreignKey: "project_id",
+});
 
 Project.hasMany(ChatLine, {
-    foreignKey: 'user_id'
-})
+  foreignKey: "user_id",
+});
 
 // Task
 // Belongs to one Project
@@ -48,15 +47,16 @@ Project.hasMany(ChatLine, {
 // has many Comment
 
 Task.belongsTo(Project, {
-    foreignKey: 'project_id'
+  foreignKey: "project_id",
+  onDelete: "CASCADE",
 });
 
 Task.belongsToMany(User, {
-    through: TaskUser
+  through: TaskUser,
 });
 
 Task.hasMany(Comment, {
-    foreignKey: 'task_id'
+  foreignKey: "task_id",
 });
 
 // User
@@ -65,24 +65,25 @@ Task.hasMany(Comment, {
 // Has many Comment
 
 User.belongsTo(Workspace, {
-    foreignKey: 'workspace_id'
+  foreignKey: "workspace_id",
 });
 
 User.belongsToMany(Task, {
-    through: TaskUser
+  through: TaskUser,
 });
 
 User.hasMany(Comment, {
-    foreignKey: 'user_id'
+  foreignKey: "user_id",
 });
 
 User.belongsToMany(Project, {
-    through: ProjectUser, foreignKey: 'user_id'
-})
+  through: ProjectUser,
+  foreignKey: "user_id",
+});
 
 User.hasMany(ChatLine, {
-    foreignKey: 'user_id'
-})
+  foreignKey: "user_id",
+});
 
 // Comment
 // Belongs to one Task
@@ -90,11 +91,11 @@ User.hasMany(ChatLine, {
 // onDelete: 'CASCADE'
 
 Comment.belongsTo(Task, {
-    foreignKey: 'task_id'
+  foreignKey: "task_id",
 });
 
 Comment.belongsTo(User, {
-    foreignKey: 'user_id'
+  foreignKey: "user_id",
 });
 
 // ChatLine
@@ -102,12 +103,20 @@ Comment.belongsTo(User, {
 // Belongs to one User
 
 ChatLine.belongsTo(Project, {
-    foreignKey: 'project_id'
-})
+  foreignKey: "project_id",
+});
 
 ChatLine.belongsTo(User, {
-    foreignKey: 'user_id'
-})
+  foreignKey: "user_id",
+});
 
-
-module.exports = { Workspace, User, Project, Task, Comment, TaskUser, ProjectUser, ChatLine };
+module.exports = {
+  Workspace,
+  User,
+  Project,
+  Task,
+  Comment,
+  TaskUser,
+  ProjectUser,
+  ChatLine,
+};

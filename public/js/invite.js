@@ -23,7 +23,7 @@ async function submitInvitations(e) {
 
   console.log(values, join_code);
 
-  const response = await fetch("/api/workspace/invites", {
+  await fetch("/api/workspace/invites", {
     method: "POST",
 
     body: JSON.stringify({ values, join_code }),
@@ -31,23 +31,9 @@ async function submitInvitations(e) {
       "Content-Type": "application/json",
     },
   });
-  if (response.ok) {
-    document.location.replace("/home");
-  }
+
+  document.location.replace("/dashboard");
 }
-
-// Submit invites
-// document.getElementById("add-btn").addEventListener("click", generateHTML);
-// document
-//   .getElementById("invite-form")
-//   .addEventListener("submit", submitInvitations);
-
-// Direct to home page
-document
-  .getElementById("enter-workspace-invite")
-  .addEventListener("click", function () {
-    document.location.replace("/dashboard");
-  });
 
 // Copy code to clipboard
 const copyToClipboard = async () => {
@@ -61,3 +47,19 @@ const copyToClipboard = async () => {
     // Optional: Display an error message to the user
   }
 };
+
+// Submit invites
+document.getElementById("add-btn").addEventListener("click", generateHTML);
+
+document.addEventListener("DOMContentLoaded", () => {
+  document
+    .querySelector("#invite-form")
+    .addEventListener("submit", submitInvitations);
+});
+
+// Direct to home page
+document
+  .getElementById("enter-workspace-invite")
+  .addEventListener("click", function () {
+    document.location.replace("/dashboard");
+  });
