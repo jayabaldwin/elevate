@@ -9,27 +9,27 @@
         {{> navbar }}
         <div class="container">
             <div class="row">
-                <div class="d-flex justify-content-start align-items-stretch flex-wrap">
+                <div class="d-flex justify-content-start align-items-stretch flex-wrap trash-card">
                     {{!-- RENDER SORTABLE PROJECT TILES --}}
                     {{!-- Render --}}
                     {{#each projects}}
-                    <div class="card text-white bg-dark mb-3 mr-3" style="width: 16rem; height: 12rem">
-                        <div class="card-header d-flex justify-content-between">
-                            <a href="#" data-toggle="tooltip" title="Tooltip for the first icon">
+                    <div class="card text-white bg-dark mb-3 mr-3" style="width: 16rem; height: 14rem;">
+                        <div class="card-header d-flex justify-content-between align-items-center">
+                            <a href="/projects/{{id}}">
                                 <i class="fa-solid fa-list-check" style="color: #ffffff;"></i>
                             </a>
-                            <a href="#" data-toggle="tooltip" title="Tooltip for the second icon">
-                                <i class="fa-solid fa-trash-can" style="color: #ffffff;"></i>
-                            </a>
+                            <button class="delete-icon bg-transparent btn">
+                                <i data-id="{{id}}" class="fa-solid fa-trash-can" style="color: #ffffff;"></i>
+                            </button> 
                         </div>
-                        <div class="card-body">
+                        <div class="card-body" style="overflow-y: auto">
                             <h5 class="card-title text-white">{{name}}</h5>
                             <p class="card-text text-white">{{description}}</p>
                         </div>
                     </div>
                     {{/each}}
                     <a href="#" data-toggle="modal" data-target="#project-modal" class="text-decoration-none">
-                        <div class="card text-white bg-transparent border-white mb-3" style="width: 16rem; height: 12rem">
+                        <div class="card text-white bg-transparent border-white mb-3" style="width: 16rem; height: 14rem">
                             <div class="card-body d-flex justify-content-center align-items-center">
                                 <h5 class="card-title text-center text-white"><i class="fa-regular fa-square-plus" style="color: #ffffff;"></i> ADD PROJECT</h5>
                             </div>

@@ -21,3 +21,19 @@ async function saveProject() {
   const data = await response.json();
   location.reload();
 }
+
+// Deletes project
+document.querySelectorAll(".delete-icon").forEach((deleteButton) => {
+  deleteButton.addEventListener("click", async (e) => {
+    console.log(e.target);
+    const id = e.target.dataset.id;
+    console.log(id);
+    const response = await fetch(`/api/projects/${id}`, {
+      method: "DELETE",
+    });
+
+    if (response.ok) {
+      document.location.reload();
+    }
+  });
+});
