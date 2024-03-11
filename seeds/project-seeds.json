@@ -1,28 +1,28 @@
 [
   {
-    "name": "Project Delta",
-    "workspace_id": 1,
-    "description": "An innovative project aimed at enhancing productivity within the workspace."
+    "name": "Customer Relationship Management System",
+    "workspace_id": 4,
+    "description": "Developing a CRM system to manage customer interactions, streamline sales processes, and improve customer satisfaction."
   },
   {
-    "name": "Project Alpha",
-    "workspace_id": 3,
-    "description": "A groundbreaking project focused on revolutionizing the workspace environment."
+    "name": "E-commerce Platform Enhancement",
+    "workspace_id": 4,
+    "description": "Enhancing an existing e-commerce platform with new features, improved performance, and enhanced security."
   },
   {
-    "name": "Project Zeta",
-    "workspace_id": 2,
-    "description": "A cutting-edge project designed to streamline operations within the workspace."
+    "name": "Mobile App Development",
+    "workspace_id": 4,
+    "description": "Creating a mobile app for iOS and Android platforms to provide users with a seamless and intuitive experience."
   },
   {
-    "name": "Project Gamma",
-    "workspace_id": 3,
-    "description": "An ambitious project dedicated to fostering collaboration and teamwork within the workspace."
+    "name": "Data Analytics Dashboard",
+    "workspace_id": 4,
+    "description": "Building a data analytics dashboard to visualize key metrics, trends, and insights for informed decision-making."
   },
   {
-    "name": "Project Omega",
-    "workspace_id": 1,
-    "description": "A comprehensive project aimed at optimizing resources and maximizing efficiency in the workspace."
+    "name": "Cloud Migration Project",
+    "workspace_id": 4,
+    "description": "Migrating on-premises infrastructure and applications to the cloud for improved scalability, flexibility, and cost-efficiency."
   },
   {
     "name": "Project Beta",
