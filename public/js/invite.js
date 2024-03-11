@@ -1,5 +1,3 @@
-// JAYA TO FIX
-
 function generateHTML() {
   let newInput = document.createElement("input");
   newInput.placeholder = "Enter email";
