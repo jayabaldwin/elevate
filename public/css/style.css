@@ -174,7 +174,7 @@ aside .nav-pills .nav-link:hover {
     border-color: rgba(106, 130, 251, 0.5);
     background-color: rgba(106, 130, 251, 0.5);
     border-radius: 0 0 5px 5px;
-    font-weight: bolder;
+    /* font-weight: bolder; */
 }
 
 #messageInput {
@@ -183,6 +183,7 @@ aside .nav-pills .nav-link:hover {
     white-space: pre-wrap;
     height: 50px;
     border-radius: 5px 5px 0 0;
+    border-color: rgba(106, 130, 251, 0.5);
 }
 
 .card-body.chat {
